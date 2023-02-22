@@ -1,4 +1,4 @@
-from Live.CheckingSiteNG import CheckingSiteNG
+from Web.Live.CheckingSiteNG import *
 
 def main():
 	CheckingSiteNG()

@@ -4,16 +4,16 @@ pySelenium is a Python library for web/mobile app testing in the Gorenje d.d. na
 
 ## Installation
 
-Earliest confirmed version of Python this library works with:
+Earliest confirmed version of [Python](https://www.python.org/) this library works with:
 
 ```
 Python 3.10.10 64-bit
 ```
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install selenium.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the required libraries.
 
 ```bash
-pip install selenium
+pip install -r requirements.txt
 ```
 
 ## Usage
