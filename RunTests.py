@@ -1,4 +1,5 @@
 from Web.Live.CheckingSiteTitle import *
+from Web.Live.LoginTest import *
 import json
 
 test_cases = {
@@ -13,10 +14,12 @@ test_cases = {
 }
 
 def main():
-	for case in test_cases:
-		site = test_cases[case]["site"]
-		title = test_cases[case]["title"]
-		CheckingSiteTitle(site, title)
+	# for case in test_cases:
+	# 	site = test_cases[case]["site"]
+	# 	title = test_cases[case]["title"]
+	# 	CheckingSiteTitle(site, title)
+
+	LoginTest()
 
 
 if __name__ == "__main__":
