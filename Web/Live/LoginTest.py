@@ -6,21 +6,28 @@ from selenium.webdriver.support import expected_conditions as EC
 from Common.Helpers import *
 
 
-def LoginTest() -> None:
+def LoginTest(site: str, loginValues: dict) -> None:
     print("Test Case 'Login' Started: ")
 
-    usernamePath = '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[1]/div[1]/div/div/input'
-    passwordPath = '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[1]/div[2]/div[1]/div/input'
-    submitPath = '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[2]/div/div[2]/button'
+    # usernamePath = '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[1]/div[1]/div/div/input'
+    # passwordPath = '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[1]/div[2]/div[1]/div/input'
+    # submitPath = '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[2]/div/div[2]/button'
 
-    username = "jedan70743@wireps.com"
-    password = "gA5Z5KJxTLsb@u"
+    # username = "jedan70743@wireps.com"
+    # password = "gA5Z5KJxTLsb@u"
+
+    usernamePath = loginValues["usernamePath"]
+    passwordPath = loginValues["passwordPath"]
+    submitPath = loginValues["submitPath"]
+
+    username = loginValues["username"]
+    password = loginValues["password"]
 
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
     driver = webdriver.Chrome(options=options)
-    driver.get("https://si.gorenje.com/login")
+    driver.get(site)
     
     if(HasCookieMessage(driver)):
         AcceptCookies(driver)
