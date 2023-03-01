@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Common.Helpers import *
+from Common.WebHelpers import *
 
 
 def LoginTest(site: str, loginValues: dict) -> None:
@@ -43,6 +43,8 @@ def LoginTest(site: str, loginValues: dict) -> None:
 
     welcomePath = '/html/body/main/header/div[1]/div/div/div[4]/div/div/div/div/p'
     welcomeParagraph = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, welcomePath)))
+
+    Screenshot(driver, folder="./Web/Screenshots")
 
     try:
         assert "Dobrodošli" in welcomeParagraph.get_attribute('innerHTML') 
