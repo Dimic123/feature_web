@@ -2,37 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from Common.AppDriver import *
+from Common.JsonHelpers import ImportJsonFile
 import Web.Live as WebTests
 import Mobile as MobileTests
 
 import os
+import json
 
-
-test_cases = {
-	"site_title_1": {
-		"site" : "https://si.gorenje.com/",
-		"title" : "Gorenje | Domača Stran"
-	},
-	"site_title_1": {
-		"site" : "https://si.gorenje.com/",
-		"title" : "Gorenje | Veliki in mali gospodinjski aparati"
-	}
-}
-
-login_values = {
-	"usernamePath" : '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[1]/div[1]/div/div/input',
-    "passwordPath" : '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[1]/div[2]/div[1]/div/input',
-    "submitPath" : '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[2]/div/div[2]/button',
-    "username" : "jedan70743@wireps.com",
-    "password" : "gA5Z5KJxTLsb@u"
-}
-
-test_cases2 = {
-	"login_1": {
-		"site" : "https://si.gorenje.com/login",
-		"values" : login_values
-	}
-}
 
 def main():
 	TestWeb()
@@ -43,17 +19,19 @@ def TestWeb():
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
 	driver = webdriver.Chrome(options=options)
 
-	for case in test_cases:
-		site = test_cases[case]["site"]
-		title = test_cases[case]["title"]
-		WebTests.CheckingSiteTitle(driver, site, title)
+	data = ImportJsonFile('./Web/Live/CheckingSiteTitle.json')
+
+	for case in data:
+		WebTests.CheckingSiteTitle(driver, data[case])
 		print("Test case", case, "passed")
 
-	for case in test_cases2:
-		site = test_cases2[case]["site"]
-		values = test_cases2[case]["values"]
-		WebTests.LoginTest(driver, site, values)
+	data = ImportJsonFile('./Web/Live/LoginTest.json')
+
+	for case in data:
+		WebTests.LoginTest(driver, data[case])
 		print("Test case", case, "passed")
+
+	driver.quit()
 
 def TestMobile():
 	# Create options for app testing

@@ -6,7 +6,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from Common.WebHelpers import *
 
 
-def LoginTest(driver: webdriver, site: str, loginValues: dict) -> None:
+# def LoginTest(driver: webdriver, site: str, loginValues: dict) -> None:
+def LoginTest(driver: webdriver, data: dict) -> bool:
+    site = data["site"]
+    loginValues = data["values"]
+
     print("Test Case 'Login' Started: ")
 
     usernamePath = loginValues["usernamePath"]
@@ -39,6 +43,8 @@ def LoginTest(driver: webdriver, site: str, loginValues: dict) -> None:
         assert "Dobrodošli" in welcomeParagraph.get_attribute('innerHTML') 
     except:
         print("FAILED - Expected welcome message")
+        return False
     else:
         print("PASSED - Login successful")
+        return True
 
