@@ -12,7 +12,8 @@ def HasCookieMessage(driver: webdriver) -> bool:
 
 def AcceptCookies(driver: webdriver) -> None:
     driver.implicitly_wait(2)
-    acceptButton = '/html/body/div[2]/div/div/div[2]/div[1]/div[2]/button'
+    # acceptButton = '/html/body/div[2]/div/div/div[2]/div[1]/div[2]/button'
+    acceptButton = '/html/body/div[2]/div/div/div[2]/div[1]/div[2]/span[1]/button[1]'
 
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, acceptButton))).click()
     driver.implicitly_wait(2)

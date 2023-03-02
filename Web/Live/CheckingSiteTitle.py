@@ -2,10 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-def CheckingSiteTitle(site: str, expectedTitle: str) -> None:
+def CheckingSiteTitle(driver: webdriver, site: str, expectedTitle: str) -> None:
 	print("Checking site title for site: ", site)
 
-	driver = webdriver.Chrome()
 	driver.get(site)
 
 	title = driver.title
@@ -16,5 +15,3 @@ def CheckingSiteTitle(site: str, expectedTitle: str) -> None:
 		print("FAILED - Expected page title was \"" + expectedTitle + "\", but actual title is: \"" + title + "\"")
 	else:
 		print("PASSED - Page title is as expected: \"" + expectedTitle + "\"")
-
-	driver.quit()
