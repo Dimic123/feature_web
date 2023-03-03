@@ -19,16 +19,22 @@ def TestWeb():
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
 	driver = webdriver.Chrome(options=options)
 
-	data = ImportJsonFile('./Web/Live/CheckingSiteTitle.json')
+	data = ImportJsonFile('./Web/Live/Data/CheckingSiteTitle.json')
 
 	for case in data:
 		WebTests.CheckingSiteTitle(driver, data[case])
 		print("Test case", case, "passed")
 
-	data = ImportJsonFile('./Web/Live/LoginTest.json')
+	data = ImportJsonFile('./Web/Live/Data/LoginTest.json')
 
 	for case in data:
 		WebTests.LoginTest(driver, data[case])
+		print("Test case", case, "passed")
+
+	data = ImportJsonFile('./Web/Live/Data/DataOnSiteTest.json')
+
+	for case in data:
+		WebTests.DataOnSiteTest(driver, data[case])
 		print("Test case", case, "passed")
 
 	driver.quit()

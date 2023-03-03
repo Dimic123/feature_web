@@ -23,7 +23,7 @@ def LoginTest(driver: webdriver, data: dict) -> bool:
     driver.get(site)
     
     if(HasCookieMessage(driver)):
-        AcceptCookies(driver)
+        AcceptCookies(driver, '/html/body/div[2]/div/div/div[2]/div[1]/div[2]/span[1]/button[1]')
         driver.implicitly_wait(1)
 
     usernameField = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, usernamePath)))
