@@ -1,10 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from Common.AppDriver import *
+#from Common.AppDriver import *
 from Common.JsonHelpers import ImportJsonFile
 import Web.Live as WebTests
-import Mobile as MobileTests
+#import Mobile as MobileTests
 
 import os
 import json
