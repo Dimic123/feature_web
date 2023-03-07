@@ -18,7 +18,7 @@ steps:
     #sudo mv geckodriver /usr/local/bin/
 
     # Install WebDriver for Chrome
-    wget https://chromedriver.storage.googleapis.com/91.0.4472.101/chromedriver_linux64.zip
+    wget https://chromedriver.storage.googleapis.com/110.0.5481.77/chromedriver_linux64.zip
     unzip chromedriver_linux64.zip
     sudo mv chromedriver /usr/local/bin/
 
