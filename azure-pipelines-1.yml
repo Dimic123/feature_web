@@ -1,0 +1,35 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.9'
+
+
+
+- script: |
+    # Install WebDriver for Firefox
+    wget https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-linux64.tar.gz
+    tar -xvzf geckodriver-v0.30.0-linux64.tar.gz
+    sudo mv geckodriver /usr/local/bin/
+
+    # Install WebDriver for Chrome
+    wget https://chromedriver.storage.googleapis.com/91.0.4472.101/chromedriver_linux64.zip
+    unzip chromedriver_linux64.zip
+    sudo mv chromedriver /usr/local/bin/
+
+    # Install WebDriver for Edge
+    wget https://msedgedriver.azureedge.net/95.0.1020.40/edgedriver_linux64.zip
+    unzip edgedriver_linux64.zip
+    sudo mv msedgedriver /usr/local/bin/
+  displayName: 'Install WebDrivers'
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+    python RunTests.py
+  displayName: 'Run Tests'
+
