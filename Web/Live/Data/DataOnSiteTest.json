@@ -1,0 +1,11 @@
+{
+    "data_case_1": {
+        "site": "https://si.gorenje.com/",
+        "values": {
+            "support": {
+                "xpath": "/html/body/main/header/div[1]/div/div/div[2]/div/ul/li[4]/a",
+                "text": "Podpora"
+            }
+        }
+    }
+}

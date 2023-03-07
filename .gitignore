@@ -1,3 +1,6 @@
+./Mobile/UIAutomatorViewer
+./Mobile/UIAutomatorViewer/*
+
 # VScode
 .vscode/*
 !.vscode/settings.json

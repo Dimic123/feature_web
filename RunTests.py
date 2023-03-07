@@ -1,47 +1,59 @@
-from Web.Live.CheckingSiteTitle import *
-from Web.Live.LoginTest import *
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+from Common.AppDriver import *
+from Common.JsonHelpers import ImportJsonFile
+import Web.Live as WebTests
+import Mobile as MobileTests
+
+import os
 import json
 
-test_cases = {
-	"case_1": {
-		"site" : "https://si.gorenje.com/",
-		"title" : "Gorenje | Domača Stran"
-	},
-	"case_2": {
-		"site" : "https://si.gorenje.com/",
-		"title" : "Gorenje | Veliki in mali gospodinjski aparati"
-	}
-}
-
-login_values = {
-	"usernamePath" : '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[1]/div[1]/div/div/input',
-    "passwordPath" : '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[1]/div[2]/div[1]/div/input',
-    "submitPath" : '/html/body/main/div[2]/div/div/div[2]/div/form/article/div/div[2]/div/div[2]/div/div[2]/button',
-    "username" : "jedan70743@wireps.com",
-    "password" : "gA5Z5KJxTLsb@u"
-}
-
-test_cases2 = {
-	"case_1": {
-		"site" : "https://si.gorenje.com/login",
-		"values" : login_values
-	}
-}
 
 def main():
-	for case in test_cases:
-		site = test_cases[case]["site"]
-		title = test_cases[case]["title"]
-		CheckingSiteTitle(site, title)
-		print("Test case ", case, " passed")
+	# TestWeb()
+	TestMobile()
 
-	for case in test_cases2:
-		site = test_cases2[case]["site"]
-		values = test_cases2[case]["values"]
-		LoginTest(site, values)
-		print("Test case ", case, " passed")
+def TestWeb():
+	options = webdriver.ChromeOptions()
+	options.add_experimental_option('excludeSwitches', ['enable-logging'])
+	driver = webdriver.Chrome(options=options)
+
+	data = ImportJsonFile('./Web/Live/Data/CheckingSiteTitle.json')
+
+	for case in data:
+		WebTests.CheckingSiteTitle(driver, data[case])
+		print("Test case", case, "passed")
+
+	data = ImportJsonFile('./Web/Live/Data/LoginTest.json')
+
+	for case in data:
+		WebTests.LoginTest(driver, data[case])
+		print("Test case", case, "passed")
+
+	data = ImportJsonFile('./Web/Live/Data/DataOnSiteTest.json')
+
+	for case in data:
+		WebTests.DataOnSiteTest(driver, data[case])
+		print("Test case", case, "passed")
+
+	driver.quit()
+
+def TestMobile():
+	# Create options for app testing
+	options = UiAutomator2Options()
+	options.platformVersion = '10'
+	# ADB device UDID
+	options.udid = 'R3CT309J26M'
+	# App .apk file
+	options.app = os.path.abspath(r'.\Mobile\Apps\ConnectLife_1.3.0prod_12300222.apk') 
+	server = 'http://127.0.0.1:4723/wd/hub'
+
+	with AppDriver(options, server) as driver:
+		MobileTests.LoginTest(driver)
+		MobileTests.ManualsTest(driver)
+		
+
 	
-
-
 if __name__ == "__main__":
 	main()

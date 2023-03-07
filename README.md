@@ -16,6 +16,8 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the req
 pip install -r requirements.txt
 ```
 
+To run mobile test also install [Appium Server](https://github.com/appium/appium-desktop) and [Appium Inspector](https://github.com/appium/appium-inspector) for inspecting mobile app UI structure. Or just run the available tests.
+
 ## Usage
 
 Run the `RunTests.py` file with python.
