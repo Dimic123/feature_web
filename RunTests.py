@@ -11,8 +11,8 @@ import json
 
 
 def main():
-	# TestWeb()
-	TestMobile()
+	 TestWeb()
+	#TestMobile()
 
 def TestWeb():
 	options = webdriver.ChromeOptions()
