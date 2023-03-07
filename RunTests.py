@@ -11,7 +11,7 @@ import json
 
 
 def main():
-	TestWeb()
+	# TestWeb()
 	TestMobile()
 
 def TestWeb():
@@ -51,6 +51,7 @@ def TestMobile():
 
 	with AppDriver(options, server) as driver:
 		MobileTests.LoginTest(driver)
+		MobileTests.ManualsTest(driver)
 		
 
 	

@@ -131,6 +131,10 @@ def LoginTest(driver: appdriver) -> bool:
         actions.w3c_actions.pointer_action.move_to_location(509, 771)
         actions.w3c_actions.pointer_action.release()
         actions.perform()
+
+        Screenshot(driver, "./Mobile/Screenshots")
+
+        homeBtn = driver.find_element(by=AppiumBy.XPATH, value='//android.view.View[@content-desc="Home"]')
     except:
         return False
     else:

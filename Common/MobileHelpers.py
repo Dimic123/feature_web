@@ -22,3 +22,22 @@ def Screenshot(driver: webdriver, folder: str) -> None:
     screenshot = os.path.join(os.path.abspath(folder), activity + datetime.now().strftime("_%d-%m-%Y_%H-%M-%S.png"))
     if not driver.save_screenshot(screenshot):
         raise Exception("Screenshot could not be saved, check file location!")
+    
+def CheckIfHome(driver: webdriver) -> bool:
+    try:
+        driver.find_element(by=AppiumBy.XPATH, value='//android.view.View[@content-desc="PULL TO REFRESH"]')
+    except:
+        return False
+    else:
+        return True
+    
+def CheckIfBottomBar(driver: webdriver) -> bool:
+    try:
+        driver.find_element(by=AppiumBy.XPATH, value='//android.view.View[@content-desc="Home"]')
+        driver.find_element(by=AppiumBy.XPATH, value='//android.view.View[@content-desc="Devices"]')
+        driver.find_element(by=AppiumBy.XPATH, value='//android.view.View[@content-desc="Menu"]')
+        driver.find_element(by=AppiumBy.XPATH, value='//android.view.View[@content-desc="Show menu"]')
+    except:
+        return False
+    else:
+        return True
