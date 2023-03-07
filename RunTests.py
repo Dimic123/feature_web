@@ -17,6 +17,7 @@ def main():
 def TestWeb():
 	options = webdriver.ChromeOptions()
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
+ 	options.add_argument('--headless')
 	driver = webdriver.Chrome(options=options)
 
 	data = ImportJsonFile('./Web/Live/Data/CheckingSiteTitle.json')

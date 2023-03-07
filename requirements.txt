@@ -1,4 +1,4 @@
 pytest
 selenium
-Appium-Python-Client
-pytest-selenium[appium]
+#Appium-Python-Client
+#pytest-selenium[appium]
