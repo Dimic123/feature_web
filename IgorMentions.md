@@ -1,4 +1,5 @@
 Use python 3.11 (hitrejsi)
+1.Web
 RunTests  (only for web browsers) ---> requirements.txt
 RunTestsMobile  ---> requirementsMobile.txt
 
@@ -6,6 +7,11 @@ Vsi testi v Web,Live  , v /Data txt files s seznami  ?! (ali json??)
 
 Pipeline , parameters
 
+Seleniu test za call API?
+
+
+2.Mobile
+narediti VM za android?? ali lahko kar kot deploy
 
 Razlicni sklopi: (glej wiki)
 
