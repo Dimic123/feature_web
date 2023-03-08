@@ -1,18 +1,13 @@
+import logging
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-#from Common.AppDriver import *
 from Common.JsonHelpers import ImportJsonFile
 import Web.Live as WebTests
-#import Mobile as MobileTests
-
-import os
-import json
 
 
 def main():
-	 TestWeb()
-	#TestMobile()
+	TestWeb()
 
 def TestWeb():
 	options = webdriver.ChromeOptions()
@@ -38,23 +33,7 @@ def TestWeb():
 		WebTests.DataOnSiteTest(driver, data[case])
 		print("Test case", case, "passed")
 
-	driver.quit()
+	driver.quit()	
 
-def TestMobile():
-	# Create options for app testing
-	options = UiAutomator2Options()
-	options.platformVersion = '10'
-	# ADB device UDID
-	options.udid = 'R3CT309J26M'
-	# App .apk file
-	options.app = os.path.abspath(r'.\Mobile\Apps\ConnectLife_1.3.0prod_12300222.apk') 
-	server = 'http://127.0.0.1:4723/wd/hub'
-
-	with AppDriver(options, server) as driver:
-		MobileTests.LoginTest(driver)
-		MobileTests.ManualsTest(driver)
-		
-
-	
 if __name__ == "__main__":
 	main()

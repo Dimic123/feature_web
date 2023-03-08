@@ -1,5 +1,8 @@
+import logging
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+
+from Common.Logging import *
 
 
 # def CheckingSiteTitle(driver: webdriver, site: str, expectedTitle: str) -> None:
@@ -16,7 +19,8 @@ def CheckingSiteTitle(driver: webdriver, data: dict) -> bool:
 	try:
 		assert title == expectedTitle
 	except:
-		print("FAILED - Expected page title was \"" + expectedTitle + "\", but actual title is: \"" + title + "\"")
+		msg = "FAILED - Expected page title was \"" + expectedTitle + "\", but actual title is: \"" + title + "\""
+		Logger.Log(msg, source="CheckingSiteTitle", type=Environment.Web, console=True)
 		return False
 	else:
 		print("PASSED - Page title is as expected: \"" + expectedTitle + "\"")
