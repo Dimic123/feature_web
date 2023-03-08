@@ -10,6 +10,21 @@ Pipeline , parameters
 Seleniu test za call API?
 
 
+Output:
+output.txt
+
+Summary:
+Sklop1: 100 PASS, 2 FAILED
+...
+prilepljen raw log.
+
+Posiljanje reporta/output.txt -- teams kanal, smtp,...
+
+Managiranje:
+nekdo spreminja, dodaja samo urlje v txt file?
+ce je treba dodatno funkcnioanlnoist, se pac napise posebni py.
+
+
 2.Mobile
 narediti VM za android?? ali lahko kar kot deploy
 
