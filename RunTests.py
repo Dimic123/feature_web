@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from Common.JsonHelpers import ImportJsonFile
-import Web.Live as WebTests
+from Web.Live import *
 
 
 def main():
@@ -15,23 +15,25 @@ def TestWeb():
 	options.add_argument('--headless')
 	driver = webdriver.Chrome(options=options)
 
-	data = ImportJsonFile('./Web/Live/Data/CheckingSiteTitle.json')
+	StandaloneObject(driver).RunTest()
 
-	for case in data:
-		WebTests.CheckingSiteTitle(driver, data[case])
-		print("Test case", case, "passed")
+	# data = ImportJsonFile('./Web/Live/Data/CheckingSiteTitle.json')
 
-	data = ImportJsonFile('./Web/Live/Data/LoginTest.json')
+	# for case in data:
+	# 	WebTests.CheckingSiteTitle(driver, data[case])
+	# 	print("Test case", case, "passed")
 
-	for case in data:
-		WebTests.LoginTest(driver, data[case])
-		print("Test case", case, "passed")
+	# data = ImportJsonFile('./Web/Live/Data/LoginTest.json')
 
-	data = ImportJsonFile('./Web/Live/Data/DataOnSiteTest.json')
+	# for case in data:
+	# 	WebTests.LoginTest(driver, data[case])
+	# 	print("Test case", case, "passed")
 
-	for case in data:
-		WebTests.DataOnSiteTest(driver, data[case])
-		print("Test case", case, "passed")
+	# data = ImportJsonFile('./Web/Live/Data/DataOnSiteTest.json')
+
+	# for case in data:
+	# 	WebTests.DataOnSiteTest(driver, data[case])
+	# 	print("Test case", case, "passed")
 
 	driver.quit()	
 

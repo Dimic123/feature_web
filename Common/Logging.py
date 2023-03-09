@@ -14,13 +14,13 @@ class Logger:
     log_folder = "./Logs"
 
     @classmethod
-    def Log(self, *values: str, source: str, type: Environment, console: bool) -> None:
-        if console:
-            print(values)
-        
+    def Log(cls, *values: str, source: str, type: Environment, console: bool) -> None:
         msg = " ".join(values)
 
-        logFolder = self.log_folder
+        if console:
+            print(msg)
+
+        logFolder = cls.log_folder
         if type is Environment.Web:
             logFolder = os.path.join(logFolder, "Web")
         elif type is Environment.Mobile:

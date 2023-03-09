@@ -1,6 +1,12 @@
 ./Mobile/UIAutomatorViewer
 ./Mobile/UIAutomatorViewer/*
 
+./Web/Screenshots
+./Web/Screenshots/*
+
+./Mobile/Screenshots
+./Mobile/Screenshots/*
+
 # VScode
 .vscode/*
 !.vscode/settings.json
