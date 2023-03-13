@@ -1,13 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Common.WebHelpers import *
 
 
 # def LoginTest(driver: webdriver, site: str, loginValues: dict) -> None:
-def LoginTest(driver: webdriver, data: dict) -> bool:
+def LoginTest(driver, data: dict) -> bool:
     site = data["site"]
     loginValues = data["values"]
 

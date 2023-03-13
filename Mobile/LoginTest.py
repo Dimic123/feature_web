@@ -9,7 +9,7 @@ from selenium.webdriver.common.actions import interaction
 from selenium.webdriver.common.actions.action_builder import ActionBuilder
 from selenium.webdriver.common.actions.pointer_input import PointerInput
 
-def LoginTest(driver: appdriver) -> bool:
+def LoginTest(driver) -> bool:
     try:
         # Press next
         actions = ActionChains(driver)

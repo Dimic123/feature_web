@@ -5,7 +5,7 @@ from Common.Logging import *
 
 
 # def CheckingSiteTitle(driver: webdriver, site: str, expectedTitle: str) -> None:
-def CheckingSiteTitle(driver: webdriver, data: dict) -> bool:
+def CheckingSiteTitle(driver, data: dict) -> bool:
 	site = data["site"]
 	expectedTitle = data["title"]
 
