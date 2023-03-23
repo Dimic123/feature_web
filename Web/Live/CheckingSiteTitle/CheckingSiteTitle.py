@@ -3,7 +3,7 @@ from Common.Logging import *
 from Common.TestObject import TestObject
 
 
-class StandaloneObject(TestObject):
+class CheckingSiteTitle(TestObject):
     def __init__(self, driver) -> None:
         super().__init__(driver, __file__)
 

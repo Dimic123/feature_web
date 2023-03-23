@@ -15,7 +15,7 @@ def TestWeb():
 	options.add_argument('--headless')
 	driver = webdriver.Chrome(options=options)
 
-	StandaloneObject(driver).RunTest()
+	CheckingSiteTitle(driver).RunTest()
 
 	# data = ImportJsonFile('./Web/Live/Data/CheckingSiteTitle.json')
 
