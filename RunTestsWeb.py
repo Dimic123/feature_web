@@ -2,8 +2,9 @@ import logging
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from Common.JsonHelpers import ImportJsonFile
+from Common import JsonHelpers
 from Web.Live import *
+from Web.Live.CheckingSiteTitleStandalone.CheckingSiteTitleTest import *
 
 
 def main():
@@ -15,7 +16,7 @@ def TestWeb():
 	options.add_argument('--headless')
 	driver = webdriver.Chrome(options=options)
 
-	CheckingSiteTitle(driver).RunTest()
+	CheckingSiteTitleTest(driver).RunTest()
 
 	# data = ImportJsonFile('./Web/Live/Data/CheckingSiteTitle.json')
 
