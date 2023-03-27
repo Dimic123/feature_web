@@ -29,7 +29,7 @@ steps:
   displayName: 'Install WebDrivers'
 - script: |
     python -m pip install --upgrade pip
-    pip install -r requirements.txt
+    pip install -r requirements-web.txt
     python RunTestsWeb.py
   displayName: 'Run Web Tests'
 
