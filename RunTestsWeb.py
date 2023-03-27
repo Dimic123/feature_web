@@ -10,31 +10,49 @@ from Web.Live.LoginTest.LoginTest import *
 
 
 def main():
-	print("")
-	print("*******************************************************")
-	print("******************** TESTS STARTED ********************")
-	print("*******************************************************")
-	print("")
+    print("")
+    print("*******************************************************")
+    print("******************** TESTS STARTED ********************")
+    print("*******************************************************")
+    print("")
 
-	TestWeb()
+    TestWeb()
 
-	print("")
-	print("*******************************************************")
-	print("********************* TESTS ENDED *********************")
-	print("*******************************************************")
-	print("")
+    print("")
+    print("*******************************************************")
+    print("********************* TESTS ENDED *********************")
+    print("*******************************************************")
+    print("")
+
 
 def TestWeb():
-	options = webdriver.ChromeOptions()
-	options.add_experimental_option('excludeSwitches', ['enable-logging'])
-	options.add_argument('--headless')
-	driver = webdriver.Chrome(options=options)
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.add_argument('--headless')
+    driver = webdriver.Chrome(options=options)
+    results = {"passed": 0, "failed": 0, "total": 0}
 
-	CheckingSiteTitleTest(driver).RunTest()
-	DataOnSiteTest(driver).RunTest()
-	LoginTest(driver).RunTest()
+    result = CheckingSiteTitleTest(driver).RunTest()
+    results = CombineDicts(results, result)
 
-	driver.quit()	
+    result = DataOnSiteTest(driver).RunTest()
+    results = CombineDicts(results, result)
+
+    result = LoginTest(driver).RunTest()
+    results = CombineDicts(results, result)
+
+    print("Web tests complete, passed:",
+          results["passed"], ", failed:", results["failed"], ", total:", results["total"])
+
+    driver.quit()
+
+
+def CombineDicts(d1: dict, d2: dict) -> dict:
+    for k in d1.keys():
+        d1[k] += d2[k]
+
+    return d1
+
 
 if __name__ == "__main__":
-	main()
+    main()
