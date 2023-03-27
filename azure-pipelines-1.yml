@@ -30,6 +30,6 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
-    python RunTests.py
-  displayName: 'Run Tests'
+    python RunTestsWeb.py
+  displayName: 'Run Web Tests'
 
