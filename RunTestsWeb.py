@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.options import Options
 
 from Common import JsonHelpers
 # from Web.Live import *
-from Web.Live.CheckingSiteTitleStandalone.CheckingSiteTitleTest import *
+from Web.Live.CheckingSiteTitle.CheckingSiteTitle import *
 
 
 def main():
