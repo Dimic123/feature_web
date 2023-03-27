@@ -8,7 +8,19 @@ from Web.Live.CheckingSiteTitleStandalone.CheckingSiteTitleTest import *
 
 
 def main():
+	print("")
+	print("*******************************************************")
+	print("******************** TESTS STARTED ********************")
+	print("*******************************************************")
+	print("")
+
 	TestWeb()
+
+	print("")
+	print("*******************************************************")
+	print("********************* TESTS ENDED *********************")
+	print("*******************************************************")
+	print("")
 
 def TestWeb():
 	options = webdriver.ChromeOptions()
