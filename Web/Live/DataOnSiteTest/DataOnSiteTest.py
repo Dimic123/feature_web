@@ -5,7 +5,7 @@ from Common.Logging import *
 from Common.TestObject import TestObject
 
 
-class BasicTest(TestObject):
+class DataOnSiteTest(TestObject):
     def __init__(self, driver) -> None:
         super().__init__(driver, __file__)
 
@@ -14,7 +14,7 @@ class BasicTest(TestObject):
         testValues = data["values"]
         returnValue = False
 
-        print("Test Case 'Data' Started: ")
+        self.logger.info("Test Case 'Data' Started: ")
 
         self.driver.get(site)
 
@@ -26,10 +26,10 @@ class BasicTest(TestObject):
                 element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, xpath)))
                 assert text in element.get_attribute('innerHTML') 
             except:
-                print("FAILED - Didn't find the expected value:", text)
+                self.logger.error("FAILED - Didn't find the expected value:", text)
                 returnValue &= False
             else:
-                print("PASSED - Data found")
+                self.logger.info("PASSED - Data found")
                 returnValue &= True
         
         return returnValue

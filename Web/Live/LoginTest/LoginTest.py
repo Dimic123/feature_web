@@ -13,7 +13,7 @@ class LoginTest(TestObject):
         site = data["site"]
         loginValues = data["values"]
 
-        print("Test Case 'Login' Started: ")
+        self.logger.info("Test Case 'Login' Started: ")
 
         usernamePath = loginValues["usernamePath"]
         passwordPath = loginValues["passwordPath"]
@@ -44,8 +44,8 @@ class LoginTest(TestObject):
         try:
             assert "Dobrodošli" in welcomeParagraph.get_attribute('innerHTML') 
         except:
-            print("FAILED - Expected welcome message")
+            self.logger.error("FAILED - Expected welcome message")
             return False
         else:
-            print("PASSED - Login successful")
+            self.logger.info("PASSED - Login successful")
             return True

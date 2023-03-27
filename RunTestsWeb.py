@@ -5,6 +5,8 @@ from selenium.webdriver.chrome.options import Options
 from Common import JsonHelpers
 # from Web.Live import *
 from Web.Live.CheckingSiteTitle.CheckingSiteTitle import *
+from Web.Live.DataOnSiteTest.DataOnSiteTest import *
+from Web.Live.LoginTest.LoginTest import *
 
 
 def main():
@@ -29,6 +31,8 @@ def TestWeb():
 	driver = webdriver.Chrome(options=options)
 
 	CheckingSiteTitleTest(driver).RunTest()
+	DataOnSiteTest(driver).RunTest()
+	LoginTest(driver).RunTest()
 
 	# data = ImportJsonFile('./Web/Live/Data/CheckingSiteTitle.json')
 
