@@ -1,6 +1,6 @@
 from selenium import webdriver
-from Common import Logging
-from Common import TestObject
+from Common.Logging import *
+from Common.TestObject import *
 
 
 class CheckingSiteTitleTest(TestObject):
