@@ -6,17 +6,34 @@ from Common.Logging import *
 import logging
 from datetime import datetime
 
+from Configuration.Settings import Settings
+
 
 class TestObject:
-    def __init__(self, driver, testFilePath: str) -> None:
-        self.driver = driver
+    def __init__(self, testFilePath: str, driver = None) -> None:
+        if driver is None:
+            options = webdriver.ChromeOptions()
+            options.add_experimental_option('excludeSwitches', ['enable-logging'])
+            options.add_argument('--headless')
+            driver = Settings.get("Driver")  
+            if driver == "Chrome":
+                self.driver = webdriver.Chrome(options=options)
+            else:
+                raise NotImplementedError
+        else:
+            self.driver = driver
+
         self.file = testFilePath
         self.logger = self.__setupLogger()
 
     def __setupLogger(self, level=logging.INFO):
         formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 
-        logFile = os.path.join(os.path.dirname(self.file), os.path.splitext(
+        logFolder = Settings.get("LogFolder")
+        if not logFolder:
+            logFolder = os.path.dirname(self.file)
+
+        logFile = os.path.join(logFolder, os.path.splitext(
             os.path.basename(self.file))[0] + datetime.now().strftime("_%d-%m-%Y_%H-%M-%S.log"))
 
         fileHandler = logging.FileHandler(logFile)
@@ -60,6 +77,7 @@ class TestObject:
 
         self.logger.info("")
 
+        self.driver.quit()
         self.logger.info(scriptFilename + " tests complete, passed: " + str(passed)+", failed:" + str(failed) + ", total: " + str(len(data)))
         return {"passed": passed, "failed": failed, "total": len(data)}
 

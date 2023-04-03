@@ -1,4 +1,5 @@
 from selenium import webdriver
+from Configuration.Settings import Settings
 
 from Web.Individual.CheckingSiteTitle.CheckingSiteTitle import *
 from Web.Individual.DataOnSiteTest.DataOnSiteTest import *
@@ -24,25 +25,25 @@ def main():
 
 
 def TestWebIndividual():
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    options.add_argument('--headless')
-    driver = webdriver.Chrome(options=options)
+    # options = webdriver.ChromeOptions()
+    # options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    # options.add_argument('--headless')
+    # driver = webdriver.Chrome(options=options)
     results = {"passed": 0, "failed": 0, "total": 0}
 
-    result = CheckingSiteTitleTest(driver).RunTest()
+    result = CheckingSiteTitleTest().RunTest()
     results = CombineDicts(results, result)
 
-    result = DataOnSiteTest(driver).RunTest()
+    result = DataOnSiteTest().RunTest()
     results = CombineDicts(results, result)
 
-    result = LoginTest(driver).RunTest()
+    result = LoginTest().RunTest()
     results = CombineDicts(results, result)
 
     print("Web tests complete, passed:",
           results["passed"], ", failed:", results["failed"], ", total:", results["total"])
 
-    driver.quit()
+    # driver.quit()
 
 def TestWebSimple():
 	options = webdriver.ChromeOptions()

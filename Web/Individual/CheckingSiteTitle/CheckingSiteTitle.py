@@ -1,10 +1,11 @@
 from selenium import webdriver
 from Common.Logging import *
+from Configuration.Settings import Settings
 from Common.TestObject import *
 
 class CheckingSiteTitleTest(TestObject):
-    def __init__(self, driver) -> None:
-        super().__init__(driver, __file__)
+    def __init__(self, driver = None) -> None:
+        super().__init__(__file__)
 
     def Test(self, data: dict) -> bool:
         site = data["site"]
