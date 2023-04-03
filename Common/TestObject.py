@@ -32,7 +32,7 @@ class TestObject:
         logFolder = Settings.get("LogFolder")
         if not logFolder:
             logFolder = os.path.dirname(self.file)
-        elif not os.path.exists():
+        elif not os.path.exists(logFolder):
             os.makedirs(logFolder)
 
         logFile = os.path.join(logFolder, os.path.splitext(
