@@ -60,7 +60,7 @@ class TestObject:
 
         self.logger.info("")
 
-        self.logger.critical(scriptFilename + " tests complete, passed: " + str(passed)+", failed:" + str(failed) + ", total: " + str(len(data)))
+        self.logger.info(scriptFilename + " tests complete, passed: " + str(passed)+", failed:" + str(failed) + ", total: " + str(len(data)))
         return {"passed": passed, "failed": failed, "total": len(data)}
 
     @abstractmethod
