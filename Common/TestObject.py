@@ -32,6 +32,8 @@ class TestObject:
         logFolder = Settings.get("LogFolder")
         if not logFolder:
             logFolder = os.path.dirname(self.file)
+        elif not os.path.exists():
+            os.makedirs(logFolder)
 
         logFile = os.path.join(logFolder, os.path.splitext(
             os.path.basename(self.file))[0] + datetime.now().strftime("_%d-%m-%Y_%H-%M-%S.log"))
