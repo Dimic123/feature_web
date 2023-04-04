@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.options import Options
 
 from Common.AppDriver import *
 from Common.JsonHelpers import ImportJsonFile
-import Mobile as MobileTests
+import Mobile.ConnectLife as ConnectLife
 
 import os
 
@@ -23,8 +23,8 @@ def TestMobile():
 	server = 'http://127.0.0.1:4723/wd/hub'
 
 	with AppDriver(options, server) as driver:
-		MobileTests.LoginTest(driver)
-		MobileTests.ManualsTest(driver)
+		ConnectLife.LoginTest(driver)
+		ConnectLife.ManualsTest(driver)
 		
 
 if __name__ == "__main__":

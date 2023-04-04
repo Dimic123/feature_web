@@ -18,10 +18,11 @@ def TouchButton(driver: webdriver, xpath: str) -> None:
     el.click()
 
 def Screenshot(driver: webdriver, folder: str) -> None:
-    activity = driver.current_activity
-    screenshot = os.path.join(os.path.abspath(folder), activity + datetime.now().strftime("_%d-%m-%Y_%H-%M-%S.png"))
-    if not driver.save_screenshot(screenshot):
-        raise Exception("Screenshot could not be saved, check file location!")
+    # activity = driver.current_activity
+    # screenshot = os.path.join(os.path.abspath(folder), activity + datetime.now().strftime("_%d-%m-%Y_%H-%M-%S.png"))
+    # if not driver.save_screenshot(screenshot):
+    #     raise Exception("Screenshot could not be saved, check file location!")
+    pass
     
 def CheckIfHome(driver: webdriver) -> bool:
     try:
