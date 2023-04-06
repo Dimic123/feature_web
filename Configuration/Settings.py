@@ -4,12 +4,15 @@ class Settings:
   __conf = None
 
   @staticmethod
-  def get(name):
+  def get(name, type = None):
     if Settings.__conf is None:  # Read only once, lazy.
       Settings.__conf = configparser.ConfigParser()
       Settings.__conf.read('./Configuration/Config.ini')
 
     for section in Settings.__conf.sections():
+      if type and section not in ["COMMON", type]:
+        continue
+
       if name in Settings.__conf[section]:
         return Settings.__conf[section][name]
       

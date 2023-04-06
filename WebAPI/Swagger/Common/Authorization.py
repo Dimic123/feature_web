@@ -4,8 +4,11 @@ import json
 
 def AuthAPI(username: str, password: str, client_id: str, client_secret: str):
     loginData = LoginAPI(username, password, client_id)
-    tokenData = GetToken(loginData["code"], client_id, client_secret)
-    if tokenData is None:
+    if "code" in loginData:
+        tokenData = GetToken(loginData["code"], client_id, client_secret)
+        if tokenData is None:
+            return None
+    else:
         return None
 
     return tokenData["access_token"]

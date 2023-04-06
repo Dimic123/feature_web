@@ -66,11 +66,12 @@ if os.path.exists("./Web") or os.path.exists("./Mobile"):
 else:
     print("Not in pySelenium directory...")
 
-testType = inputValid("Select type of test (Web or Mobile):\n", "Type 'Web' or 'Mobile'...", ["web", "mobile"])
+testType = inputValid("Select type of test ['web', 'mobile', 'api']:\n", "Option not recognized...", ["web", "mobile", "api"])
 
 if testType == "web":
     name = input("Type name of test: \n")
-    folder = os.path.join("./Web/Live", name)
+    folder = input("Test folder location: \n")
+    folder = os.path.join(folder, name)
 
     if not os.path.exists(folder):
         os.makedirs(folder)
@@ -83,9 +84,11 @@ if testType == "web":
 
     with open(py, 'w') as p:
         p.write(py_template)
+
 elif testType == "mobile":
     name = input("Type name of test: \n")
-    folder = os.path.join("./Mobile", name)
+    folder = input("Test folder location: \n")
+    folder = os.path.join(folder, name)
 
     if not os.path.exists(folder):
         os.makedirs(folder)
@@ -98,3 +101,6 @@ elif testType == "mobile":
 
     with open(py, 'w') as p:
         p.write(py_template)
+
+elif testType == "api":
+    raise NotImplementedError
