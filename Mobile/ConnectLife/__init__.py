@@ -1,2 +1,2 @@
-from .LoginTest import *
+from .LoginTest.LoginTest import *
 from .ManualsTest import *

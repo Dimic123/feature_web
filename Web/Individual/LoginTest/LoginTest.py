@@ -1,11 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from Common.Logging import *
-from Common.TestObject import TestObject
+from Common.TestObject import WebTestObject
 from Common.WebHelpers import *
 
 
-class LoginTest(TestObject):
+class LoginTest(WebTestObject):
     def __init__(self, driver = None) -> None:
         super().__init__(__file__)
 

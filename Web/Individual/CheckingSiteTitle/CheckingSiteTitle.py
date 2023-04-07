@@ -3,7 +3,7 @@ from Common.Logging import *
 from Configuration.Settings import Settings
 from Common.TestObject import *
 
-class CheckingSiteTitleTest(TestObject):
+class CheckingSiteTitleTest(WebTestObject):
     def __init__(self, driver = None) -> None:
         super().__init__(__file__)
 

@@ -24,6 +24,12 @@ class AppDriver(object):
         except:
             pass
 
+    def quit(self):
+        try:
+            self.driver.quit()
+        except:
+            pass
+
 
 
 

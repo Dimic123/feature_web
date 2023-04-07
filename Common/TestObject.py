@@ -5,26 +5,13 @@ from Common.JsonHelpers import ImportJsonFile
 from Common.Logging import *
 import logging
 from datetime import datetime
+from Common.AppDriver import *
 
-from Configuration.Settings import Settings
-
+from Configuration.Settings import Sections, Settings
 
 class TestObject:
-    def __init__(self, testFilePath: str, driver = None) -> None:
-        if driver is None:
-            options = webdriver.ChromeOptions()
-            options.add_experimental_option('excludeSwitches', ['enable-logging'])
-            options.add_argument('--headless')
-            driver = Settings.get("Driver")  
-            if driver == "Chrome":
-                self.driver = webdriver.Chrome(options=options)
-            else:
-                raise NotImplementedError
-        else:
-            self.driver = driver
-
-        self.file = testFilePath
-        self.logger = self.__setupLogger()
+    def __init__(self) -> None:
+        pass
 
     def __setupLogger(self, level=logging.INFO):
         formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
@@ -86,3 +73,48 @@ class TestObject:
     @abstractmethod
     def Test(self, data: dict) -> bool:
         raise NotImplementedError("Must override method")
+
+class MobileTestObject(TestObject):
+    def __init__(self, testFilePath: str, driver = None) -> None:
+        super().__init__()
+        if driver is None:
+            # Create options for app testing
+            options = UiAutomator2Options()
+            options.platformVersion = '10'
+            # ADB device UDID
+            options.udid = Settings.get("DeviceUDID", ( Sections.MOBILE ))
+            # App .apk file
+            options.app = os.path.abspath(Settings.get("AppPath", ( Sections.MOBILE ))) 
+            server = Settings.get("Server", ( Sections.MOBILE ))
+            
+            self.driver = AppDriver(options, server)
+
+        else:
+            self.driver = driver
+
+        self.file = testFilePath
+        self.logger = self._TestObject__setupLogger()
+        
+
+class WebTestObject(TestObject):
+    def __init__(self, testFilePath: str, driver = None) -> None:
+        super().__init__()
+        if driver is None:
+            options = webdriver.ChromeOptions()
+            options.add_experimental_option('excludeSwitches', ['enable-logging'])
+            options.add_argument('--headless')
+            driver = Settings.get("Driver")  
+            if driver == "Chrome":
+                self.driver = webdriver.Chrome(options=options)
+            else:
+                raise NotImplementedError
+        else:
+            self.driver = driver
+
+        self.file = testFilePath
+        self.logger = self._TestObject__setupLogger()
+        
+
+    
+
+    

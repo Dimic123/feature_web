@@ -2,10 +2,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Common.Logging import *
-from Common.TestObject import TestObject
+from Common.TestObject import WebTestObject
 
 
-class DataOnSiteTest(TestObject):
+class DataOnSiteTest(WebTestObject):
     def __init__(self, driver = None) -> None:
         super().__init__(__file__)
 
