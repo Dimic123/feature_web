@@ -10,20 +10,39 @@ pool:
   vmImage: ubuntu-latest
 strategy:
   matrix:
-    Python27:
-      python.version: '2.7'
-    Python35:
-      python.version: '3.5'
-    Python36:
-      python.version: '3.6'
-    Python37:
-      python.version: '3.7'
+    # Python27:
+    #   python.version: '2.7'
+    # Python35:
+    #   python.version: '3.5'
+    # Python36:
+    #   python.version: '3.6'
+    # Python37:
+    #   python.version: '3.7'
+    Python311:
+      python.version: '3.11'
 
 steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
+  
+- script: |
+    # Install WebDriver for Firefox
+    #wget https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-linux64.tar.gz
+    #tar -xvzf geckodriver-v0.30.0-linux64.tar.gz
+    #sudo mv geckodriver /usr/local/bin/
+
+    # Install WebDriver for Chrome
+    wget https://chromedriver.storage.googleapis.com/110.0.5481.77/chromedriver_linux64.zip
+    unzip chromedriver_linux64.zip
+    sudo mv chromedriver /usr/local/bin/
+
+    # Install WebDriver for Edge
+    #wget https://msedgedriver.azureedge.net/95.0.1020.40/edgedriver_linux64.zip
+    #unzip edgedriver_linux64.zip
+    #sudo mv msedgedriver /usr/local/bin/
+  displayName: 'Install WebDrivers'
 
 - script: |
     python -m pip install --upgrade pip
