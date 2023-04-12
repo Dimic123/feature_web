@@ -49,12 +49,12 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements-pytest.txt
+    pip install pytest pytest-azurepipelines
+    pip install pytest-cov
   displayName: 'Install dependencies'
 
 - script: |
-    pip install pytest pytest-azurepipelines
-    pip install pytest-cov
-    python -m pytest -s Web/ --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
+    python -m pytest -s Web/PyTest/ --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
   displayName: 'pytest'
 
 - task: PublishTestResults@2
