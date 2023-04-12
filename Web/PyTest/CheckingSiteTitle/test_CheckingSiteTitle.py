@@ -1,24 +1,20 @@
-from selenium import webdriver
+
 from Common.Logging import *
 from Configuration.Settings import Settings
 from Common.TestObject import *
 
-def test_run(data):
-    # CheckingSiteTitleTest().RunTest()
+def test_title(driver, data: dict) -> None:
     site = data["site"]
     expectedTitle = data["title"]
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    options.add_argument('--headless') 
-    driver = webdriver.Chrome(options=options)
 
-    print("Checking site title for site: " + site)
+    print("\nChecking site title for site: " + site)
+    print("Expected title: \"" + expectedTitle + "\"")
 
     driver.get(site)
 
     title = driver.title
 
+    print("Actual title: \"" + title + "\"")
     assert title == expectedTitle
 
-    # print("PASSED - Page title is as expected: \"" + expectedTitle + "\"")
 
