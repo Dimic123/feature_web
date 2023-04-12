@@ -57,8 +57,8 @@ steps:
     python -m pytest -s $(TestPath) --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
   displayName: 'pytest'
 
-- task: PublishTestResults@2
-  condition: succeededOrFailed()
-  inputs:
-    testResultsFiles: '**/test-*.xml'
-    testRunTitle: 'Publish test results for Python $(python.version)'
+# - task: PublishTestResults@2
+#   condition: succeededOrFailed()
+#   inputs:
+#     testResultsFiles: '**/test-*.xml'
+#     testRunTitle: 'Publish test results for Python $(python.version)'
