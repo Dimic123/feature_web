@@ -1,0 +1,8 @@
+{
+    "case_1": {
+        "username": "test5@connectlife.io",
+        "password": "test1234",
+        "username_id": "com.hisense.juconnect.connectlife:id/sign_email",
+        "password_id": "com.hisense.juconnect.connectlife:id/sign_password"
+    }
+}

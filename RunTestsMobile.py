@@ -2,18 +2,16 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from Common.AppDriver import *
-from Common.JsonHelpers import ImportJsonFile
 import Mobile.ConnectLife as ConnectLife
 
 import os
 
 
 def main():
-	#  TestWeb()
 	TestMobile()
 
 def TestMobile():
-	# # Create options for app testing
+	# # Create options for app testing 
 	# options = UiAutomator2Options()
 	# options.platformVersion = '10'
 	# # ADB device UDID
