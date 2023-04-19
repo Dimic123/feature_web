@@ -36,9 +36,9 @@ steps:
     #sudo mv geckodriver /usr/local/bin/
 
     # Install WebDriver for Chrome
-    wget https://chromedriver.storage.googleapis.com/110.0.5481.77/chromedriver_linux64.zip
-    unzip chromedriver_linux64.zip
-    sudo mv chromedriver /usr/local/bin/
+    #wget https://chromedriver.storage.googleapis.com/110.0.5481.77/chromedriver_linux64.zip
+    #unzip chromedriver_linux64.zip
+    #sudo mv chromedriver /usr/local/bin/
 
     # Install WebDriver for Edge
     #wget https://msedgedriver.azureedge.net/95.0.1020.40/edgedriver_linux64.zip
