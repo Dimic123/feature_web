@@ -4,9 +4,9 @@ from Common.Logging import *
 from Common.WebHelpers import *
 
 
-def test_login(driver, data: dict) -> None:
-    site = data["site"]
-    loginValues = data["values"]
+def test_login(driver, params: dict) -> None:
+    site = params["site"]
+    loginValues = params["values"]
 
     print("Testing login...")
 

@@ -3,9 +3,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def test_data_on_site(driver, data: dict) -> bool:
-    site = data["site"]
-    testValues = data["values"]
+def test_data_on_site(driver, params: dict) -> bool:
+    site = params["site"]
+    testValues = params["values"]
     returnValue = False
 
     print("Testing data on site... ")

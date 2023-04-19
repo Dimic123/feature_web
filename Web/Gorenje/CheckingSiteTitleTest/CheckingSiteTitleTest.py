@@ -3,9 +3,9 @@ from Common.Logging import *
 from Configuration.Settings import Settings
 from Common.TestObject import *
 
-def test_title(driver, data: dict) -> None:
-    site = data["site"]
-    expectedTitle = data["title"]
+def test_title(driver, params: dict) -> None:
+    site = params["site"]
+    expectedTitle = params["title"]
 
     print("\nChecking site title for site: " + site)
     print("Expected title: \"" + expectedTitle + "\"")

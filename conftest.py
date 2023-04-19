@@ -6,6 +6,10 @@ from selenium import webdriver
 from appium import webdriver as appdriver
 from appium.options.android import UiAutomator2Options
 from Configuration.Settings import *
+from WebAPI.Juconnect.Common.Authorization import AuthAPI
+
+def pytest_configure():
+    pytest.api_token = None
 
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="firefox", help="Select browser type for tests")
@@ -22,7 +26,7 @@ def pytest_generate_tests(metafunc):
     for case in json_data:
         data.append(json_data[case])
 
-    metafunc.parametrize("data", data)
+    metafunc.parametrize("params", data)
 
 @pytest.fixture(scope="function")
 def driver(request):
@@ -60,6 +64,23 @@ def driver(request):
     driver.close()
     driver.quit()
 
+@pytest.fixture(scope="function")
+def token(request):
+    if pytest.api_token is None:
+        retry = 0
+        while retry < 5:
+            token = AuthAPI(Settings.get("Username"), Settings.get("Password"), Settings.get("ClientId"), Settings.get("ClientSecret"))
+            if token is None:
+                print("ERROR - token was not retrieved, retrying... (attempt " + str(retry+1) + ")")
+                retry+=1
+            else:
+                pytest.api_token = token
+                break
+                
+        if pytest.api_token is None:
+            print("ERROR - token was not retrieved")
+
+    yield pytest.api_token
 
 def pytest_runtest_setup(item):
     pass
