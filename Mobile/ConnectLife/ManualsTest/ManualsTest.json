@@ -1,0 +1,6 @@
+{
+    "case_1": {
+        "menu_id": "//android.view.View[@content-desc=\"Menu\"]",
+        "manuals_id": "//android.view.View[@content-desc=\"Manuals\"]"
+    }
+}

@@ -1,3 +1,7 @@
 pytest
+pytest
+pytest-azurepipelines
+selenium
+Appium-Python-Client
 requests
 
