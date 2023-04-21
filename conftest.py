@@ -6,7 +6,7 @@ from selenium import webdriver
 from appium import webdriver as appdriver
 from appium.options.android import UiAutomator2Options
 from Configuration.Settings import *
-from WebAPI.Juconnect.Common.Authorization import AuthAPI
+from WebAPI.ConnectLife.Common.Authorization import AuthAPI
 
 def pytest_configure():
     pytest.api_token = None

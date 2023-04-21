@@ -3,14 +3,14 @@ from time import sleep
 
 
 class TestManuals():
-    def test_main(self, driver, data: dict) -> None:
+    def test_main(self, driver, params: dict) -> None:
         if not CheckIfBottomBar(driver):
             return False
         
-        menuBtn = driver.find_element(by=AppiumBy.XPATH, value=data["menu_id"])
+        menuBtn = driver.find_element(by=AppiumBy.XPATH, value=params["menu_id"])
         menuBtn.click()
 
-        manualsBtn = driver.find_element(by=AppiumBy.XPATH, value=data["manuals_id"])
+        manualsBtn = driver.find_element(by=AppiumBy.XPATH, value=params["manuals_id"])
         manualsBtn.click()
 
         sleep(10)

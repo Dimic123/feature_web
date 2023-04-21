@@ -11,8 +11,8 @@ from selenium.webdriver.common.actions.pointer_input import PointerInput
 
 
 class TestLogin():
-    def test_main(self, driver, data: dict) -> None:
-        self.step_skip(driver, data)
+    def test_main(self, driver, params: dict) -> None:
+        self.step_skip(driver, params)
 
         # Press sign in	
         actions = ActionChains(driver)
@@ -29,7 +29,7 @@ class TestLogin():
 
         sleep(0.5)
 
-        self.step_login(driver, data)
+        self.step_login(driver, params)
 
         if not location:
             CheckLocation(driver, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.Button[1]')
@@ -45,7 +45,7 @@ class TestLogin():
             
         sleep(0.5)
        
-        self.step_move(driver, data)
+        self.step_move(driver, params)
 
         Screenshot(driver, "./Mobile/Screenshots")
 
@@ -53,7 +53,7 @@ class TestLogin():
 
         assert homeBtn
 
-    def step_skip(self, driver, data: dict) -> None:
+    def step_skip(self, driver, params: dict) -> None:
         # Press next
         actions = ActionChains(driver)
         actions.w3c_actions = ActionBuilder(driver, mouse=PointerInput(interaction.POINTER_TOUCH, "touch"))
@@ -87,12 +87,12 @@ class TestLogin():
 
         sleep(0.5)
 
-    def step_login(self, driver, data: dict) -> None:
+    def step_login(self, driver, params: dict) -> None:
         # Login
-        el1 = driver.find_element(by=AppiumBy.ID, value=data["username_id"])
-        el1.send_keys(data["username"])
-        el2 = driver.find_element(by=AppiumBy.ID, value=data["password_id"])
-        el2.send_keys(data["password"])
+        el1 = driver.find_element(by=AppiumBy.ID, value=params["username_id"])
+        el1.send_keys(params["username"])
+        el2 = driver.find_element(by=AppiumBy.ID, value=params["password_id"])
+        el2.send_keys(params["password"])
         actions = ActionChains(driver)
         actions.w3c_actions = ActionBuilder(driver, mouse=PointerInput(interaction.POINTER_TOUCH, "touch"))
         actions.w3c_actions.pointer_action.move_to_location(528, 1758)
@@ -103,7 +103,7 @@ class TestLogin():
 
         sleep(1)
 
-    def step_move(self, driver, data: dict) -> None:
+    def step_move(self, driver, params: dict) -> None:
          # Drag
         actions = ActionChains(driver)
         actions.w3c_actions = ActionBuilder(driver, mouse=PointerInput(interaction.POINTER_TOUCH, "touch"))

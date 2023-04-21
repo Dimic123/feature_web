@@ -1,7 +1,6 @@
 
 from Common.Logging import *
 from Configuration.Settings import Settings
-from Common.TestObject import *
 
 def test_title(driver, params: dict) -> None:
     site = params["site"]
