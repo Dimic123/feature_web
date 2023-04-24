@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def test_data_on_site(driver, params: dict) -> bool:
     site = params["site"]
     testValues = params["values"]
-    returnValue = False
+    result = True
 
     print("Testing data on site... ")
 
@@ -16,13 +16,13 @@ def test_data_on_site(driver, params: dict) -> bool:
         xpath = testValues[field]["xpath"]
         text = testValues[field]["text"]
 
+        print("Testing value " + text + "...")
         try:
             element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, xpath)))
             assert text in element.get_attribute('innerHTML') 
         except:
             print("ERROR - Didn't find the expected value:", text)
-            returnValue &= False
-        else:
-            returnValue &= True
+            result &= False
+
     
-    assert returnValue, "Not all values appear on site"
+    assert result, "Not all values appear on site"
