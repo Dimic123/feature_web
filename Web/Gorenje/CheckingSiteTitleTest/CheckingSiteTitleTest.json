@@ -1,14 +1,14 @@
 {
-    "site_title_1": {
-        "site": "https://si.gorenje.com/",
-        "title": "Gorenje | Domača Stran"
+    "case_1": {
+        "site": "https://gorenjegostinstvo.si/",
+        "title": "Domov - Gorenje Gostinstvo"
     },
-    "site_title_2": {
+    "case_2": {
         "site": "https://si.gorenje.com/",
         "title": "Gorenje | Veliki in mali gospodinjski aparati"
     },
-    "site_title_3": {
+    "case_3": {
         "site": "https://si.hisense.com/",
-        "title": "Gorenje | Veliki in mali gospodinjski aparati"
+        "title": "Hisense Slovenija - Visokokakovostni pametni gospodinjski aparati"
     }
 }
