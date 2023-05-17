@@ -3,7 +3,7 @@ import sys
 
 
 def main() -> int:
-    retcode = pytest.main(["WebAPI/ConnectLife/Tests/GetApplianceProfileTest", "-s"])
+    retcode = pytest.main(["WebAPI/ConnectLife/Tests/", "-s"])
     return retcode
 
 if __name__ == "__main__":
