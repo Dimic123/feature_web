@@ -8,6 +8,8 @@ from Common.Logging import PrettyPrint
 def test_get_appliance_property(token: str, params: dict):
     url = "https://api.connectlife.io/api/v1/appliance/" + params["id"]
 
+    print("Testing " + url)
+
     payload = {}
     headers = {
         'Authorization': 'Bearer '+token+''

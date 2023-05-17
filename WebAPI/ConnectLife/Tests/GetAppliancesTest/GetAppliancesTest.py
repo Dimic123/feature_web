@@ -7,6 +7,8 @@ from Common.Logging import PrettyPrint
 def test_get_appliances(token: str, params: dict):
     url = "https://api.connectlife.io/api/v1/appliance"
 
+    print("Testing " + url)
+
     payload = {}
     headers = {
         'Authorization': 'Bearer '+token+''
@@ -23,7 +25,7 @@ def test_get_appliances(token: str, params: dict):
 
     assert len(data) > 0, "Missing data"
 
-    assert all(k in ["id", "name", "type", "status"] for k in data[0]), "Data structure seems to not be correct"
+    assert all(k in ["id", "name", "type", "status"] for k in data[0]), "Data structure seems to be incorrect"
 
     PrettyPrint(data)
 
