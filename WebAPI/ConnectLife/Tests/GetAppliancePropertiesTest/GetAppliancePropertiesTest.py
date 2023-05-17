@@ -25,7 +25,8 @@ def test_get_appliance_property(token: str, params: dict):
     assert "errorMessage" not in data, "API call returned error"
 
     assert len(data) > 0, "Missing data"
+    
+    PrettyPrint(data)
 
     assert all(k in ["id", "name", "type", "status", "properties"] for k in data[0]), "Data structure is incorrect"
 
-    PrettyPrint(data)

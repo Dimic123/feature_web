@@ -1,11 +1,12 @@
 import requests
 import json
+import pprint
 
 from Common.Logging import PrettyPrint
 
 
-def test_get_appliances(token: str, params: dict):
-    url = "https://api.connectlife.io/api/v1/appliance"
+def test_get_appliance_property(token: str, params: dict):
+    url = "https://api.connectlife.io/api/v1/appliance/profile/" + params["id"]
 
     print("Testing " + url)
 
@@ -27,6 +28,4 @@ def test_get_appliances(token: str, params: dict):
 
     PrettyPrint(data)
     
-    assert all(k in ["id", "name", "type", "status"] for k in data[0]), "Data structure seems to be incorrect"
-
-
+    assert all(k in data[0] for k in ["id", "type", "auid"]), "Data structure is incorrect"
