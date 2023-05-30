@@ -37,5 +37,5 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    python -m pytest -s $(TestPath) --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
+    python -m pytest -s $(TestPath) --auth $(Auth) --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
   displayName: 'pytest'
