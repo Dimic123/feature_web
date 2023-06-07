@@ -35,8 +35,9 @@ def Login(username: str, password: str):
 
 
 def GetToken(response):
-    if "response" in response:
-        if "accessToken" in response.response:
-            return response.response.response.accessToken
+    if response is not None:
+        if "response" in response:
+            if "accessToken" in response["response"]:
+                return response["response"]["accessToken"]
 
     return None

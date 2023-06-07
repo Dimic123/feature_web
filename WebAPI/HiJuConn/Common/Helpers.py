@@ -3,7 +3,6 @@ from random import choice
 import datetime, time
 import rsa
 import subprocess
-import os
 from hashlib import sha256
 
 from Configuration.Settings import Settings
@@ -18,24 +17,21 @@ def GenerateRandStr() -> str:
 
 def GenerateSign(data, isLogin : bool = False) -> str:
   sorted_dict = dict(sorted(data.items()))
-  print(sorted_dict)
 
   sign = ""
 
   for key, value in sorted_dict.items():
-    if value is not None or "":
+    if value is not None and value != "":
       sign += key + "=" + value + "&"
 
   sign = sign[:-1]
   sign += "D9519A4B756946F081B7BB5B5E8D1197"
-  print(sign)
 
   pubkey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyyWrNG6q475HIHu7sMVuvHof6vlgPeixmxa4EL/UsvVvHPz33NnWoQetQqit9TBNzUjMXw0KlY9PXM4iqHUUU+dSyNDq1jZWIiJ2C2FccppswJtIKL3NRMFvT9PFh6NlP/4FUcQKojgKFbF7KaccJPKYHlwaO7qgoIjLxAHlSOXGpucJcOkPzT2EqsSVnW8sn8kenvNmghXDayhgxsh6AyxK4kehJplEnmX/iYCfNoFXknGcLqFWYccgBz3fybvx30C/0IgU1980L8QsUAv5esZmN8ugnbRgLRxKRlkQQLxQAiZMZdKTAx665YflT3YMHJvEFE8c2XFgoxHzSMc4BwIDAQAB"
   # pubkey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx5sOMDhBtj/iYi7QjpavZlgthlM8RGE1+9jreOb6Ng7RCGMNA3KBQeYcMB+52X836J2xI/53NZ5xFbcPgEPFAIHgSfiU7CgyH/h5o6o5z7CoIW505zQ8N5qbjjbLYLZAQiuibT/gdLp5gfquzjZZoXkYj6R6ImfxWhxWgu9qcmpaz6wPqmzRAZ/CiFP9calW1gzkMJeLOsERm+MC+VuYFackp4dpNTUf3+rnLLTiH7RF7kegldj7mRiThScA+W8H84oEIzEPzKrBjkSJZPQgDfJnednCxKUw6FKHiLnmDXRUKmmXxzVQD8JMT7c3h/uO215PbbssxymMN6soOyb0GwIDAQAB"
 
-  hash = sha256(sign.encode('utf-8')).hexdigest()
-  print(hash)
-  sign = hash
+  hash = sha256(sign.encode('utf-8'))
+  sign = hash.hexdigest()
 
   if isLogin:
     key = rsa.PublicKey.load_pkcs1_openssl_der(base64.b64decode(pubkey))
@@ -46,7 +42,6 @@ def GenerateSign(data, isLogin : bool = False) -> str:
     sign = bytes.fromhex(sign)
 
   sign = base64.b64encode(sign).decode("utf-8") 
-  print(sign) 
   sign = sign.replace("+", "-").replace("/", "_")
   return sign
 
