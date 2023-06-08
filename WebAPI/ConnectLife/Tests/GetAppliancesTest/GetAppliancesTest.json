@@ -1,5 +1,7 @@
 {
-    "case_1": {
-
+    "general_data": {},
+    "settings": {},
+    "test_cases": {
+        "case_1": {}
     }
 }

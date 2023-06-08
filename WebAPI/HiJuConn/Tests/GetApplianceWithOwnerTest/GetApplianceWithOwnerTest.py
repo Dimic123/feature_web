@@ -8,11 +8,11 @@ from WebAPI.HiJuConn.Common.Helpers import GenerateSystemParameters
 
 
 def test_get_appliance_property(token: str, params: dict):
-    url = "https://clife-eu-gateway.hijuconn.com/lgs/get_room_list"
+    url = "https://asko-eu-gateway.hijuconn.com/wm-web/get_appliance_with_owner"
 
     print("Testing " + url)
 
-    data = {"roomType": "0"}
+    data = {}
 
     payload = GenerateSystemParameters(data, token)
 
@@ -30,4 +30,4 @@ def test_get_appliance_property(token: str, params: dict):
     PrettyPrint(data)
 
     assert all(k in data["response"] for k in [
-               "resultCode", "roomList"]), "Data structure is incorrect"
+               "resultCode", "clApplianceList"]), "Data structure is incorrect"

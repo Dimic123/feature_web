@@ -10,14 +10,15 @@ class AppDriver(object):
         self.options = options
         self.appiumServer = server
 
-
     def __enter__(self) -> appdriver:
         try:
-            self.driver = appdriver.Remote(self.appiumServer, options=self.options)
+            self.driver = appdriver.Remote(
+                self.appiumServer, options=self.options)
         except:
-            raise Exception("Cannot connect to Appium server, make sure you have the correct url and that the server is running.")
+            raise Exception(
+                "Cannot connect to Appium server, make sure you have the correct url and that the server is running.")
         return self.driver
- 
+
     def __exit__(self, *args):
         try:
             self.driver.quit()
@@ -29,8 +30,3 @@ class AppDriver(object):
             self.driver.quit()
         except:
             pass
-
-
-
-
-

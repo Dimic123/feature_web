@@ -14,7 +14,8 @@ def test_get_appliances(token: str, params: dict):
         'Authorization': 'Bearer '+token+''
     }
 
-    response = requests.request("GET", url, headers=headers, data=payload, timeout=10)
+    response = requests.request(
+        "GET", url, headers=headers, data=payload, timeout=10)
 
     try:
         data = json.loads(response.text)
@@ -26,7 +27,6 @@ def test_get_appliances(token: str, params: dict):
     assert len(data) > 0, "Missing data"
 
     PrettyPrint(data)
-    
-    assert all(k in ["id", "name", "type", "status"] for k in data[0]), "Data structure seems to be incorrect"
 
-
+    assert all(k in ["id", "name", "type", "status"]
+               for k in data[0]), "Data structure seems to be incorrect"

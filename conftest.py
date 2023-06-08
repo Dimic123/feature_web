@@ -9,27 +9,36 @@ from Configuration.Settings import *
 from WebAPI.ConnectLife.Common.Authorization import AuthAPI as SwaggerAPI
 from WebAPI.HiJuConn.Common.Authorization import AuthAPI as JuconnectAPI
 
+
 def pytest_configure():
     pytest.api_token = None
 
+
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="firefox", help="Select browser type for tests")
-    parser.addoption("--device", action="store", default="", help="If using Appium for testing, select device UDID")
-    parser.addoption("--auth", action="store", default="juconnect", help="If doing web API tests, specifiy what type of authorization to use")
+    parser.addoption("--browser", action="store",
+                     default="firefox", help="Select browser type for tests")
+    parser.addoption("--device", action="store", default="",
+                     help="If using Appium for testing, select device UDID")
+    parser.addoption("--auth", action="store", default="juconnect",
+                     help="If doing web API tests, specifiy what type of authorization to use")
+
 
 def pytest_generate_tests(metafunc):
     # called once per each test function
-    json_file = os.path.join(metafunc.definition.fspath.dirname, metafunc.definition.fspath.purebasename + ".json")
+    json_file = os.path.join(metafunc.definition.fspath.dirname,
+                             metafunc.definition.fspath.purebasename + ".json")
     json_data = {}
     if os.path.exists(json_file):
         with open(json_file, 'r') as f:
             json_data = json.load(f)
 
     data = []
-    for case in json_data:
-        data.append(json_data[case])
+
+    for case in json_data["test_cases"]:
+        data.append(json_data["test_cases"][case])
 
     metafunc.parametrize("params", data)
+
 
 @pytest.fixture(scope="function")
 def driver(request):
@@ -51,8 +60,9 @@ def driver(request):
             options = UiAutomator2Options()
             options.platformVersion = '10'
             options.udid = request.config.getoption("--device")
-            options.app = os.path.abspath(Settings.get("AppPath", ( Sections.MOBILE )))
-            server =  Settings.get("Server", ( Sections.MOBILE ))
+            options.app = os.path.abspath(
+                Settings.get("AppPath", (Sections.MOBILE)))
+            server = Settings.get("Server", (Sections.MOBILE))
             driver = appdriver.Remote(server, options=options)
         else:
             raise Exception("Device not selected for Appium testing!")
@@ -62,10 +72,11 @@ def driver(request):
         options.add_argument('--headless')
         driver = webdriver.Chrome(options=options)
 
-    yield driver 
+    yield driver
     # Teardown
     driver.close()
     driver.quit()
+
 
 @pytest.fixture(scope="function")
 def token(request):
@@ -74,31 +85,36 @@ def token(request):
         retry = 0
         while retry < 5:
             if(authType == "swagger"):
-                token = SwaggerAPI(Settings.get("Username"), Settings.get("Password"), Settings.get("ClientId"), Settings.get("ClientSecret"))
+                token = SwaggerAPI(Settings.get("Username"), Settings.get(
+                    "Password"), Settings.get("ClientId"), Settings.get("ClientSecret"))
                 if token is None:
-                    print("ERROR - token was not retrieved, retrying... (attempt " + str(retry+1) + ")")
+                    print(
+                        "ERROR - token was not retrieved, retrying... (attempt " + str(retry+1) + ")")
                 else:
                     pytest.api_token = token
                     break
             elif(authType == "juconnect"):
-                token = JuconnectAPI(Settings.get("Username"), Settings.get("Password"))
+                token = JuconnectAPI(Settings.get(
+                    "Username"), Settings.get("Password"))
                 if token is None:
-                    print("ERROR - token was not retrieved, retrying... (attempt " + str(retry+1) + ")")
+                    print(
+                        "ERROR - token was not retrieved, retrying... (attempt " + str(retry+1) + ")")
                 else:
                     pytest.api_token = token
                     break
 
-            retry+=1
+            retry += 1
 
-                    
     if pytest.api_token is None:
         print("ERROR - token was not retrieved")
         raise Exception("ERROR - token was not retrieved")
 
     yield pytest.api_token
 
+
 def pytest_runtest_setup(item):
     pass
+
 
 def pytest_runtest_teardown(item):
     pass

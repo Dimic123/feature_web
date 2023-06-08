@@ -1,6 +1,7 @@
 from Common.Logging import *
 from Configuration.Settings import Settings
 
+
 def test_title(driver, params: dict) -> None:
     site = params["site"]
     expectedTitle = params["title"]
@@ -14,5 +15,3 @@ def test_title(driver, params: dict) -> None:
 
     print("Actual title: \"" + title + "\"")
     assert title == expectedTitle
-
-
