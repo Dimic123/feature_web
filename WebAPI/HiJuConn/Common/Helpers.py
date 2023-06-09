@@ -38,15 +38,15 @@ def GenerateSign(data, isLogin: bool = False) -> str:
     hash = sha256(sign.encode('utf-8'))
     sign = hash.hexdigest()
 
-    if isLogin:
-        key = rsa.PublicKey.load_pkcs1_openssl_der(base64.b64decode(pubkey))
-        sign = rsa.encrypt(sign.encode('utf-8'), key)
-    else:
-        out = subprocess.check_output(
-            ['java', '-jar', '.\\WebAPI\\HiJuConn\\Common\\rsaKeyTest.jar', pubkey, sign])
-        sign = out.strip().decode("utf-8")
-        sign = bytes.fromhex(sign)
+    key = rsa.PublicKey.load_pkcs1_openssl_der(base64.b64decode(pubkey))
+    data = None
 
+    if isLogin:
+        data = sign.encode('utf-8')
+    else:
+        data = bytearray.fromhex(sign)
+
+    sign = rsa.encrypt(data, key)
     sign = base64.b64encode(sign).decode("utf-8")
     sign = sign.replace("+", "-").replace("/", "_")
     return sign
