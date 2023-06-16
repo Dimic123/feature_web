@@ -1,0 +1,14 @@
+{
+    "general_data": {},
+    "settings": {},
+    "test_cases": {
+        "case_1": {
+            "deviceFeatureCode": "000",
+            "deviceTypeCode": "013"
+        },
+        "case_2": {
+            "deviceFeatureCode": "000",
+            "deviceTypeCode": "023"
+        }
+    }
+}
