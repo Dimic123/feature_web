@@ -4,6 +4,7 @@ import datetime
 import time
 import rsa
 import subprocess
+import jsonschema
 from hashlib import sha256
 
 from Configuration.Settings import Settings
@@ -51,7 +52,7 @@ def GenerateSign(data, isLogin: bool = False) -> str:
     return sign
 
 
-def GenerateSystemParameters(data: dict = None, token: str = None, isLogin: bool = False) -> dict:
+def GenerateSystemParameters(data: dict = None, token: str = None, isLogin: bool = False, requestType: str = "GET") -> dict:
     params = {}
     if isLogin:
         params = {
@@ -75,6 +76,11 @@ def GenerateSystemParameters(data: dict = None, token: str = None, isLogin: bool
             "timezone": "1.0",
             "randStr": GenerateRandStr(),
         }
+        
+    if requestType == "GET":
+        params["srcType"] = "0"
+    else:
+        params["srcType"] = "1"
 
     if data is not None:
         data.update(params)
@@ -84,3 +90,12 @@ def GenerateSystemParameters(data: dict = None, token: str = None, isLogin: bool
     data["sign"] = GenerateSign(data, isLogin)
 
     return data
+
+def ValidateJson(_json, _schema):
+    try:
+        jsonschema.validate(instance=_json, schema=_schema)
+    except jsonschema.exceptions.ValidationError as err:
+        print("******************************** jsonschema ERROR MESSAGE ********************************")
+        print(err.message)
+        return False
+    return True

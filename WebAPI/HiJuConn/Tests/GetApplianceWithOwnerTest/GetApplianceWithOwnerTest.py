@@ -14,7 +14,7 @@ def test_get_appliance_property(token: str, params: dict):
 
     data = {}
 
-    payload = GenerateSystemParameters(data, token)
+    payload = GenerateSystemParameters(data, token, requestType="GET")
 
     response = requests.request("GET", url, params=payload, timeout=10)
 

@@ -22,7 +22,7 @@ def Login(username: str, password: str):
         "password": password
     }
 
-    payload = json.dumps(GenerateSystemParameters(loginData, "", True))
+    payload = json.dumps(GenerateSystemParameters(loginData, "", True, "POST"))
     headers = {
         'Content-Type': 'application/json'
     }
