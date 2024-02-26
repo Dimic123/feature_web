@@ -5,8 +5,8 @@ from Common.JsonHelpers import AssertValidateJson
 from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema, IsArray
 
-from base_jsonschema_items import base_jsonschema_items
-from base_jsonschema_error_response import base_jsonschema_error_response
+from WebAPI.ConnectLife.Tests.Recipe.base_jsonschema_items import base_jsonschema_items
+from WebAPI.ConnectLife.Tests.Recipe.base_jsonschema_error_response import base_jsonschema_error_response
 from WebAPI.ConnectLife.Tests.Recipe.base_jsonschema_other_status_code_response import base_jsonschema_other_status_code_response
 import pytest
 

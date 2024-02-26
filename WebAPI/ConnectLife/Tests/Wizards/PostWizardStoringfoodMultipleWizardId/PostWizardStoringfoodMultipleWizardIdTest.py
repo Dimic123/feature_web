@@ -5,7 +5,7 @@ from Common.JsonHelpers import AssertValidateJson
 from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 
-from base_jsonschema_error_respose import base_jsonschema_error_response
+from WebAPI.ConnectLife.Tests.Wizards.base_jsonschema_error_respose import base_jsonschema_error_response
 
 import pytest
 
