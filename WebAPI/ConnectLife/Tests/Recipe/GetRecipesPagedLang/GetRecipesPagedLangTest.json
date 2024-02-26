@@ -1,0 +1,11 @@
+{
+    "general_data": {},
+    "settings": {},
+    "test_cases": {
+        "case_1": {
+            "lang": "en",
+            "page": 0,
+            "pageSize": 15
+        }
+    }
+}

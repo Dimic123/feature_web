@@ -1,3 +1,6 @@
+_jsonschema_*
+_response_*
+
 ./Mobile/UIAutomatorViewer
 ./Mobile/UIAutomatorViewer/*
 

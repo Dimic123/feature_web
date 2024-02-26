@@ -10,7 +10,7 @@ from WebAPI.HiJuConn.Common.Helpers import GenerateSystemParameters
 def test_get_appliance_property(token: str, params: dict):
     url = "https://clife-eu-gateway.hijuconn.com/lgs/get_room_list"
 
-    print("Testing " + url)
+    print("\nTesting " + url)
 
     data = {"roomType": "0"}
 

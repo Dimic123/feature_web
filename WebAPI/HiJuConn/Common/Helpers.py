@@ -3,8 +3,6 @@ from random import choice
 import datetime
 import time
 import rsa
-import subprocess
-import jsonschema
 from hashlib import sha256
 
 from Configuration.Settings import Settings
@@ -90,12 +88,3 @@ def GenerateSystemParameters(data: dict = None, token: str = None, isLogin: bool
     data["sign"] = GenerateSign(data, isLogin)
 
     return data
-
-def ValidateJson(_json, _schema):
-    try:
-        jsonschema.validate(instance=_json, schema=_schema)
-    except jsonschema.exceptions.ValidationError as err:
-        print("******************************** jsonschema ERROR MESSAGE ********************************")
-        print(err.message)
-        return False
-    return True

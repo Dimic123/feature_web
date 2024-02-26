@@ -1,0 +1,14 @@
+{
+    "general_data": {},
+    "settings": {},
+    "test_cases": {
+        "case_1": {
+            "wizardid": "dishwasher_v2_default",
+            "payload": {
+                "type": "PotsAndPans",
+                "soilLevel": "Light",
+                "wayOfWash": "Normal"
+            }
+        }
+    }
+}

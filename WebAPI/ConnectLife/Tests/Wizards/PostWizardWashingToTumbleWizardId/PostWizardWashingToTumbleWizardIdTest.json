@@ -1,0 +1,22 @@
+{
+    "general_data": {},
+    "settings": {},
+    "test_cases": {
+        "case_1": {
+            "wizardid": "wm_to_td_default",
+            "payload": {
+                "programNameId": 1,
+                "temperature": "Cold",
+                "programOptions": [ "string" ]
+            }
+        },
+        "case_2": {
+            "wizardid": "wm_to_td_default",
+            "payload": {
+                "programNameId": 2,
+                "temperature": "Cold",
+                "programOptions": [ "string" ]
+            }
+        }
+    }
+}

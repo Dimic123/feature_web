@@ -42,6 +42,7 @@ def pytest_generate_tests(metafunc):
 
 @pytest.fixture(scope="function")
 def driver(request):
+    """Get driver for specified browser"""
     browser = request.config.getoption("--browser")
     device = request.config.getoption("--device")
 
@@ -80,6 +81,7 @@ def driver(request):
 
 @pytest.fixture(scope="function")
 def token(request):
+    """Get token for specified API"""
     authType = request.config.getoption("--auth")
     if pytest.api_token is None:
         retry = 0

@@ -1,0 +1,14 @@
+{
+    "general_data": {},
+    "settings": {},
+    "test_cases": {
+        "case_1": {
+            "wizardid": "washing_default",
+            "payload": {
+                "type": [ "Business" ],
+                "color": "White",
+                "dirtiness": "Low"
+            }
+        }
+    }
+}

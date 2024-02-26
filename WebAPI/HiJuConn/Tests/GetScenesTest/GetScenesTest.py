@@ -3,17 +3,17 @@ import json
 
 from Common.Logging import PrettyPrint
 from WebAPI.HiJuConn.Common.Helpers import GenerateSystemParameters
-from WebAPI.HiJuConn.Common.Helpers import ValidateJson
+from Common.JsonHelpers import AssertValidateJson
 
 from ResponseSchema import schema
 
 def test_get_appliance_property(token: str, params: dict):
     url = "https://clife-eu-gateway.hijuconn.com/scene/get_scenes"
 
-    print("Testing " + url)    
+    print("\nTesting " + url)
     
     data = {
-        "packageName": params["packageName"], 
+        "packageName": params["packageName"],
         "versionCode":  params["versionCode"],
     }
 
@@ -28,5 +28,5 @@ def test_get_appliance_property(token: str, params: dict):
 
     assert "response" in data, "Malformed data: " + response.text
     assert len(data) > 0, "Missing data"
-    assert ValidateJson(data["response"], schema), "Structure of response JSON is incorrect"
+    AssertValidateJson(data["response"], schema)
     PrettyPrint(data)

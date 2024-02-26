@@ -10,7 +10,7 @@ from WebAPI.HiJuConn.Common.Helpers import GenerateSystemParameters
 def test_get_appliance_property(token: str, params: dict):
     url = "https://asko-eu-gateway.hijuconn.com/wm-web/get_appliance_with_owner"
 
-    print("Testing " + url)
+    print("\nTesting " + url)
 
     data = {}
 

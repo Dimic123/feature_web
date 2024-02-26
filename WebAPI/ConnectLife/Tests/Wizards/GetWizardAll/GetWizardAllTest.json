@@ -1,0 +1,15 @@
+{
+    "general_data": {},
+    "settings": {},
+    "test_cases": {
+        "case_1": {
+            "includeLogicData": true
+        },
+        "case_2": {
+            "includeLogicData": false
+        },
+        "case_3": {
+            "includeLogicData": ""
+        }
+    }
+}
