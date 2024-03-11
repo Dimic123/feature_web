@@ -1,18 +1,951 @@
 {
-    "general_data": {},
-    "settings": {},
-    "test_cases": {
-        "case_1": {
-            "auids": [
-                "0000000000007394880001202200022460001"
-            ],
-            "id": ""
-        },
-        "case_2": {
-            "auids": [
-                " "
-            ],
-            "id": ""
-        }
-    }
+   "general_data": {},
+   "settings": {},
+   "test_cases": {
+      "case_1": {
+         "auids": [
+            "740401"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_2": {
+         "auids": [
+            "740407"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_3": {
+         "auids": [
+            "740411"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_4": {
+         "auids": [
+            "740413"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_5": {
+         "auids": [
+            "740418"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_6": {
+         "auids": [
+            "740419"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_7": {
+         "auids": [
+            "741801"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_8": {
+         "auids": [
+            "741803"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_9": {
+         "auids": [
+            "741849"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_10": {
+         "auids": [
+            "741850"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_11": {
+         "auids": [
+            "741891"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_12": {
+         "auids": [
+            "741979"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_13": {
+         "auids": [
+            "741980"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_14": {
+         "auids": [
+            "742001"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_15": {
+         "auids": [
+            "742214"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_16": {
+         "auids": [
+            "742215"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_17": {
+         "auids": [
+            "742216"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_18": {
+         "auids": [
+            "742226"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_19": {
+         "auids": [
+            "742227"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_20": {
+         "auids": [
+            "742616"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_21": {
+         "auids": [
+            "742671"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_22": {
+         "auids": [
+            "742683"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_23": {
+         "auids": [
+            "742740"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_24": {
+         "auids": [
+            "742844"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_25": {
+         "auids": [
+            "742845"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_26": {
+         "auids": [
+            "742846"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_27": {
+         "auids": [
+            "742847"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_28": {
+         "auids": [
+            "742849"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_29": {
+         "auids": [
+            "742850"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_30": {
+         "auids": [
+            "742851"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_31": {
+         "auids": [
+            "742853"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_32": {
+         "auids": [
+            "742854"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_33": {
+         "auids": [
+            "742911"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_34": {
+         "auids": [
+            "742926"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_35": {
+         "auids": [
+            "742993"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_36": {
+         "auids": [
+            "743161"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_37": {
+         "auids": [
+            "743171"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_38": {
+         "auids": [
+            "743248"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_39": {
+         "auids": [
+            "743302"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_40": {
+         "auids": [
+            "743303"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_41": {
+         "auids": [
+            "743304"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_42": {
+         "auids": [
+            "743320"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_43": {
+         "auids": [
+            "743345"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_44": {
+         "auids": [
+            "743361"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_45": {
+         "auids": [
+            "743362"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_46": {
+         "auids": [
+            "743659"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_47": {
+         "auids": [
+            "743660"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_48": {
+         "auids": [
+            "743825"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_49": {
+         "auids": [
+            "744174"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_50": {
+         "auids": [
+            "744223"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_51": {
+         "auids": [
+            "744224"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_52": {
+         "auids": [
+            "744225"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_53": {
+         "auids": [
+            "744226"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_54": {
+         "auids": [
+            "744227"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_55": {
+         "auids": [
+            "744228"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_56": {
+         "auids": [
+            "744229"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_57": {
+         "auids": [
+            "744230"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_58": {
+         "auids": [
+            "744231"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_59": {
+         "auids": [
+            "744232"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_60": {
+         "auids": [
+            "744238"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_61": {
+         "auids": [
+            "744278"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_62": {
+         "auids": [
+            "744280"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_63": {
+         "auids": [
+            "744336"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_64": {
+         "auids": [
+            "744337"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_65": {
+         "auids": [
+            "744338"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_66": {
+         "auids": [
+            "744431"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_67": {
+         "auids": [
+            "744434"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22",
+         "id": ""
+      },
+      "case_68": {
+         "auids": [
+            "743206"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_69": {
+         "auids": [
+            "743207"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_70": {
+         "auids": [
+            "743246"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_71": {
+         "auids": [
+            "743247"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_72": {
+         "auids": [
+            "743300"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_73": {
+         "auids": [
+            "743322"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_74": {
+         "auids": [
+            "743446"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_75": {
+         "auids": [
+            "743447"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_76": {
+         "auids": [
+            "743490"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_77": {
+         "auids": [
+            "744025"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_78": {
+         "auids": [
+            "744026"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_79": {
+         "auids": [
+            "744055"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_80": {
+         "auids": [
+            "744056"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_81": {
+         "auids": [
+            "744057"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_82": {
+         "auids": [
+            "744058"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_83": {
+         "auids": [
+            "744060"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_84": {
+         "auids": [
+            "744068"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_85": {
+         "auids": [
+            "744069"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_86": {
+         "auids": [
+            "744070"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_87": {
+         "auids": [
+            "744071"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_88": {
+         "auids": [
+            "744074"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_89": {
+         "auids": [
+            "744075"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_90": {
+         "auids": [
+            "744076"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_91": {
+         "auids": [
+            "744077"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_92": {
+         "auids": [
+            "744078"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_93": {
+         "auids": [
+            "744079"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_94": {
+         "auids": [
+            "744080"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_95": {
+         "auids": [
+            "744085"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_96": {
+         "auids": [
+            "744086"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_97": {
+         "auids": [
+            "744087"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_98": {
+         "auids": [
+            "744088"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_99": {
+         "auids": [
+            "744089"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_100": {
+         "auids": [
+            "744090"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_101": {
+         "auids": [
+            "744091"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_102": {
+         "auids": [
+            "744092"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_103": {
+         "auids": [
+            "744093"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_104": {
+         "auids": [
+            "744094"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_105": {
+         "auids": [
+            "744098"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_106": {
+         "auids": [
+            "744099"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_107": {
+         "auids": [
+            "744100"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_108": {
+         "auids": [
+            "744120"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_109": {
+         "auids": [
+            "744121"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_110": {
+         "auids": [
+            "744122"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_111": {
+         "auids": [
+            "744124"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_112": {
+         "auids": [
+            "744125"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_113": {
+         "auids": [
+            "744127"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_114": {
+         "auids": [
+            "744141"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_115": {
+         "auids": [
+            "744173"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_116": {
+         "auids": [
+            "744233"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_117": {
+         "auids": [
+            "744234"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_118": {
+         "auids": [
+            "744235"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_119": {
+         "auids": [
+            "744236"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_120": {
+         "auids": [
+            "744237"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_121": {
+         "auids": [
+            "744286"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_122": {
+         "auids": [
+            "744349"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_123": {
+         "auids": [
+            "744401"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_124": {
+         "auids": [
+            "744433"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM22-B2PLUS",
+         "id": ""
+      },
+      "case_125": {
+         "auids": [
+            "742867"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      },
+      "case_126": {
+         "auids": [
+            "742868"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      },
+      "case_127": {
+         "auids": [
+            "743064"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      },
+      "case_128": {
+         "auids": [
+            "743065"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      },
+      "case_129": {
+         "auids": [
+            "743067"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      },
+      "case_130": {
+         "auids": [
+            "743068"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      },
+      "case_131": {
+         "auids": [
+            "743182"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      },
+      "case_132": {
+         "auids": [
+            "743264"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      },
+      "case_133": {
+         "auids": [
+            "743365"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      },
+      "case_134": {
+         "auids": [
+            "743366"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      },
+      "case_135": {
+         "auids": [
+            "744279"
+         ],
+         "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": ""
+      }
+   }
 }

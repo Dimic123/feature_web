@@ -18,7 +18,7 @@ def HandleTest(url, params, token, callerFilePath):
     print("Request/response time: " + str(responseInSeconds) + " seconds")
     print("Response status code: " + str(response.status_code))
     
-    assert response.status_code in [200, 404, 500], "Unknown response status code" + str(response.status_code)
+    assert response.status_code in [200, 500], "Unknown response status code: " + str(response.status_code)
 
     try:
         unicode_escaped_data = json.dumps(response.json())

@@ -1,12 +1,9 @@
 import os, shutil
 
-filePath = os.path.realpath(__file__)
-
-currDir = filePath.split("\\")[:-1]
-currDir = "\\".join(currDir)
+currentDirectory = os.path.dirname(os.path.realpath(__file__))
 
 try:
-    for root, subdirs, files in os.walk(currDir):
+    for root, subdirs, files in os.walk(currentDirectory):
         for d in subdirs:
             if d == "__pycache__":
                 shutil.rmtree(os.path.join(root, d))

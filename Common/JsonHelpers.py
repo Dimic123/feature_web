@@ -15,3 +15,10 @@ def AssertValidateJson(_json, _schema):
     except jsonschema.exceptions.ValidationError as err:
         assert False, err.message
     assert True
+    
+def ValidateJson(_json, _schema):
+    try:
+        jsonschema.validate(instance=_json, schema=_schema)
+    except jsonschema.exceptions.ValidationError as err:
+        return err.message
+    return True
