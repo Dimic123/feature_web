@@ -6,7 +6,7 @@ sys.path.append(projectRootPath)
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 
-def create_different_schemas():
+def CreateValidationSchemas():
     filePath = os.path.realpath(__file__)
     step_1_success_schema = CreateJsonSchema(
         "GET response schema for /api/v1/wizard/{auids} requests: SUCCESS 200", 
@@ -61,7 +61,7 @@ def create_different_schemas():
     
     err500Schema = CreateJsonSchema(
         "Generic response schema for ERROR 500", 
-        "WashingPrograms response schema", 
+        "Recipe response schema", 
         {
             "errorId": "string",
             "errorMessage": "string"
@@ -69,9 +69,19 @@ def create_different_schemas():
     )
     WriteDataToJsonFileInCurrentDirectory("_jsonschema_error", filePath, err500Schema)
     
+    err400Schema = CreateJsonSchema(
+        "Generic response schema for ERROR 400", 
+        "Recipe response schema", 
+        {
+            "errorId": "string",
+            "errorMessage": "string"
+        }
+    )
+    WriteDataToJsonFileInCurrentDirectory("_jsonschema_error", filePath, err400Schema)
+    
     err404Schema = CreateJsonSchema(
-        "GET response schema for all WashingPrograms requests: ERROR 404", 
-        "WashingPrograms response schema", 
+        "GET response schema for all Recipe requests: ERROR 404", 
+        "Recipe response schema", 
         {
             "type": "string",
             "title": "string",
@@ -81,4 +91,4 @@ def create_different_schemas():
     )
     WriteDataToJsonFileInCurrentDirectory("_jsonschema_404", filePath, err404Schema)
     
-    return [step_1_success_schema, step_3_success_schema, err404Schema, err500Schema]
+    return [step_1_success_schema, step_3_success_schema, err404Schema, err500Schema, err400Schema]

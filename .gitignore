@@ -3,6 +3,7 @@ report_logs/*
 _jsonschema_*
 _response_*
 step_*_logs.txt
+error_logs.txt
 
 ./Mobile/UIAutomatorViewer
 ./Mobile/UIAutomatorViewer/*

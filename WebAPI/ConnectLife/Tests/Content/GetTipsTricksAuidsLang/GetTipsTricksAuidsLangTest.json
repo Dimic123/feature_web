@@ -4,13 +4,2885 @@
    "test_cases": {
       "case_1": {
          "auids": [
+            "728674"
+         ],
+         "wizard_id": "COMBI",
+         "id": "",
+         "lang": "en"
+      },
+      "case_2": {
+         "auids": [
+            "732583"
+         ],
+         "wizard_id": "COMBI",
+         "id": "",
+         "lang": "en"
+      },
+      "case_3": {
+         "auids": [
+            "738834"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_4": {
+         "auids": [
+            "738836"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_5": {
+         "auids": [
+            "739089"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_6": {
+         "auids": [
+            "739090"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_7": {
+         "auids": [
+            "739396"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_8": {
+         "auids": [
+            "739397"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_9": {
+         "auids": [
+            "739771"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_10": {
+         "auids": [
+            "740261"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_11": {
+         "auids": [
+            "740298"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_12": {
+         "auids": [
+            "740299"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_13": {
+         "auids": [
+            "742002"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_14": {
+         "auids": [
+            "742021"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_15": {
+         "auids": [
+            "742023"
+         ],
+         "wizard_id": "COMBI-FS600",
+         "id": "",
+         "lang": "en"
+      },
+      "case_16": {
+         "auids": [
+            "742855"
+         ],
+         "wizard_id": "COMBI-FS600-G34",
+         "id": "",
+         "lang": "en"
+      },
+      "case_17": {
+         "auids": [
+            "743603"
+         ],
+         "wizard_id": "COMBI-FS600-G34",
+         "id": "",
+         "lang": "en"
+      },
+      "case_18": {
+         "auids": [
+            "728289"
+         ],
+         "wizard_id": "COOLER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_19": {
+         "auids": [
+            "728676"
+         ],
+         "wizard_id": "COOLER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_20": {
+         "auids": [
+            "732585"
+         ],
+         "wizard_id": "COOLER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_21": {
+         "auids": [
+            "728288"
+         ],
+         "wizard_id": "FREEZER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_22": {
+         "auids": [
+            "728675"
+         ],
+         "wizard_id": "FREEZER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_23": {
+         "auids": [
+            "732584"
+         ],
+         "wizard_id": "FREEZER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_24": {
+         "auids": [
+            "737726"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_25": {
+         "auids": [
+            "738663"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_26": {
+         "auids": [
+            "738664"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_27": {
+         "auids": [
+            "739347"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_28": {
+         "auids": [
+            "740026"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_29": {
+         "auids": [
+            "740494"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_30": {
+         "auids": [
+            "735911"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-3Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_31": {
+         "auids": [
+            "737091"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-3Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_32": {
+         "auids": [
+            "737868"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-3Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_33": {
+         "auids": [
+            "738386"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-3Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_34": {
+         "auids": [
+            "738393"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-3Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_35": {
+         "auids": [
+            "740025"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-3Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_36": {
+         "auids": [
+            "740495"
+         ],
+         "wizard_id": "WINE-COOLER-WC70-3Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_37": {
+         "auids": [
+            "740364"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-2Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_38": {
+         "auids": [
+            "741100"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-2Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_39": {
+         "auids": [
+            "741111"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-2Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_40": {
+         "auids": [
+            "741114"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-2Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_41": {
+         "auids": [
+            "741115"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-2Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_42": {
+         "auids": [
+            "741116"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-2Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_43": {
+         "auids": [
+            "742504"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-2Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_44": {
+         "auids": [
+            "741117"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_45": {
+         "auids": [
+            "741134"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_46": {
+         "auids": [
+            "741135"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_47": {
+         "auids": [
+            "741137"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_48": {
+         "auids": [
+            "741138"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-1Z",
+         "id": "",
+         "lang": "en"
+      },
+      "case_49": {
+         "auids": [
+            "743249"
+         ],
+         "wizard_id": "WINE-COOLER-WC60-1Z-MID",
+         "id": "",
+         "lang": "en"
+      },
+      "case_50": {
+         "auids": [
+            "504880"
+         ],
+         "wizard_id": "OVEN",
+         "id": "",
+         "lang": "en"
+      },
+      "case_51": {
+         "auids": [
+            "728422"
+         ],
+         "wizard_id": "OVEN",
+         "id": "",
+         "lang": "en"
+      },
+      "case_52": {
+         "auids": [
+            "728423"
+         ],
+         "wizard_id": "OVEN",
+         "id": "",
+         "lang": "en"
+      },
+      "case_53": {
+         "auids": [
+            "731382"
+         ],
+         "wizard_id": "OVEN",
+         "id": "",
+         "lang": "en"
+      },
+      "case_54": {
+         "auids": [
+            "735455"
+         ],
+         "wizard_id": "OVEN",
+         "id": "",
+         "lang": "en"
+      },
+      "case_55": {
+         "auids": [
+            "735456"
+         ],
+         "wizard_id": "OVEN",
+         "id": "",
+         "lang": "en"
+      },
+      "case_56": {
+         "auids": [
+            "741107"
+         ],
+         "wizard_id": "OVEN",
+         "id": "",
+         "lang": "en"
+      },
+      "case_57": {
+         "auids": [
+            "741108"
+         ],
+         "wizard_id": "OVEN",
+         "id": "",
+         "lang": "en"
+      },
+      "case_58": {
+         "auids": [
+            "744261"
+         ],
+         "wizard_id": "OVEN",
+         "id": "",
+         "lang": "en"
+      },
+      "case_59": {
+         "auids": [
+            "738604"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_60": {
+         "auids": [
+            "739567"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_61": {
+         "auids": [
+            "739568"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_62": {
+         "auids": [
+            "739569"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_63": {
+         "auids": [
+            "739570"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_64": {
+         "auids": [
+            "739571"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_65": {
+         "auids": [
+            "740825"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_66": {
+         "auids": [
+            "741050"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_67": {
+         "auids": [
+            "741540"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_68": {
+         "auids": [
+            "741581"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_69": {
+         "auids": [
+            "742105"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_70": {
+         "auids": [
+            "742106"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_71": {
+         "auids": [
+            "743113"
+         ],
+         "wizard_id": "OVEN-BIO21-ICONLEDPLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_72": {
+         "auids": [
+            "741691"
+         ],
+         "wizard_id": "OVEN-ASKO CN SMART",
+         "id": "",
+         "lang": "en"
+      },
+      "case_73": {
+         "auids": [
+            "742524"
+         ],
+         "wizard_id": "OVEN-BIO21-FULLTOUCH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_74": {
+         "auids": [
+            "742525"
+         ],
+         "wizard_id": "OVEN-BIO21-FULLTOUCH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_75": {
+         "auids": [
+            "742526"
+         ],
+         "wizard_id": "OVEN-BIO21-FULLTOUCH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_76": {
+         "auids": [
+            "742872"
+         ],
+         "wizard_id": "OVEN-BIO21-FULLTOUCH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_77": {
+         "auids": [
+            "743327"
+         ],
+         "wizard_id": "OVEN-BIO21-FULLTOUCH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_78": {
+         "auids": [
+            "743328"
+         ],
+         "wizard_id": "OVEN-BIO21-FULLTOUCH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_79": {
+         "auids": [
+            "743837"
+         ],
+         "wizard_id": "OVEN-HI8",
+         "id": "",
+         "lang": "en"
+      },
+      "case_80": {
+         "auids": [
+            "743838"
+         ],
+         "wizard_id": "OVEN-HI8",
+         "id": "",
+         "lang": "en"
+      },
+      "case_81": {
+         "auids": [
+            "743839"
+         ],
+         "wizard_id": "OVEN-HI8",
+         "id": "",
+         "lang": "en"
+      },
+      "case_82": {
+         "auids": [
+            "743931"
+         ],
+         "wizard_id": "OVEN-HI8",
+         "id": "",
+         "lang": "en"
+      },
+      "case_83": {
+         "auids": [
+            "743932"
+         ],
+         "wizard_id": "OVEN-HI8",
+         "id": "",
+         "lang": "en"
+      },
+      "case_84": {
+         "auids": [
+            "743933"
+         ],
+         "wizard_id": "OVEN-HI8",
+         "id": "",
+         "lang": "en"
+      },
+      "case_85": {
+         "auids": [
+            "738901"
+         ],
+         "wizard_id": "RANGE-COOKER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_86": {
+         "auids": [
+            "738905"
+         ],
+         "wizard_id": "RANGE-COOKER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_87": {
+         "auids": [
+            "738907"
+         ],
+         "wizard_id": "RANGE-COOKER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_88": {
+         "auids": [
+            "728751"
+         ],
+         "wizard_id": "HOB",
+         "id": "",
+         "lang": "en"
+      },
+      "case_89": {
+         "auids": [
+            "728762"
+         ],
+         "wizard_id": "HOB",
+         "id": "",
+         "lang": "en"
+      },
+      "case_90": {
+         "auids": [
+            "728763"
+         ],
+         "wizard_id": "HOB",
+         "id": "",
+         "lang": "en"
+      },
+      "case_91": {
+         "auids": [
+            "728765"
+         ],
+         "wizard_id": "HOB",
+         "id": "",
+         "lang": "en"
+      },
+      "case_92": {
+         "auids": [
+            "737425"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_93": {
+         "auids": [
+            "737426"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_94": {
+         "auids": [
+            "737427"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_95": {
+         "auids": [
+            "737428"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_96": {
+         "auids": [
+            "737794"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_97": {
+         "auids": [
+            "737820"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_98": {
+         "auids": [
+            "737822"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_99": {
+         "auids": [
+            "737823"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_100": {
+         "auids": [
+            "737824"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_101": {
+         "auids": [
+            "737825"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_102": {
+         "auids": [
+            "737826"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_103": {
+         "auids": [
+            "737827"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_104": {
+         "auids": [
+            "737828"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_105": {
+         "auids": [
+            "737829"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_106": {
+         "auids": [
+            "737830"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_107": {
+         "auids": [
+            "737831"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_108": {
+         "auids": [
+            "737832"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_109": {
+         "auids": [
+            "737833"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_110": {
+         "auids": [
+            "737834"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_111": {
+         "auids": [
+            "737835"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_112": {
+         "auids": [
+            "737836"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_113": {
+         "auids": [
+            "737838"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_114": {
+         "auids": [
+            "737839"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_115": {
+         "auids": [
+            "737840"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_116": {
+         "auids": [
+            "737843"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_117": {
+         "auids": [
+            "737848"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_118": {
+         "auids": [
+            "737850"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_119": {
+         "auids": [
+            "737852"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_120": {
+         "auids": [
+            "737854"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_121": {
+         "auids": [
+            "737855"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_122": {
+         "auids": [
+            "743633"
+         ],
+         "wizard_id": "HOB-PIND",
+         "id": "",
+         "lang": "en"
+      },
+      "case_123": {
+         "auids": [
+            "742606"
+         ],
+         "wizard_id": "HOB-PIND-GAS ",
+         "id": "",
+         "lang": "en"
+      },
+      "case_124": {
+         "auids": [
+            "742609"
+         ],
+         "wizard_id": "HOB-PIND-GAS ",
+         "id": "",
+         "lang": "en"
+      },
+      "case_125": {
+         "auids": [
+            "742610"
+         ],
+         "wizard_id": "HOB-PIND-GAS ",
+         "id": "",
+         "lang": "en"
+      },
+      "case_126": {
+         "auids": [
+            "742641"
+         ],
+         "wizard_id": "HOB-PIND-GAS ",
+         "id": "",
+         "lang": "en"
+      },
+      "case_127": {
+         "auids": [
+            "742642"
+         ],
+         "wizard_id": "HOB-PIND-GAS ",
+         "id": "",
+         "lang": "en"
+      },
+      "case_128": {
+         "auids": [
+            "742643"
+         ],
+         "wizard_id": "HOB-PIND-GAS ",
+         "id": "",
+         "lang": "en"
+      },
+      "case_129": {
+         "auids": [
+            "742644"
+         ],
+         "wizard_id": "HOB-PIND-GAS ",
+         "id": "",
+         "lang": "en"
+      },
+      "case_130": {
+         "auids": [
+            "728213"
+         ],
+         "wizard_id": "HOOD",
+         "id": "",
+         "lang": "en"
+      },
+      "case_131": {
+         "auids": [
+            "730880"
+         ],
+         "wizard_id": "HOOD",
+         "id": "",
+         "lang": "en"
+      },
+      "case_132": {
+         "auids": [
+            "730928"
+         ],
+         "wizard_id": "HOOD",
+         "id": "",
+         "lang": "en"
+      },
+      "case_133": {
+         "auids": [
+            "739155"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_134": {
+         "auids": [
+            "739156"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_135": {
+         "auids": [
+            "739157"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_136": {
+         "auids": [
+            "739158"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_137": {
+         "auids": [
+            "739893"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_138": {
+         "auids": [
+            "741087"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_139": {
+         "auids": [
+            "741088"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_140": {
+         "auids": [
+            "743309"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_141": {
+         "auids": [
+            "743310"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_142": {
+         "auids": [
+            "743986"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_143": {
+         "auids": [
+            "743988"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_144": {
+         "auids": [
+            "743989"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_145": {
+         "auids": [
+            "743990"
+         ],
+         "wizard_id": "HOOD-AA-CAPACITIVE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_146": {
+         "auids": [
+            "739438"
+         ],
+         "wizard_id": "HOOD-AA-TACTILE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_147": {
+         "auids": [
+            "739439"
+         ],
+         "wizard_id": "HOOD-AA-TACTILE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_148": {
+         "auids": [
+            "739450"
+         ],
+         "wizard_id": "HOOD-AA-TACTILE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_149": {
+         "auids": [
+            "739451"
+         ],
+         "wizard_id": "HOOD-AA-TACTILE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_150": {
+         "auids": [
+            "739452"
+         ],
+         "wizard_id": "HOOD-AA-TACTILE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_151": {
+         "auids": [
+            "739441"
+         ],
+         "wizard_id": "HOOD-AA-LIGHTFEEDBACK",
+         "id": "",
+         "lang": "en"
+      },
+      "case_152": {
+         "auids": [
+            "739443"
+         ],
+         "wizard_id": "HOOD-AA-LIGHTFEEDBACK",
+         "id": "",
+         "lang": "en"
+      },
+      "case_153": {
+         "auids": [
+            "739444"
+         ],
+         "wizard_id": "HOOD-AA-LIGHTFEEDBACK",
+         "id": "",
+         "lang": "en"
+      },
+      "case_154": {
+         "auids": [
+            "739446"
+         ],
+         "wizard_id": "HOOD-AA-LIGHTFEEDBACK",
+         "id": "",
+         "lang": "en"
+      },
+      "case_155": {
+         "auids": [
+            "739448"
+         ],
+         "wizard_id": "HOOD-AA-LIGHTFEEDBACK",
+         "id": "",
+         "lang": "en"
+      },
+      "case_156": {
+         "auids": [
+            "739449"
+         ],
+         "wizard_id": "HOOD-AA-LIGHTFEEDBACK",
+         "id": "",
+         "lang": "en"
+      },
+      "case_157": {
+         "auids": [
+            "738990"
+         ],
+         "wizard_id": "HIH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_158": {
+         "auids": [
+            "738991"
+         ],
+         "wizard_id": "HIH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_159": {
+         "auids": [
+            "742974"
+         ],
+         "wizard_id": "HIH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_160": {
+         "auids": [
+            "742975"
+         ],
+         "wizard_id": "HIH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_161": {
+         "auids": [
+            "742976"
+         ],
+         "wizard_id": "HIH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_162": {
+         "auids": [
+            "742977"
+         ],
+         "wizard_id": "HIH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_163": {
+         "auids": [
+            "743661"
+         ],
+         "wizard_id": "HIH",
+         "id": "",
+         "lang": "en"
+      },
+      "case_164": {
+         "auids": [
+            "729053"
+         ],
+         "wizard_id": "DISHWASHER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_165": {
+         "auids": [
+            "731017"
+         ],
+         "wizard_id": "DISHWASHER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_166": {
+         "auids": [
+            "731163"
+         ],
+         "wizard_id": "DISHWASHER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_167": {
+         "auids": [
+            "739949"
+         ],
+         "wizard_id": "DISHWASHER-60.1",
+         "id": "",
+         "lang": "en"
+      },
+      "case_168": {
+         "auids": [
+            "739950"
+         ],
+         "wizard_id": "DISHWASHER-60.1",
+         "id": "",
+         "lang": "en"
+      },
+      "case_169": {
+         "auids": [
+            "739989"
+         ],
+         "wizard_id": "DISHWASHER-60.1",
+         "id": "",
+         "lang": "en"
+      },
+      "case_170": {
+         "auids": [
+            "739990"
+         ],
+         "wizard_id": "DISHWASHER-60.1",
+         "id": "",
+         "lang": "en"
+      },
+      "case_171": {
+         "auids": [
+            "740872"
+         ],
+         "wizard_id": "DISHWASHER-60.1",
+         "id": "",
+         "lang": "en"
+      },
+      "case_172": {
+         "auids": [
+            "739488"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_173": {
+         "auids": [
+            "739489"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_174": {
+         "auids": [
+            "739490"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_175": {
+         "auids": [
+            "739511"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_176": {
+         "auids": [
+            "739512"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_177": {
+         "auids": [
+            "739513"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_178": {
+         "auids": [
+            "739514"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_179": {
+         "auids": [
+            "739516"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_180": {
+         "auids": [
+            "739517"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_181": {
+         "auids": [
+            "739518"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_182": {
+         "auids": [
+            "739519"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_183": {
+         "auids": [
+            "739844"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_184": {
+         "auids": [
+            "739845"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_185": {
+         "auids": [
+            "739981"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_186": {
+         "auids": [
+            "739991"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_187": {
+         "auids": [
+            "739992"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_188": {
+         "auids": [
+            "740017"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_189": {
+         "auids": [
+            "740018"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_190": {
+         "auids": [
+            "740019"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_191": {
+         "auids": [
+            "740089"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_192": {
+         "auids": [
+            "740090"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_193": {
+         "auids": [
+            "740098"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_194": {
+         "auids": [
+            "740099"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_195": {
+         "auids": [
+            "740100"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_196": {
+         "auids": [
+            "740101"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_197": {
+         "auids": [
+            "740102"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_198": {
+         "auids": [
+            "740103"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_199": {
+         "auids": [
+            "740651"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_200": {
+         "auids": [
+            "740652"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_201": {
+         "auids": [
+            "740653"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_202": {
+         "auids": [
+            "740655"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_203": {
+         "auids": [
+            "740657"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_204": {
+         "auids": [
+            "740662"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_205": {
+         "auids": [
+            "740667"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_206": {
+         "auids": [
+            "740682"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_207": {
+         "auids": [
+            "740685"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_208": {
+         "auids": [
+            "740687"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_209": {
+         "auids": [
+            "740688"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_210": {
+         "auids": [
+            "740701"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_211": {
+         "auids": [
+            "740703"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_212": {
+         "auids": [
+            "740709"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_213": {
+         "auids": [
+            "740711"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_214": {
+         "auids": [
+            "740713"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_215": {
+         "auids": [
+            "741262"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_216": {
+         "auids": [
+            "741392"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_217": {
+         "auids": [
+            "741393"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_218": {
+         "auids": [
+            "741396"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_219": {
+         "auids": [
+            "741397"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_220": {
+         "auids": [
+            "741398"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_221": {
+         "auids": [
+            "742930"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_222": {
+         "auids": [
+            "743359"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_223": {
+         "auids": [
+            "743360"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_224": {
+         "auids": [
+            "743844"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_225": {
+         "auids": [
+            "743845"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_226": {
+         "auids": [
+            "743847"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_227": {
+         "auids": [
+            "744256"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_228": {
+         "auids": [
+            "744258"
+         ],
+         "wizard_id": "DISHWASHER-60.2",
+         "id": "",
+         "lang": "en"
+      },
+      "case_229": {
+         "auids": [
+            "738876"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_230": {
+         "auids": [
+            "738877"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_231": {
+         "auids": [
+            "738878"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_232": {
+         "auids": [
+            "739403"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_233": {
+         "auids": [
+            "739437"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_234": {
+         "auids": [
+            "739520"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_235": {
+         "auids": [
+            "739521"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_236": {
+         "auids": [
+            "739522"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_237": {
+         "auids": [
+            "739523"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_238": {
+         "auids": [
+            "739524"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_239": {
+         "auids": [
+            "739525"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_240": {
+         "auids": [
+            "739526"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_241": {
+         "auids": [
+            "739836"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_242": {
+         "auids": [
+            "739837"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_243": {
+         "auids": [
+            "739839"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_244": {
+         "auids": [
+            "739840"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_245": {
+         "auids": [
+            "739841"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_246": {
+         "auids": [
+            "739842"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_247": {
+         "auids": [
+            "739843"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_248": {
+         "auids": [
+            "739846"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_249": {
+         "auids": [
+            "739847"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_250": {
+         "auids": [
+            "739982"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_251": {
+         "auids": [
+            "739983"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_252": {
+         "auids": [
+            "739984"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_253": {
+         "auids": [
+            "739994"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_254": {
+         "auids": [
+            "739995"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_255": {
+         "auids": [
+            "739997"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_256": {
+         "auids": [
+            "740005"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_257": {
+         "auids": [
+            "740006"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_258": {
+         "auids": [
+            "740013"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_259": {
+         "auids": [
+            "740014"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_260": {
+         "auids": [
+            "740015"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_261": {
+         "auids": [
+            "740016"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_262": {
+         "auids": [
+            "740094"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_263": {
+         "auids": [
+            "740095"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_264": {
+         "auids": [
+            "740096"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_265": {
+         "auids": [
+            "740097"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_266": {
+         "auids": [
+            "740514"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_267": {
+         "auids": [
+            "740516"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_268": {
+         "auids": [
+            "742486"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_269": {
+         "auids": [
+            "742487"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_270": {
+         "auids": [
+            "742632"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_271": {
+         "auids": [
+            "743755"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_272": {
+         "auids": [
+            "743760"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_273": {
+         "auids": [
+            "743762"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_274": {
+         "auids": [
+            "743763"
+         ],
+         "wizard_id": "DISHWASHER-60.3",
+         "id": "",
+         "lang": "en"
+      },
+      "case_275": {
+         "auids": [
+            "739123"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_276": {
+         "auids": [
+            "739637"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_277": {
+         "auids": [
+            "739638"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_278": {
+         "auids": [
+            "739639"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_279": {
+         "auids": [
+            "739640"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_280": {
+         "auids": [
+            "739653"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_281": {
+         "auids": [
+            "739656"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_282": {
+         "auids": [
+            "739664"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_283": {
+         "auids": [
+            "739670"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_284": {
+         "auids": [
+            "739671"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_285": {
+         "auids": [
+            "739672"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_286": {
+         "auids": [
+            "739737"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_287": {
+         "auids": [
+            "739738"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_288": {
+         "auids": [
+            "739741"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_289": {
+         "auids": [
+            "739831"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_290": {
+         "auids": [
+            "739832"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_291": {
+         "auids": [
+            "739833"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_292": {
+         "auids": [
+            "739870"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_293": {
+         "auids": [
+            "739872"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_294": {
+         "auids": [
+            "739873"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_295": {
+         "auids": [
+            "739874"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_296": {
+         "auids": [
+            "739875"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_297": {
+         "auids": [
+            "739877"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_298": {
+         "auids": [
+            "739878"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_299": {
+         "auids": [
+            "739882"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_300": {
+         "auids": [
+            "739883"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_301": {
+         "auids": [
+            "740021"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_302": {
+         "auids": [
+            "740161"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_303": {
+         "auids": [
+            "740163"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_304": {
+         "auids": [
+            "740165"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_305": {
+         "auids": [
+            "743051"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_306": {
+         "auids": [
+            "743052"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_307": {
+         "auids": [
+            "743053"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_308": {
+         "auids": [
+            "743126"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_309": {
+         "auids": [
+            "743159"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_310": {
+         "auids": [
+            "743160"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_311": {
+         "auids": [
+            "743334"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_312": {
+         "auids": [
+            "743595"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_313": {
+         "auids": [
+            "743764"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_314": {
+         "auids": [
+            "743969"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_315": {
+         "auids": [
+            "744142"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_316": {
+         "auids": [
+            "744143"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_317": {
+         "auids": [
+            "744144"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_318": {
+         "auids": [
+            "744150"
+         ],
+         "wizard_id": "DISHWASHER-50.2T",
+         "id": "",
+         "lang": "en"
+      },
+      "case_319": {
+         "auids": [
+            "739127"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_320": {
+         "auids": [
+            "739129"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_321": {
+         "auids": [
+            "739130"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_322": {
+         "auids": [
+            "739663"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_323": {
+         "auids": [
+            "739745"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_324": {
+         "auids": [
+            "739748"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_325": {
+         "auids": [
+            "739751"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_326": {
+         "auids": [
+            "739826"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_327": {
+         "auids": [
+            "739827"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_328": {
+         "auids": [
+            "739828"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_329": {
+         "auids": [
+            "739902"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_330": {
+         "auids": [
+            "740020"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_331": {
+         "auids": [
+            "740114"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_332": {
+         "auids": [
+            "740132"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_333": {
+         "auids": [
+            "740133"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_334": {
+         "auids": [
+            "740136"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_335": {
+         "auids": [
+            "740138"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_336": {
+         "auids": [
+            "740139"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_337": {
+         "auids": [
+            "740145"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_338": {
+         "auids": [
+            "742589"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_339": {
+         "auids": [
+            "743054"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_340": {
+         "auids": [
+            "743055"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_341": {
+         "auids": [
+            "743056"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_342": {
+         "auids": [
+            "743390"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_343": {
+         "auids": [
+            "743432"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_344": {
+         "auids": [
+            "743541"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_345": {
+         "auids": [
+            "743542"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_346": {
+         "auids": [
+            "744146"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_347": {
+         "auids": [
+            "744147"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_348": {
+         "auids": [
+            "744148"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_349": {
+         "auids": [
+            "744149"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_350": {
+         "auids": [
+            "744386"
+         ],
+         "wizard_id": "DISHWASHER-50.2F",
+         "id": "",
+         "lang": "en"
+      },
+      "case_351": {
+         "auids": [
+            "20012581"
+         ],
+         "wizard_id": "WASHING-MACHINE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_352": {
+         "auids": [
+            "737891"
+         ],
+         "wizard_id": "WASHING-MACHINE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_353": {
+         "auids": [
+            "737892"
+         ],
+         "wizard_id": "WASHING-MACHINE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_354": {
+         "auids": [
+            "738158"
+         ],
+         "wizard_id": "WASHING-MACHINE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_355": {
+         "auids": [
+            "738165"
+         ],
+         "wizard_id": "WASHING-MACHINE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_356": {
+         "auids": [
+            "738182"
+         ],
+         "wizard_id": "WASHING-MACHINE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_357": {
+         "auids": [
+            "738293"
+         ],
+         "wizard_id": "WASHING-MACHINE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_358": {
+         "auids": [
+            "738294"
+         ],
+         "wizard_id": "WASHING-MACHINE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_359": {
+         "auids": [
+            "739114"
+         ],
+         "wizard_id": "WASHING-MACHINE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_360": {
+         "auids": [
             "740401"
          ],
          "wizard_id": "WASHING-MACHINE-WM22",
          "id": "",
          "lang": "en"
       },
-      "case_2": {
+      "case_361": {
          "auids": [
             "740407"
          ],
@@ -18,7 +2890,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_3": {
+      "case_362": {
          "auids": [
             "740411"
          ],
@@ -26,7 +2898,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_4": {
+      "case_363": {
          "auids": [
             "740413"
          ],
@@ -34,7 +2906,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_5": {
+      "case_364": {
          "auids": [
             "740418"
          ],
@@ -42,7 +2914,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_6": {
+      "case_365": {
          "auids": [
             "740419"
          ],
@@ -50,7 +2922,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_7": {
+      "case_366": {
          "auids": [
             "741801"
          ],
@@ -58,7 +2930,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_8": {
+      "case_367": {
          "auids": [
             "741803"
          ],
@@ -66,7 +2938,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_9": {
+      "case_368": {
          "auids": [
             "741849"
          ],
@@ -74,7 +2946,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_10": {
+      "case_369": {
          "auids": [
             "741850"
          ],
@@ -82,7 +2954,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_11": {
+      "case_370": {
          "auids": [
             "741891"
          ],
@@ -90,7 +2962,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_12": {
+      "case_371": {
          "auids": [
             "741979"
          ],
@@ -98,7 +2970,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_13": {
+      "case_372": {
          "auids": [
             "741980"
          ],
@@ -106,7 +2978,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_14": {
+      "case_373": {
          "auids": [
             "742001"
          ],
@@ -114,7 +2986,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_15": {
+      "case_374": {
          "auids": [
             "742214"
          ],
@@ -122,7 +2994,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_16": {
+      "case_375": {
          "auids": [
             "742215"
          ],
@@ -130,7 +3002,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_17": {
+      "case_376": {
          "auids": [
             "742216"
          ],
@@ -138,7 +3010,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_18": {
+      "case_377": {
          "auids": [
             "742226"
          ],
@@ -146,7 +3018,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_19": {
+      "case_378": {
          "auids": [
             "742227"
          ],
@@ -154,7 +3026,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_20": {
+      "case_379": {
          "auids": [
             "742616"
          ],
@@ -162,7 +3034,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_21": {
+      "case_380": {
          "auids": [
             "742671"
          ],
@@ -170,7 +3042,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_22": {
+      "case_381": {
          "auids": [
             "742683"
          ],
@@ -178,7 +3050,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_23": {
+      "case_382": {
          "auids": [
             "742740"
          ],
@@ -186,7 +3058,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_24": {
+      "case_383": {
          "auids": [
             "742844"
          ],
@@ -194,7 +3066,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_25": {
+      "case_384": {
          "auids": [
             "742845"
          ],
@@ -202,7 +3074,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_26": {
+      "case_385": {
          "auids": [
             "742846"
          ],
@@ -210,7 +3082,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_27": {
+      "case_386": {
          "auids": [
             "742847"
          ],
@@ -218,7 +3090,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_28": {
+      "case_387": {
          "auids": [
             "742849"
          ],
@@ -226,7 +3098,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_29": {
+      "case_388": {
          "auids": [
             "742850"
          ],
@@ -234,7 +3106,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_30": {
+      "case_389": {
          "auids": [
             "742851"
          ],
@@ -242,7 +3114,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_31": {
+      "case_390": {
          "auids": [
             "742853"
          ],
@@ -250,7 +3122,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_32": {
+      "case_391": {
          "auids": [
             "742854"
          ],
@@ -258,7 +3130,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_33": {
+      "case_392": {
          "auids": [
             "742911"
          ],
@@ -266,7 +3138,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_34": {
+      "case_393": {
          "auids": [
             "742926"
          ],
@@ -274,7 +3146,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_35": {
+      "case_394": {
          "auids": [
             "742993"
          ],
@@ -282,7 +3154,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_36": {
+      "case_395": {
          "auids": [
             "743161"
          ],
@@ -290,7 +3162,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_37": {
+      "case_396": {
          "auids": [
             "743171"
          ],
@@ -298,7 +3170,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_38": {
+      "case_397": {
          "auids": [
             "743248"
          ],
@@ -306,7 +3178,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_39": {
+      "case_398": {
          "auids": [
             "743302"
          ],
@@ -314,7 +3186,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_40": {
+      "case_399": {
          "auids": [
             "743303"
          ],
@@ -322,7 +3194,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_41": {
+      "case_400": {
          "auids": [
             "743304"
          ],
@@ -330,7 +3202,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_42": {
+      "case_401": {
          "auids": [
             "743320"
          ],
@@ -338,7 +3210,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_43": {
+      "case_402": {
          "auids": [
             "743345"
          ],
@@ -346,7 +3218,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_44": {
+      "case_403": {
          "auids": [
             "743361"
          ],
@@ -354,7 +3226,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_45": {
+      "case_404": {
          "auids": [
             "743362"
          ],
@@ -362,7 +3234,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_46": {
+      "case_405": {
          "auids": [
             "743659"
          ],
@@ -370,7 +3242,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_47": {
+      "case_406": {
          "auids": [
             "743660"
          ],
@@ -378,7 +3250,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_48": {
+      "case_407": {
          "auids": [
             "743825"
          ],
@@ -386,7 +3258,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_49": {
+      "case_408": {
          "auids": [
             "744174"
          ],
@@ -394,7 +3266,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_50": {
+      "case_409": {
          "auids": [
             "744223"
          ],
@@ -402,7 +3274,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_51": {
+      "case_410": {
          "auids": [
             "744224"
          ],
@@ -410,7 +3282,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_52": {
+      "case_411": {
          "auids": [
             "744225"
          ],
@@ -418,7 +3290,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_53": {
+      "case_412": {
          "auids": [
             "744226"
          ],
@@ -426,7 +3298,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_54": {
+      "case_413": {
          "auids": [
             "744227"
          ],
@@ -434,7 +3306,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_55": {
+      "case_414": {
          "auids": [
             "744228"
          ],
@@ -442,7 +3314,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_56": {
+      "case_415": {
          "auids": [
             "744229"
          ],
@@ -450,7 +3322,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_57": {
+      "case_416": {
          "auids": [
             "744230"
          ],
@@ -458,7 +3330,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_58": {
+      "case_417": {
          "auids": [
             "744231"
          ],
@@ -466,7 +3338,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_59": {
+      "case_418": {
          "auids": [
             "744232"
          ],
@@ -474,7 +3346,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_60": {
+      "case_419": {
          "auids": [
             "744238"
          ],
@@ -482,7 +3354,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_61": {
+      "case_420": {
          "auids": [
             "744278"
          ],
@@ -490,7 +3362,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_62": {
+      "case_421": {
          "auids": [
             "744280"
          ],
@@ -498,7 +3370,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_63": {
+      "case_422": {
          "auids": [
             "744336"
          ],
@@ -506,7 +3378,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_64": {
+      "case_423": {
          "auids": [
             "744337"
          ],
@@ -514,7 +3386,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_65": {
+      "case_424": {
          "auids": [
             "744338"
          ],
@@ -522,7 +3394,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_66": {
+      "case_425": {
          "auids": [
             "744431"
          ],
@@ -530,7 +3402,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_67": {
+      "case_426": {
          "auids": [
             "744434"
          ],
@@ -538,7 +3410,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_68": {
+      "case_427": {
          "auids": [
             "743206"
          ],
@@ -546,7 +3418,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_69": {
+      "case_428": {
          "auids": [
             "743207"
          ],
@@ -554,7 +3426,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_70": {
+      "case_429": {
          "auids": [
             "743246"
          ],
@@ -562,7 +3434,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_71": {
+      "case_430": {
          "auids": [
             "743247"
          ],
@@ -570,7 +3442,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_72": {
+      "case_431": {
          "auids": [
             "743300"
          ],
@@ -578,7 +3450,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_73": {
+      "case_432": {
          "auids": [
             "743322"
          ],
@@ -586,7 +3458,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_74": {
+      "case_433": {
          "auids": [
             "743446"
          ],
@@ -594,7 +3466,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_75": {
+      "case_434": {
          "auids": [
             "743447"
          ],
@@ -602,7 +3474,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_76": {
+      "case_435": {
          "auids": [
             "743490"
          ],
@@ -610,7 +3482,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_77": {
+      "case_436": {
          "auids": [
             "744025"
          ],
@@ -618,7 +3490,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_78": {
+      "case_437": {
          "auids": [
             "744026"
          ],
@@ -626,7 +3498,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_79": {
+      "case_438": {
          "auids": [
             "744055"
          ],
@@ -634,7 +3506,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_80": {
+      "case_439": {
          "auids": [
             "744056"
          ],
@@ -642,7 +3514,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_81": {
+      "case_440": {
          "auids": [
             "744057"
          ],
@@ -650,7 +3522,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_82": {
+      "case_441": {
          "auids": [
             "744058"
          ],
@@ -658,7 +3530,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_83": {
+      "case_442": {
          "auids": [
             "744060"
          ],
@@ -666,7 +3538,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_84": {
+      "case_443": {
          "auids": [
             "744068"
          ],
@@ -674,7 +3546,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_85": {
+      "case_444": {
          "auids": [
             "744069"
          ],
@@ -682,7 +3554,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_86": {
+      "case_445": {
          "auids": [
             "744070"
          ],
@@ -690,7 +3562,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_87": {
+      "case_446": {
          "auids": [
             "744071"
          ],
@@ -698,7 +3570,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_88": {
+      "case_447": {
          "auids": [
             "744074"
          ],
@@ -706,7 +3578,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_89": {
+      "case_448": {
          "auids": [
             "744075"
          ],
@@ -714,7 +3586,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_90": {
+      "case_449": {
          "auids": [
             "744076"
          ],
@@ -722,7 +3594,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_91": {
+      "case_450": {
          "auids": [
             "744077"
          ],
@@ -730,7 +3602,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_92": {
+      "case_451": {
          "auids": [
             "744078"
          ],
@@ -738,7 +3610,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_93": {
+      "case_452": {
          "auids": [
             "744079"
          ],
@@ -746,7 +3618,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_94": {
+      "case_453": {
          "auids": [
             "744080"
          ],
@@ -754,7 +3626,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_95": {
+      "case_454": {
          "auids": [
             "744085"
          ],
@@ -762,7 +3634,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_96": {
+      "case_455": {
          "auids": [
             "744086"
          ],
@@ -770,7 +3642,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_97": {
+      "case_456": {
          "auids": [
             "744087"
          ],
@@ -778,7 +3650,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_98": {
+      "case_457": {
          "auids": [
             "744088"
          ],
@@ -786,7 +3658,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_99": {
+      "case_458": {
          "auids": [
             "744089"
          ],
@@ -794,7 +3666,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_100": {
+      "case_459": {
          "auids": [
             "744090"
          ],
@@ -802,7 +3674,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_101": {
+      "case_460": {
          "auids": [
             "744091"
          ],
@@ -810,7 +3682,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_102": {
+      "case_461": {
          "auids": [
             "744092"
          ],
@@ -818,7 +3690,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_103": {
+      "case_462": {
          "auids": [
             "744093"
          ],
@@ -826,7 +3698,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_104": {
+      "case_463": {
          "auids": [
             "744094"
          ],
@@ -834,7 +3706,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_105": {
+      "case_464": {
          "auids": [
             "744098"
          ],
@@ -842,7 +3714,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_106": {
+      "case_465": {
          "auids": [
             "744099"
          ],
@@ -850,7 +3722,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_107": {
+      "case_466": {
          "auids": [
             "744100"
          ],
@@ -858,7 +3730,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_108": {
+      "case_467": {
          "auids": [
             "744120"
          ],
@@ -866,7 +3738,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_109": {
+      "case_468": {
          "auids": [
             "744121"
          ],
@@ -874,7 +3746,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_110": {
+      "case_469": {
          "auids": [
             "744122"
          ],
@@ -882,7 +3754,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_111": {
+      "case_470": {
          "auids": [
             "744124"
          ],
@@ -890,7 +3762,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_112": {
+      "case_471": {
          "auids": [
             "744125"
          ],
@@ -898,7 +3770,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_113": {
+      "case_472": {
          "auids": [
             "744127"
          ],
@@ -906,7 +3778,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_114": {
+      "case_473": {
          "auids": [
             "744141"
          ],
@@ -914,7 +3786,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_115": {
+      "case_474": {
          "auids": [
             "744173"
          ],
@@ -922,7 +3794,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_116": {
+      "case_475": {
          "auids": [
             "744233"
          ],
@@ -930,7 +3802,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_117": {
+      "case_476": {
          "auids": [
             "744234"
          ],
@@ -938,7 +3810,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_118": {
+      "case_477": {
          "auids": [
             "744235"
          ],
@@ -946,7 +3818,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_119": {
+      "case_478": {
          "auids": [
             "744236"
          ],
@@ -954,7 +3826,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_120": {
+      "case_479": {
          "auids": [
             "744237"
          ],
@@ -962,7 +3834,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_121": {
+      "case_480": {
          "auids": [
             "744286"
          ],
@@ -970,7 +3842,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_122": {
+      "case_481": {
          "auids": [
             "744349"
          ],
@@ -978,7 +3850,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_123": {
+      "case_482": {
          "auids": [
             "744401"
          ],
@@ -986,7 +3858,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_124": {
+      "case_483": {
          "auids": [
             "744433"
          ],
@@ -994,7 +3866,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_125": {
+      "case_484": {
          "auids": [
             "742867"
          ],
@@ -1002,7 +3874,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_126": {
+      "case_485": {
          "auids": [
             "742868"
          ],
@@ -1010,7 +3882,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_127": {
+      "case_486": {
          "auids": [
             "743064"
          ],
@@ -1018,7 +3890,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_128": {
+      "case_487": {
          "auids": [
             "743065"
          ],
@@ -1026,7 +3898,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_129": {
+      "case_488": {
          "auids": [
             "743067"
          ],
@@ -1034,7 +3906,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_130": {
+      "case_489": {
          "auids": [
             "743068"
          ],
@@ -1042,7 +3914,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_131": {
+      "case_490": {
          "auids": [
             "743182"
          ],
@@ -1050,7 +3922,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_132": {
+      "case_491": {
          "auids": [
             "743264"
          ],
@@ -1058,7 +3930,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_133": {
+      "case_492": {
          "auids": [
             "743365"
          ],
@@ -1066,7 +3938,7 @@
          "id": "",
          "lang": "en"
       },
-      "case_134": {
+      "case_493": {
          "auids": [
             "743366"
          ],
@@ -1074,11 +3946,947 @@
          "id": "",
          "lang": "en"
       },
-      "case_135": {
+      "case_494": {
          "auids": [
             "744279"
          ],
          "wizard_id": "WASHING-MACHINE-WM23-ADS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_495": {
+         "auids": [
+            "737972"
+         ],
+         "wizard_id": "TUMBLE-DRYER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_496": {
+         "auids": [
+            "737973"
+         ],
+         "wizard_id": "TUMBLE-DRYER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_497": {
+         "auids": [
+            "738085"
+         ],
+         "wizard_id": "TUMBLE-DRYER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_498": {
+         "auids": [
+            "738093"
+         ],
+         "wizard_id": "TUMBLE-DRYER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_499": {
+         "auids": [
+            "738104"
+         ],
+         "wizard_id": "TUMBLE-DRYER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_500": {
+         "auids": [
+            "739112"
+         ],
+         "wizard_id": "TUMBLE-DRYER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_501": {
+         "auids": [
+            "742527"
+         ],
+         "wizard_id": "TUMBLE-DRYER",
+         "id": "",
+         "lang": "en"
+      },
+      "case_502": {
+         "auids": [
+            "742587"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_503": {
+         "auids": [
+            "742743"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_504": {
+         "auids": [
+            "742760"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_505": {
+         "auids": [
+            "742826"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_506": {
+         "auids": [
+            "742827"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_507": {
+         "auids": [
+            "742835"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_508": {
+         "auids": [
+            "742843"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_509": {
+         "auids": [
+            "742912"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_510": {
+         "auids": [
+            "742994"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_511": {
+         "auids": [
+            "743148"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_512": {
+         "auids": [
+            "743242"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_513": {
+         "auids": [
+            "743243"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_514": {
+         "auids": [
+            "743244"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_515": {
+         "auids": [
+            "743593"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_516": {
+         "auids": [
+            "743594"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_517": {
+         "auids": [
+            "744266"
+         ],
+         "wizard_id": "TUMBLE-DRYER-SP22",
+         "id": "",
+         "lang": "en"
+      },
+      "case_518": {
+         "auids": [
+            "743265"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_519": {
+         "auids": [
+            "743266"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_520": {
+         "auids": [
+            "743267"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_521": {
+         "auids": [
+            "743323"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_522": {
+         "auids": [
+            "744095"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_523": {
+         "auids": [
+            "744096"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_524": {
+         "auids": [
+            "744101"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_525": {
+         "auids": [
+            "744102"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_526": {
+         "auids": [
+            "744182"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_527": {
+         "auids": [
+            "744183"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_528": {
+         "auids": [
+            "744184"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_529": {
+         "auids": [
+            "744221"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_530": {
+         "auids": [
+            "744222"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_531": {
+         "auids": [
+            "744466"
+         ],
+         "wizard_id": "TUMBLE-DRYER-TD22-B2PLUS",
+         "id": "",
+         "lang": "en"
+      },
+      "case_532": {
+         "auids": [
+            "20004041"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_533": {
+         "auids": [
+            "20010508"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_534": {
+         "auids": [
+            "20010511"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_535": {
+         "auids": [
+            "20010909"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_536": {
+         "auids": [
+            "20011006"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_537": {
+         "auids": [
+            "20011047"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_538": {
+         "auids": [
+            "20011089"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_539": {
+         "auids": [
+            "20011119"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_540": {
+         "auids": [
+            "20011126"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_541": {
+         "auids": [
+            "20011143"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_542": {
+         "auids": [
+            "20011179"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_543": {
+         "auids": [
+            "20011180"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_544": {
+         "auids": [
+            "20011181"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_545": {
+         "auids": [
+            "20011182"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_546": {
+         "auids": [
+            "20011183"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_547": {
+         "auids": [
+            "20011184"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_548": {
+         "auids": [
+            "20011185"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_549": {
+         "auids": [
+            "20011186"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_550": {
+         "auids": [
+            "20011228"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_551": {
+         "auids": [
+            "20011247"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_552": {
+         "auids": [
+            "20011253"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_553": {
+         "auids": [
+            "20011257"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_554": {
+         "auids": [
+            "20011578"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_555": {
+         "auids": [
+            "20011697"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_556": {
+         "auids": [
+            "20011720"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_557": {
+         "auids": [
+            "20011860"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_558": {
+         "auids": [
+            "20011888"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_559": {
+         "auids": [
+            "20011889"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_560": {
+         "auids": [
+            "20012422"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_561": {
+         "auids": [
+            "20012424"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_562": {
+         "auids": [
+            "20012427"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_563": {
+         "auids": [
+            "20012468"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_564": {
+         "auids": [
+            "20012469"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_565": {
+         "auids": [
+            "20012509"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_566": {
+         "auids": [
+            "20012510"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_567": {
+         "auids": [
+            "20012512"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_568": {
+         "auids": [
+            "20012513"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_569": {
+         "auids": [
+            "20012716"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_570": {
+         "auids": [
+            "20012770"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_571": {
+         "auids": [
+            "20012771"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_572": {
+         "auids": [
+            "20012816"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_573": {
+         "auids": [
+            "20012846"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_574": {
+         "auids": [
+            "20012858"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_575": {
+         "auids": [
+            "20012859"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_576": {
+         "auids": [
+            "20012912"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_577": {
+         "auids": [
+            "20012913"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_578": {
+         "auids": [
+            "20012962"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_579": {
+         "auids": [
+            "20012975"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_580": {
+         "auids": [
+            "20013096"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_581": {
+         "auids": [
+            "20013097"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_582": {
+         "auids": [
+            "20013099"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_583": {
+         "auids": [
+            "20013100"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_584": {
+         "auids": [
+            "20013101"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_585": {
+         "auids": [
+            "20013444"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_586": {
+         "auids": [
+            "20013445"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_587": {
+         "auids": [
+            "20013525"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_588": {
+         "auids": [
+            "20013526"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_589": {
+         "auids": [
+            "20013527"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_590": {
+         "auids": [
+            "20013528"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_591": {
+         "auids": [
+            "20013529"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_592": {
+         "auids": [
+            "20013530"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_593": {
+         "auids": [
+            "20013531"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_594": {
+         "auids": [
+            "20013532"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_595": {
+         "auids": [
+            "20013533"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_596": {
+         "auids": [
+            "20013534"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_597": {
+         "auids": [
+            "20013535"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_598": {
+         "auids": [
+            "20013536"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_599": {
+         "auids": [
+            "20013537"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_600": {
+         "auids": [
+            "20013538"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_601": {
+         "auids": [
+            "20013557"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_602": {
+         "auids": [
+            "20013578"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_603": {
+         "auids": [
+            "20013579"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_604": {
+         "auids": [
+            "20013580"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_605": {
+         "auids": [
+            "20013581"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_606": {
+         "auids": [
+            "20014071"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_607": {
+         "auids": [
+            "20014342"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_608": {
+         "auids": [
+            "20014371"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_609": {
+         "auids": [
+            "20014373"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_610": {
+         "auids": [
+            "20014422"
+         ],
+         "wizard_id": "SN-DEVICE",
+         "id": "",
+         "lang": "en"
+      },
+      "case_611": {
+         "auids": [
+            "20014433"
+         ],
+         "wizard_id": "SN-DEVICE",
          "id": "",
          "lang": "en"
       }

@@ -144,7 +144,14 @@ def pytest_generate_tests(metafunc: pytest.Metafunc):
     # called once per each test function
     json_file_path = os.path.join(metafunc.definition.fspath.dirname, metafunc.definition.fspath.purebasename + ".json")
     
-    if (any(value in metafunc.definition.keywords for value in ["multiStepTest", "test_multistep_recipe_ids", "test_multistep_washing_ids"])):
+    for kw in metafunc.definition.keywords:
+        print(kw)
+    
+    if (any(value in metafunc.definition.keywords for value in [
+            "multiStepTest", 
+            "test_multistep_recipe_ids", 
+            "test_multistep_washing_ids", 
+            "test_multistep_recipe_paged_detail_lang_all"])):
         print("\nignoring pytest_generate_tests")
         pass
     else:
