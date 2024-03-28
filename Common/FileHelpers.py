@@ -7,22 +7,36 @@ def WriteDataToJsonFileInCurrentDirectory(name: str, currentFilePath: str, data,
     with open(filePath, mode) as file:
         file.write(json.dumps(data, indent=3))
         file.write("\n")
-    
-def GenerateTestCasesJsonFile(testCases, jsonFilePath: str):
-    testCasesObject = { "general_data": {}, "settings": {}, "test_cases": {} }
-    
-    for index, testcase in enumerate(testCases):
-        testCasesObject["test_cases"]["case_" + str(index + 1)] = testcase
-    
-    with open(jsonFilePath, "w") as file:
-        file.write(json.dumps(testCasesObject, indent=3))
+        
+def SaveToSharedDataDirectory(file_name, data):
+    ROOT_DIR = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-1])
+    file_path = os.path.join(os.path.join(ROOT_DIR, "SharedData"), file_name)
+    with open(file_path, "w") as write_file:
+        write_file.write(json.dumps(data, indent=3))
+        
+def ReadFileFromSharedDataDirectory(file_name):
+    ROOT_DIR = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-1])
+    file_path = os.path.join(os.path.join(ROOT_DIR, "SharedData"), file_name)
+    try:
+        read_file = open(file_path, "r")
+        data = json.load(read_file)
+        read_file.close()
+        return data    
+    except Exception as err:
+        return []
 
-def GenerateTestCasesJsonFileList(testCases, jsonFilePath: str):
-    testCasesObject = []
+def ReadFileFromStaticDataDirectory(file_name):
+    ROOT_DIR = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-1])
+    file_path = os.path.join(os.path.join(ROOT_DIR, "StaticData"), file_name)
+    try:
+        read_file = open(file_path, "r")
+        data = json.load(read_file)
+        read_file.close()
+        return data    
+    except Exception as err:
+        return []
     
-    for index, testcase in enumerate(testCases):
-        key = "case_" + str(index + 1)
-        testCasesObject.append({ key: testcase })
+def ReadTxtFile(file_path):
+    with open(file_path) as f:
+        return f.read().splitlines()
     
-    with open(jsonFilePath, "w") as file:
-        file.write(json.dumps(testCasesObject, indent=3))

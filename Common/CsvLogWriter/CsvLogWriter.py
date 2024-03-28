@@ -4,6 +4,7 @@ class CsvLogWriter:
         self.delimiter = delimiter
         self.filenameFullPath = filepath
         self.rows = []
+        self.written_header = False
     
     def addColToHeader(self, col):
         if self.header == "":
@@ -27,6 +28,7 @@ class CsvLogWriter:
         f.write(self.header + "\n")
         for row in self.rows:
             f.write(row + "\n")
+        self.rows = []
         f.close()
 
     def __str__(self):
@@ -38,3 +40,21 @@ class CsvLogWriter:
         elif self.delimiter ==  " ":
             delim = "space"
         return f"[CsvLogWriter] object\n- header: {delim},\n- filepath: {self.filenameFullPath}\n"
+    
+    def writeToLogFileAsList(self, values: list[str]):
+        self.add(values)
+        f = open(self.filenameFullPath, "a")
+        for row in self.rows:
+            f.write(row + "\n")
+        self.rows = []
+        f.close()
+        
+    def writeHeaderToLogFileAsList(self, values: list[str]):
+        if self.written_header: return
+        self.header = ""
+        self.addHeaderAsList(values)
+        f = open(self.filenameFullPath, "w")
+        f.write(self.header + "\n")
+        f.close()
+        self.written_header = True
+        

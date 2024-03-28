@@ -22,3 +22,10 @@ def ValidateJson(_json, _schema):
     except jsonschema.exceptions.ValidationError as err:
         return err.message
     return True
+
+def getWizardIdsForType(wizard_type, wizard_ids):
+    wizard_objects = []
+    for wizard_id in wizard_ids:
+        if wizard_ids[wizard_id]["wizard_type"] == wizard_type:
+            wizard_objects.append(wizard_ids[wizard_id])
+    return wizard_objects

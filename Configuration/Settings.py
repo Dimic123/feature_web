@@ -5,7 +5,9 @@ from enum import Enum
 class Sections(Enum):
     WEB = 1,
     MOBILE = 2,
-    API = 3
+    API_GENERAL = 3,
+    API_PROD = 4,
+    API_TEST = 5
 
 
 class Settings:
