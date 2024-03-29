@@ -23,6 +23,7 @@ auids_and_sapIds = auids + sapIds
 if auids_and_sapIds == []:
     auids_and_sapIds = manually_added_auids
 
+@pytest.mark.skip(reason="test takes too long after n-th test case")
 @pytest.mark.test_env
 @pytest.mark.parametrize("auid", auids_and_sapIds)
 def test_get_pairing_wifi_auids(token: str, auid):

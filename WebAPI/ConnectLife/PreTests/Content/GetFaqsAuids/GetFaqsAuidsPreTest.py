@@ -22,8 +22,6 @@ auids_and_sapIds = auids + sapIds
 if auids_and_sapIds == []:
     auids_and_sapIds = manually_added_auids
 
-endpoints_with_times = []
-
 @pytest.mark.skip(reason="test takes too long after n-th test case")
 @pytest.mark.test_env
 @pytest.mark.parametrize("auid", auids_and_sapIds)
@@ -32,7 +30,6 @@ def test_get_faqs_auids_pre_test(token: str, auid):
     url = f"{pytest.api_base_url}/api/v1/faqs/{auid}"
     print("\nTesting " + url)
     
-    start = time.time()
     response = None
     attempts = 1
     while attempts <= 5:
@@ -42,18 +39,6 @@ def test_get_faqs_auids_pre_test(token: str, auid):
         except requests.exceptions.Timeout:
             attempts += 1
             print(f"Request attempt: #{attempts}")
-    end = time.time()
-    time_elapsed = end - start
-
-    endpoints_with_times.append({
-        "endpoint": url,
-        "auid": auid,
-        "time_elapsed": f"{time_elapsed}s"
-    })
-
-    SaveToSharedDataDirectory("endpoints_with_elapsed_times.json", endpoints_with_times)
-    
-    print(time_elapsed)
 
     if response == None:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", auid, url])
