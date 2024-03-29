@@ -2,29 +2,37 @@ import pytest, os
 
 currentDirectory = os.path.dirname(os.path.realpath(__file__))
 
-# api_url = "https://api.connectlife.io"
-# api_url = "https://api-test.connectlife.io"
-api_url = "https://dnejtsakgzwih.cloudfront.net"
+azure_prod_api_url = "https://api.connectlife.io"
+azure_test_api_url = "https://api-test.connectlife.io"
+aws_test_api_url = "https://dnejtsakgzwih.cloudfront.net"
 
-# env = "prod"
 env = "test"
+api_url = azure_test_api_url
+
+if api_url == aws_test_api_url or api_url == azure_test_api_url:
+    env = "test"
+elif api_url == azure_prod_api_url:
+    env == "prod"
 
 def pre_tests() -> int:
     # order is important
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetWizardsAll", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetRecipesIdLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetRecipesPagedDetailLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetRecipesPagedLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetConnectivityGroupsProductCodes", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetAppliances", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetProductsAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\PutApplianceApplianceProfileAfota", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])   
+    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetWizardsAll", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetRecipesIdLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetRecipesPagedDetailLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetRecipesPagedLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetConnectivityGroupsProductCodes", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetAppliances", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetProductsAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\PutApplianceApplianceProfileAfota", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
 
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\Content", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\Content", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
 
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\1_GetFaqsAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])              ## SLOWS DOWN
+
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\Content\GetGuides", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\2_GetFaqsAuidsLangs", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\3_GetTipsTricksAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])        ## SLOWS DOWN
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\3_GetTipsTricksAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])        ## SLOWS DOWN
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\4_GetTipsTricksAuidsLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\5_GetInspirationsAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\6_GetInspirationsAuidsLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
@@ -33,7 +41,7 @@ def pre_tests() -> int:
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\8_GetPairingAuidsLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\9_GetPairingWifiAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])       # SLOW
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\10_GetPairingWifiAuidsLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\11_GetHelp", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\17_GetGuides", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\12_GetHelpLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\13_GetHelpAuidsLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\14_GetGenericFaq", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
@@ -57,7 +65,8 @@ def main() -> int:
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Wizards", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
 
     # retcode = pytest.main(["WebAPI/HiJuConn/Tests/", "-s", "--auth", "juconnect"])
-    return retcode
+    # return retcode
+    pass
 
 
 # mode = [all, empty]

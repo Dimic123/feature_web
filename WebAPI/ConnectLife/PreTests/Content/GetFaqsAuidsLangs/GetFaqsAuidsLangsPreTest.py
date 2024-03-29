@@ -5,22 +5,30 @@ ROOT_PROJECT_PATH = "\\".join(api_group_folder_path.split("\\")[:-3])
 sys.path.append(api_group_folder_path)
 
 from Common.JsonHelpers import ValidateJson
-from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory, ReadFileFromSharedDataDirectory
+from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
-from server_error_json_schema import server_error_json_schema
+from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedDataDirectory, ReadFileFromStaticDataDirectory
 
-ids = []
-all_ids = ReadFileFromSharedDataDirectory("GetGuidesPreTest.json")
+manually_added_auids = [
+    "0000000000007391270001202400040260001", 
+    "0000000000007393970004202300030330003"
+]
 
-if "id" in all_ids:
-    ids = all_ids["id"]
+auids = ReadFileFromStaticDataDirectory("auids.json")
+sapIds = ReadFileFromSharedDataDirectory("sapIds.json")
+langs = ReadFileFromStaticDataDirectory("languages.json")
 
-@pytest.mark.skip(reason="test takes too long after n-th test case")
+auids_and_sapIds = auids + sapIds
+
+if auids_and_sapIds == []:
+    auids_and_sapIds = manually_added_auids
+
 @pytest.mark.test_env
-@pytest.mark.parametrize("_id", ids)
-def test_get_guides(token: str, _id):
-    pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "id", "endpoint"])
-    url = f"{pytest.api_base_url}/api/v1/guides?id={_id}"
+@pytest.mark.parametrize("auid", auids_and_sapIds)
+@pytest.mark.parametrize("lang", langs)
+def test_get_faqs_auids_lang_pre_test(token: str, auid, lang):
+    pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "lang", "endpoint"])
+    url = f"{pytest.api_base_url}/api/v1/faqs/{auid}/{lang}"
     print("\nTesting " + url)
     
     response = None
@@ -34,22 +42,22 @@ def test_get_guides(token: str, _id):
             print(f"Request attempt: #{attempts}")
     
     if response == None:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", _id, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", auid, lang, url])
         assert False
 
     if not response.status_code in [200, 500]:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unknown response status code: { str(response.status_code) }", _id, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unknown response status code: { str(response.status_code) }", auid, lang, url])
         assert False
 
     try:
         unicode_escaped_data = json.dumps(response.json())
         data = json.loads(unicode_escaped_data)
     except Exception as ex:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Exception: {ex}, Malformed data: {str(response.text)}", _id, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Exception: {ex}, Malformed data: {str(response.text)}", auid, lang, url])
         assert False
     
     if len(data) <= 0:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Empty response: {data}", _id, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Empty response: {data}", auid, lang, url])
         assert False
     
     [success_200_schema, error_500_schema] = CreateJsonSchemas()
@@ -61,19 +69,22 @@ def test_get_guides(token: str, _id):
         isValidOrTrue = ValidateJson(data, error_500_schema)
     
     if isValidOrTrue != True:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{isValidOrTrue}", _id, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{isValidOrTrue}", auid, lang, url])
         assert False
     
     if response.status_code == 200:
+        pytest.data_collections[__name__][auid] = []
         for el in data:
-            if el["id"] != _id:
-                pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Response includes different id/s", _id, url])
-                assert False
+            if "id" in el:
+                pytest.data_collections[__name__][auid].append({
+                    "id": el["id"],
+                    "lang": lang
+                })
     elif response.status_code == 500:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", _id, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", auid, lang, url])
         assert False
     else:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", _id, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", auid, lang, url])
         assert False
 
 def CreateJsonSchemas():
@@ -100,7 +111,10 @@ def CreateJsonSchemas():
     error_500_schema = CreateJsonSchema(
         "Server error 500 json schema", 
         "General server error schema", 
-        server_error_json_schema
+        {
+            "errorId": "string",
+            "errorMessage": "string"
+        }
     )
     WriteDataToJsonFileInCurrentDirectory("_jsonschema_error_500", file_path, error_500_schema)
     

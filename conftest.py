@@ -10,6 +10,8 @@ from WebAPI.HiJuConn.Common.Authorization import AuthAPI as JuconnectAPI
 from Common.CsvLogWriter.CsvLogWriter import CsvLogWriter
 from Common.FileHelpers import SaveToSharedDataDirectory
 
+ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
+
 def getToken(config: pytest.Config):
     authType = config.getoption("--auth")
     envType = config.getoption("--env")
@@ -51,7 +53,6 @@ def pytest_configure(config: pytest.Config):
     pytest.log_objects = {}
 
     pytest.data_collections = {}
-    pytest.data_collections["faqs_auid_to_id_maps"] = {}
     
 def pytest_unconfigure():
     pass
@@ -71,9 +72,9 @@ def pytest_addoption(parser):
 def pytest_generate_tests(metafunc: pytest.Metafunc):
     # called once per each test function
     json_file_path = os.path.join(metafunc.definition.fspath.dirname, metafunc.definition.fspath.purebasename + ".json")
-    
-    ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
+
     pytest.log_objects[metafunc.definition.fspath.purebasename] = CsvLogWriter(os.path.join(ROOT_DIR, f"report_logs/_logs_{metafunc.definition.fspath.purebasename}.log"))
+    pytest.data_collections[metafunc.definition.fspath.purebasename] = {}
 
 def pytest_sessionstart(session):
     pass
@@ -85,9 +86,37 @@ def pytest_sessionfinish(session, exitstatus):
         file_name = item.path.stem
 
         if file_name == "GetFaqsAuidsPreTest":
-            SaveToSharedDataDirectory("faqs_auid_to_id_maps.json", pytest.data_collections["faqs_auid_to_id_maps"])
-            pytest.data_collections["faqs_auid_to_id_maps"] = {}
-            break
+            if pytest.data_collections[file_name] != {}:
+                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                pytest.data_collections[file_name] = {}
+        elif file_name == "GetFaqsAuidsLangsPreTest":
+            if pytest.data_collections[file_name] != {}:
+                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                pytest.data_collections[file_name] = {}
+        elif file_name == "GetTipsTricksAuidsLangPreTest":
+            if pytest.data_collections[file_name] != {}:
+                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                pytest.data_collections[file_name] = {}
+        elif file_name == "GetInspirationsAuidsPreTest":
+            if pytest.data_collections[file_name] != {}:
+                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                pytest.data_collections[file_name] = {}
+        elif file_name == "GetPairingAuidsPreTest":
+            if pytest.data_collections[file_name] != {}:
+                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                pytest.data_collections[file_name] = {}
+        elif file_name == "GetHelpPreTest":
+            if pytest.data_collections[file_name] != {}:
+                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                pytest.data_collections[file_name] = {}
+        elif file_name == "GetGenericFaqPreTest":
+            if pytest.data_collections[file_name] != {}:
+                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                pytest.data_collections[file_name] = {}
+        elif file_name == "GetGuidesPreTest":
+            if pytest.data_collections[file_name] != {}:
+                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                pytest.data_collections[file_name] = {}
 
 @pytest.fixture(scope="function")
 def driver(request):

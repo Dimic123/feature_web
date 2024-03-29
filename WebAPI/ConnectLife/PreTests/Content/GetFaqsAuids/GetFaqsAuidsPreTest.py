@@ -72,11 +72,10 @@ def test_get_faqs_auids_pre_test(token: str, auid):
         assert False
     
     if response.status_code == 200:
-        pytest.data_collections["faqs_auid_to_id_maps"][auid] = []
+        pytest.data_collections[__name__][auid] = []
         for el in data:
             if "id" in el:
-                pytest.data_collections["faqs_auid_to_id_maps"][auid].append(el["id"])
-        pass
+                pytest.data_collections[__name__][auid].append({ "id": el["id"] })
     elif response.status_code == 500:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", auid, url])
         assert False

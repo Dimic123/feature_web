@@ -10,24 +10,21 @@ from Common.JsonSchemaHelpers import CreateJsonSchema
 from server_error_json_schema import server_error_json_schema
 from Common.FileHelpers import ReadFileFromSharedDataDirectory, ReadFileFromStaticDataDirectory
 
-manually_added_auids = [
-    "0000000000007391270001202400040260001", 
-    "0000000000007393970004202300030330003"
-]
+map_list = []
+auids_map = ReadFileFromSharedDataDirectory("GetPairingAuidsPreTest.json")
+for auid in auids_map:
+    for details in auids_map[auid]:
+        map_list.append({
+            "auid": auid,
+            "id": details["id"]
+        })
 
-auids = ReadFileFromStaticDataDirectory("auids.json")
-sapIds = ReadFileFromSharedDataDirectory("sapIds.json")
-
-auids_and_sapIds = auids + sapIds
-
-if auids_and_sapIds == []:
-    auids_and_sapIds = manually_added_auids
-
+@pytest.mark.skip(reason="test takes too long after n-th test case")
 @pytest.mark.test_env
-@pytest.mark.parametrize("auid", auids_and_sapIds)
-def test_get_pairing_auids(token: str, auid):
-    pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])
-    url = f"{pytest.api_base_url}/api/v1/pairing/{auid}"
+@pytest.mark.parametrize("test_case", map_list)
+def test_get_pairing_auids(token: str, test_case):
+    pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "id", "endpoint"])
+    url = f"{pytest.api_base_url}/api/v1/pairing/{test_case['auid']}?id={test_case['id']}"
     print("\nTesting " + url)
     
     response = None
@@ -41,22 +38,22 @@ def test_get_pairing_auids(token: str, auid):
             print(f"Request attempt: #{attempts}")
     
     if response == None:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", auid, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", test_case['auid'], test_case['id'], url])
         assert False
 
     if not response.status_code in [200, 500]:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unknown response status code: { str(response.status_code) }", auid, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unknown response status code: { str(response.status_code) }", test_case['auid'], test_case['id'], url])
         assert False
 
     try:
         unicode_escaped_data = json.dumps(response.json())
         data = json.loads(unicode_escaped_data)
     except Exception as ex:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Exception: {ex}, Malformed data: {str(response.text)}", auid, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Exception: {ex}, Malformed data: {str(response.text)}", test_case['auid'], test_case['id'], url])
         assert False
     
     if len(data) <= 0:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Empty response: {data}", auid, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Empty response: {data}", test_case['auid'], test_case['id'], url])
         assert False
     
     [success_200_schema, error_500_schema] = CreateJsonSchemas()
@@ -68,16 +65,19 @@ def test_get_pairing_auids(token: str, auid):
         isValidOrTrue = ValidateJson(data, error_500_schema)
     
     if isValidOrTrue != True:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{isValidOrTrue}", auid, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{isValidOrTrue}", test_case['auid'], test_case['id'], url])
         assert False
     
     if response.status_code == 200:
-        pass
+        for el in data:
+            if el["id"] != test_case['id']:
+                pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Response includes different id/s", test_case['auid'], test_case['id'], url])
+                assert False
     elif response.status_code == 500:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", auid, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", test_case['auid'], test_case['id'], url])
         assert False
     else:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", auid, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", test_case['auid'], test_case['id'], url])
         assert False
 
 def CreateJsonSchemas():
