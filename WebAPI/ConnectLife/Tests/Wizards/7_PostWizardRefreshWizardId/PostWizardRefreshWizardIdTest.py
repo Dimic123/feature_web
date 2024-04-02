@@ -12,6 +12,8 @@ from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedData
 
 wizard_ids = getWizardIdsForType("Refresh", ReadFileFromSharedDataDirectory("collected_wizards.json"))
 
+# get payload and expected result
+
 @pytest.mark.test_env
 @pytest.mark.parametrize("test_case_obj", wizard_ids)
 def test_post_wizard_refresh_wizard_id(token: str, test_case_obj):

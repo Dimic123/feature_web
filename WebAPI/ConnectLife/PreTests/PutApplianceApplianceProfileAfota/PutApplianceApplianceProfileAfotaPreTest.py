@@ -74,13 +74,15 @@ def test_put_appliance_appliance_profile_afota(token: str, test_case_obj):
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Empty response: {data}", test_case_obj["auid"], str(payload), url])
         assert False
     
-    [success_200_schema, error_400_schema, error_500_schema] = CreateJsonSchemas()
+    [success_200_schema, error_400_schema, error_404_schema, error_500_schema] = CreateJsonSchemas()
     
     isValidOrTrue = True
     if (response.status_code == 200):
         isValidOrTrue = ValidateJson(data, success_200_schema)
     elif (response.status_code == 400):
         isValidOrTrue = ValidateJson(data, error_400_schema)
+    elif (response.status_code == 404):
+        isValidOrTrue = ValidateJson(data, error_404_schema)
     elif (response.status_code == 500):
         isValidOrTrue = ValidateJson(data, error_500_schema)
 
@@ -92,7 +94,10 @@ def test_put_appliance_appliance_profile_afota(token: str, test_case_obj):
         payloads.append(payload)
         SaveToSharedDataDirectory("Put_appliances_payloads_profile_afota.json", payloads)
     elif response.status_code == 400:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", test_case_obj["auid"], str(payload), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"statusDescription: {data['statusDescription']}, statusCode: {data['statusCode']}", test_case_obj["auid"], str(payload), url])
+        assert False
+    elif response.status_code == 404:
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"statusDescription: {data['statusDescription']}, statusCode: {data['statusCode']}", test_case_obj["auid"], str(payload), url])
         assert False
     elif response.status_code == 500:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", test_case_obj["auid"], str(payload), url])
@@ -123,6 +128,16 @@ def CreateJsonSchemas():
     )
     WriteDataToJsonFileInCurrentDirectory("_jsonschema_error_400", file_path, error_400_schema)
 
+    error_404_schema = CreateJsonSchema(
+        "Server error 404 json schema", 
+        "General server error schema", 
+        {
+            "errorId": "string",
+            "errorMessage": "string"
+        }
+    )
+    WriteDataToJsonFileInCurrentDirectory("_jsonschema_error_404", file_path, error_404_schema)
+
     error_500_schema = CreateJsonSchema(
         "Server error 500 json schema", 
         "General server error schema", 
@@ -133,4 +148,4 @@ def CreateJsonSchemas():
     )
     WriteDataToJsonFileInCurrentDirectory("_jsonschema_error_500", file_path, error_500_schema)
     
-    return [success_200_schema, error_400_schema, error_500_schema]
+    return [success_200_schema, error_400_schema, error_404_schema, error_500_schema]

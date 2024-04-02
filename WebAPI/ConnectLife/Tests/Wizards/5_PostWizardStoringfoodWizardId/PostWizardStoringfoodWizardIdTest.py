@@ -8,21 +8,20 @@ from Common.JsonHelpers import ValidateJson, getWizardIdsForType
 from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from server_error_json_schema import server_error_json_schema
-from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedDataDirectory
+from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedDataDirectory, ReadTxtFile
 
 wizard_ids = getWizardIdsForType("Storingfood", ReadFileFromSharedDataDirectory("collected_wizards.json"))
+food_categories_list = ReadTxtFile(os.path.join(ROOT_PROJECT_PATH, "StaticData/food_categories.txt"))
 
 @pytest.mark.test_env
 @pytest.mark.parametrize("payload", wizard_ids)
-def test_post_wizard_storingfood_wizard_id(token: str, payload):
-    pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "wizard_id", "endpoint"])
+@pytest.mark.parametrize("category", food_categories_list)
+def test_post_wizard_storingfood_wizard_id(token: str, payload, category):
+    pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "wizard_id", "payload.category", "endpoint"])
     url = f"{pytest.api_base_url}/api/v1/wizard/storingfood/{payload['wizard_id']}"
     print("\nTesting " + url)
     
-    payload = {
-        "category": "Beef"
-    }
-    # todo get all categories
+    payload = { "category": category }
     
     headers = {
         'Authorization': 'Bearer ' + token + '',
@@ -41,22 +40,22 @@ def test_post_wizard_storingfood_wizard_id(token: str, payload):
             print(f"Request attempt: #{attempts}")
     
     if response == None:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", payload["wizard_id"], url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", payload["wizard_id"], category, url])
         assert False
 
     if not response.status_code in [200, 400, 500]:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unknown response status code: { str(response.status_code) }", payload["wizard_id"], url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unknown response status code: { str(response.status_code) }", payload["wizard_id"], category, url])
         assert False
 
     try:
         unicode_escaped_data = json.dumps(response.json())
         data = json.loads(unicode_escaped_data)
     except Exception as ex:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Exception: {ex}, Malformed data: {str(response.text)}", payload["wizard_id"], url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Exception: {ex}, Malformed data: {str(response.text)}", payload["wizard_id"], category, url])
         assert False
     
     if len(data) <= 0:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Empty response: {data}", payload["wizard_id"], url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Empty response: {data}", payload["wizard_id"], category, url])
         assert False
     
     [success_200_schema, error_400_schema, error_500_schema] = CreateJsonSchemas()
@@ -70,19 +69,19 @@ def test_post_wizard_storingfood_wizard_id(token: str, payload):
         isValidOrTrue = ValidateJson(data, error_500_schema)
 
     if isValidOrTrue != True:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{isValidOrTrue}", payload["wizard_id"], url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{isValidOrTrue}", payload["wizard_id"], category, url])
         assert False
     
     if response.status_code == 200:
         pass
     elif response.status_code == 400:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", payload["wizard_id"], url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", payload["wizard_id"], category, url])
         assert False
     elif response.status_code == 500:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", payload["wizard_id"], url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", payload["wizard_id"], category, url])
         assert False
     else:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", payload["wizard_id"], url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", payload["wizard_id"], category, url])
         assert False
 
 def CreateJsonSchemas():

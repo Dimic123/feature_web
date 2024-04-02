@@ -15,8 +15,10 @@ manually_added_auids = [
     "0000000000007393970004202300030330003"
 ]
 
-auids = ReadFileFromStaticDataDirectory("auids.json")
 payloads = ReadFileFromSharedDataDirectory("Put_appliances_payloads_profile_afota.json")
+sapIds_list = ReadFileFromSharedDataDirectory("sapIds.json")
+
+auids = list(map((lambda x: "000000000000" + str(x) + "0000000000000000000"), sapIds_list))
 
 if auids == []:
     auids = manually_added_auids

@@ -8,9 +8,12 @@ from Common.JsonHelpers import ValidateJson, getWizardIdsForType
 from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from server_error_json_schema import server_error_json_schema
-from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedDataDirectory
+from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedDataDirectory, ReadTxtFile
 
 wizard_ids = getWizardIdsForType("Storingfood", ReadFileFromSharedDataDirectory("collected_wizards.json"))
+food_categories_list = ReadTxtFile(os.path.join(ROOT_PROJECT_PATH, "StaticData/food_categories.txt"))
+
+food_categories_list_as_payload = list(map((lambda x: {"category": x}), food_categories_list))
 
 @pytest.mark.test_env
 @pytest.mark.parametrize("test_case_obj", wizard_ids)
@@ -19,12 +22,7 @@ def test_post_wizard_storingfood_multiple_wizard_id(token: str, test_case_obj):
     url = f"{pytest.api_base_url}/api/v1/wizard/storingfood/multiple/{test_case_obj['wizard_id']}"
     print("\nTesting " + url)
     
-    payload = [
-        {
-            "category": "Beef"
-        }
-    ]
-    # todo get all categories
+    payload = food_categories_list_as_payload
     
     headers = {
         'Authorization': 'Bearer ' + token + '',

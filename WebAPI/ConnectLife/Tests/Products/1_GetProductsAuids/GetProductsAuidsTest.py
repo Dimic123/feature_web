@@ -15,16 +15,17 @@ manually_added_auids = [
     "0000000000007393970004202300030330003"
 ]
 
-auids = ReadFileFromStaticDataDirectory("auids.json")
-sapIds = ReadFileFromSharedDataDirectory("sapIds.json")
+read_auids = ReadFileFromStaticDataDirectory("auids.json")
+sapIds_list = ReadFileFromSharedDataDirectory("sapIds.json")
+auids = list(map((lambda x: "000000000000" + str(x) + "0000000000000000000"), sapIds_list))
 
-auids_and_sapIds = auids + sapIds
+all_auids = auids + read_auids
 
-if auids_and_sapIds == []:
-    auids_and_sapIds = manually_added_auids
+if all_auids == []:
+    all_auids = manually_added_auids
 
 @pytest.mark.test_env
-@pytest.mark.parametrize("auid", auids_and_sapIds)
+@pytest.mark.parametrize("auid", all_auids)
 def test_get_products_auids(token: str, auid):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])
     url = f"{pytest.api_base_url}/api/v1/products/{auid}"

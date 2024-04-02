@@ -82,12 +82,12 @@ class OAuth2Authorization:
         
         if "errorDetails" in data:
             print(f"ERROR DETAILS {url}")
-            print(f"******* {data["errorDetails"]}")
+            print(f"******* {data['errorDetails']}")
             return
         
         if "error_description" in data:
             print(f"ERROR DESCRIPTION {url}")
-            print(f"******* {data["error_description"]}")
+            print(f"******* {data['error_description']}")
             return
         
         if "sessionInfo" in data:
@@ -121,7 +121,7 @@ class OAuth2Authorization:
         
         if "error_description" in data:
             print(f"ERROR DESCRIPTION {url}")
-            print(f"******* {data["error_description"]}")
+            print(f"******* {data['error_description']}")
             return
         
         if "id_token" in data:
@@ -155,7 +155,7 @@ class OAuth2Authorization:
         
         if "error_description" in data:
             print(f"ERROR DESCRIPTION {url}")
-            print(f"******* {data["error_description"]}")
+            print(f"******* {data['error_description']}")
             return
         
         if "code" in data:
@@ -190,7 +190,7 @@ class OAuth2Authorization:
         
         if "error_description" in data:
             print(f"ERROR DESCRIPTION {url}")
-            print(f"******* {data["error_description"]}")
+            print(f"******* {data['error_description']}")
             return
         
         if "access_token" in data:
