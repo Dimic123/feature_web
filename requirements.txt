@@ -9,3 +9,5 @@ pytest-selenium
 pytest-selenium[appium]
 rsa
 jsonschema
+openpyxl
+pandas

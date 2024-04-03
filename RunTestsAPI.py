@@ -16,16 +16,16 @@ elif api_url == azure_prod_api_url:
 
 def pre_tests() -> int:
     # order is important
-    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetWizardsAll", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetRecipesIdLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetRecipesPagedDetailLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetRecipesPagedLang", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetConnectivityGroupsProductCodes", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetAppliances", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetProductsAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\PutApplianceApplianceProfileAfota", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetWizardsAll"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetRecipesIdLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetRecipesPagedDetailLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetRecipesPagedLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetConnectivityGroupsProductCodes"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetAppliances"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetProductsAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\PutApplianceApplianceProfileAfota"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
 
-    retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\Content", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\Content"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
 
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\1_GetFaqsAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])              ## SLOWS DOWN
 
@@ -57,13 +57,17 @@ def main() -> int:
     # retcode = pytest.main([f".\WebAPI\ConnectLife\PreTests\GetProductsAuids", "-s", "--auth", "cdc", "--env", "test", "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Wizards\\6_PostWizardStoringfoodMultipleWizardId", "-s", "--auth", "cdc", "--env", "test", "--apiBaseUrl", api_url])
 
-    retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Appliance", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Manuals", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Products", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Recipe", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\WashingPrograms", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Wizards", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Appliance", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Manuals", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Products", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Recipe", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\WashingPrograms", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Wizards", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\5_PostWizardStoringfoodWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\7_PostWizardRefreshWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\8_PostWizardWashingWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
 
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Wizards\\5_PostWizardStoringfoodWizardId", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     
@@ -99,6 +103,6 @@ def clean_error_logs(mode="all"):
 
 if __name__ == "__main__":
     clean_error_logs("all")
-    pre_tests()
+    # pre_tests()
     main()
     clean_error_logs("empty")
