@@ -33,3 +33,15 @@ def get_item_from_list(_substring, _list):
         if _substring in item:
             return item
     return None
+
+def get_number_as_en_word(number: int) -> str:
+    number2word = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine", 0: "zero"}
+    return number2word[number].capitalize()
+
+def get_version_str(string) -> str:
+    if len(string) == 1:
+        return "00" + string
+    elif len(string) == 2:
+        return "0" + string
+    else:
+        return string

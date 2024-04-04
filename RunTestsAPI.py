@@ -67,7 +67,15 @@ def main() -> int:
 
     # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\5_PostWizardStoringfoodWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\7_PostWizardRefreshWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\8_PostWizardWashingWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\8_PostWizardWashingWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\9_PostWizardWashingWizardIdExtra1"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\11_PostWizardWashingEnergySavingWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\12_PostWizardWashingToTumbleWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\13_PostWizardWashingToTumbleWizardIdExtra1"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\14_PostWizardWashingToTumbleWizardIdExtra2"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\15_PostWizardDishwasherWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\16_PostWizardTumbleWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\17_PostWizardWashingProgramWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
 
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Wizards\\5_PostWizardStoringfoodWizardId", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     

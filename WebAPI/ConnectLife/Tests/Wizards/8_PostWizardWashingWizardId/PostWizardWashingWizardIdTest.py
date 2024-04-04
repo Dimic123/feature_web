@@ -36,7 +36,7 @@ for wizard_id in wizard_ids:
             row["payload"]["dirtiness"] = excel_file_pd["DIRTINESS"][idx]
             row["expected_response_obj"]["selectedProgram"] = excel_file_pd["SELECTED_PROGRAM"][idx]
             if not isNaN(excel_file_pd["PROGRAM_OPTION"][idx]):
-                row["expected_response_obj"]["programOptions"] = excel_file_pd["PROGRAM_OPTION"][idx] # convert it to array with strings
+                row["expected_response_obj"]["programOptions"] = excel_file_pd["PROGRAM_OPTION"][idx]
             row["expected_response_obj"]["temperature"] = excel_file_pd["TEMPARATURE"][idx]
 
             if isNaN(row["payload"]["type"][0]) and isNaN(row["payload"]["color"]) and isNaN(row["payload"]["dirtiness"]):
@@ -122,7 +122,7 @@ def test_post_wizard_washing_wizard_id(token: str, test_case_obj):
             pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{errors}", test_case_obj["wizard_id"], str(test_case_obj["payload"]), url])
             assert False
     elif response.status_code == 400:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", test_case_obj["wizard_id"], str(test_case_obj["payload"]), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{data}", test_case_obj["wizard_id"], str(test_case_obj["payload"]), url])
         assert False
     elif response.status_code == 500:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", test_case_obj["wizard_id"], str(test_case_obj["payload"]), url])
@@ -148,8 +148,11 @@ def CreateJsonSchemas():
         "Server error 400 json schema", 
         "General server error schema", 
         {
-            "errorId": "string",
-            "errorMessage": "string"
+            "type": "string",
+            "title": "string",
+            "status": "number",
+            "traceId": "string",
+            "errors": "object"
         }
     )
     WriteDataToJsonFileInCurrentDirectory("_jsonschema_error_400", file_path, error_400_schema)

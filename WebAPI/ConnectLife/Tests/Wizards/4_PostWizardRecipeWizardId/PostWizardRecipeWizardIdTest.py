@@ -90,7 +90,7 @@ def test_post_wizard_recipe_wizard_id(token: str, payload):
     if response.status_code == 200:
         pass
     elif response.status_code == 400:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", payload["wizard_id"], payload["recipe_id"], payload["level"], payload["servings"], url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{data}", payload["wizard_id"], payload["recipe_id"], payload["level"], payload["servings"], url])
         assert False
     elif response.status_code == 500:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", payload["wizard_id"], payload["recipe_id"], payload["level"], payload["servings"], url])
@@ -131,8 +131,11 @@ def CreateJsonSchemas():
         "Server error 400 json schema", 
         "General server error schema", 
         {
-            "errorId": "string",
-            "errorMessage": "string"
+            "type": "string",
+            "title": "string",
+            "status": "number",
+            "traceId": "string",
+            "errors": "object"
         }
     )
     WriteDataToJsonFileInCurrentDirectory("_jsonschema_error_400", file_path, error_400_schema)
