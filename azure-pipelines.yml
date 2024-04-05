@@ -40,6 +40,9 @@ steps:
 
 - script: |
     echo "Execute pre-tests"
+    echo "I want to test: "
+    echo $(env)
+    echo $(api_url)
   displayName: 'Execute pre-tests'
 
 - script: |
