@@ -1,5 +1,10 @@
+_sap_ids_sample.txt
+report_logs/*
+SharedData/*
 _jsonschema_*
 _response_*
+step_*_logs.txt
+error_logs.txt
 
 ./Mobile/UIAutomatorViewer
 ./Mobile/UIAutomatorViewer/*

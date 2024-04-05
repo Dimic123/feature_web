@@ -30,7 +30,7 @@ def CreateJsonSchema(title: str, description: str, data):
     
     if title: schema["title"] = title
     if description: schema["description"] = description
-    
+
     if (IsArray(data)):
         schema["type"] = "array"
         arrTypes = GetArrayOfTypes(data)
@@ -49,6 +49,8 @@ def CreateJsonSchema(title: str, description: str, data):
                     if type(arrEl).__name__ == "list" or type(arrEl).__name__ == "dict":
                         childElement = CreateJsonSchema(None, None, arrEl)
                         schema["items"]["oneOf"].append(childElement)
+                    elif "regex" in data:
+                        pass
                     else:
                         newTypes = ""
                         
@@ -72,8 +74,29 @@ def CreateJsonSchema(title: str, description: str, data):
         schema["properties"] = {}
         
         for key in data:
-            if IsArray(data[key]) or IsObject(data[key]):
+            if "+allowAdditionalProperties" in key:
+                extracted_property_name = key.split("+")[0]
+                if IsArray(data[key]):
+                    schema["properties"][extracted_property_name] = { "type": "array" }
+                    schema["properties"][extracted_property_name]["additionalProperties"] = True
+                elif IsObject(data[key]):
+                    schema["properties"][extracted_property_name] = { "type": "object" }
+                    schema["properties"][extracted_property_name]["additionalProperties"] = True
+            elif "regex:" in key:
+                regex_condition = key[6:]
+                del schema["properties"] # unset properties
+                schema["patternProperties"] = { regex_condition: {} }
+                
+                if IsArray(data[key]) or IsObject(data[key]):
+                    schema["patternProperties"][regex_condition] = CreateJsonSchema(None, None, data[key])
+                elif type(data[key]) == str:
+                    schema["patternProperties"][regex_condition] = GetPropertyTypesArray(data[key])
+            elif IsArray(data[key]) or IsObject(data[key]):
+                if not "properties" in schema:
+                    schema["properties"] = {}
                 schema["properties"][key] = CreateJsonSchema(None, None, data[key])
-            elif type(data[key]) == str:
+            elif type(data[key]) == str:                    
+                if not "properties" in schema:
+                    schema["properties"] = {}
                 schema["properties"][key] = GetPropertyTypesArray(data[key])
     return schema
