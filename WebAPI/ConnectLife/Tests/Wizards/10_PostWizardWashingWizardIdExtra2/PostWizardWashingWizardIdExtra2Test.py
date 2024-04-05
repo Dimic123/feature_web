@@ -8,6 +8,7 @@ from Common.JsonHelpers import ValidateJson, getWizardIdsForType
 from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from server_error_json_schema import server_error_json_schema
+from base_json_schema_400_error_response_wizards import wizards_400_error_json_schema
 from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedDataDirectory
 from Common.GeneralHelpers import get_possible_errors, get_item_from_list, isNaN
 
@@ -131,7 +132,8 @@ def CreateJsonSchemas():
         "GET SUCCESS 200", 
         "...",
         {
-            "motorSpinSpeed": "number"
+            "motorSpinSpeed": "number",
+            "wizardId": "string"
         }
     )
     WriteDataToJsonFileInCurrentDirectory("_jsonschema_success_200", file_path, success_200_schema)
@@ -139,13 +141,7 @@ def CreateJsonSchemas():
     error_400_schema = CreateJsonSchema(
         "Server error 400 json schema", 
         "General server error schema", 
-        {
-            "type": "string",
-            "title": "string",
-            "status": "number",
-            "traceId": "string",
-            "errors": "object"
-        }
+        wizards_400_error_json_schema
     )
     WriteDataToJsonFileInCurrentDirectory("_jsonschema_error_400", file_path, error_400_schema)
 
