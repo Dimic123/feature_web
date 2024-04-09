@@ -10,6 +10,11 @@ def WriteDataToJsonFileInCurrentDirectory(name: str, currentFilePath: str, data,
         
 def SaveToSharedDataDirectory(file_name, data):
     ROOT_DIR = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-1])
+    shared_data_dir = os.path.join(ROOT_DIR, "SharedData")
+
+    if not os.path.exists(shared_data_dir):
+        os.makedirs(shared_data_dir)
+
     file_path = os.path.join(os.path.join(ROOT_DIR, "SharedData"), file_name)
     with open(file_path, "w") as write_file:
         write_file.write(json.dumps(data, indent=3))
