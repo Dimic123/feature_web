@@ -19,8 +19,8 @@ class CsvLogWriter:
         rowStr = ""
         lastIdx = len(values) - 1
         for idx, value in enumerate(values):
-            if idx == lastIdx: rowStr += value
-            else: rowStr += value + self.delimiter
+            if idx == lastIdx: rowStr += str(value)
+            else: rowStr += str(value) + self.delimiter
         self.rows.append(rowStr)
     
     def writeToLogFile(self):
