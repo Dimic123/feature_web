@@ -1,4 +1,4 @@
-import requests, json, copy, xmltodict, os
+import requests, json, copy
 from xml.etree import ElementTree as ET
 
 def get_all_wizard_logic_xml(access_token):
@@ -21,48 +21,55 @@ def get_all_wizard_logic_xml(access_token):
         })
     return wizards
 
-def convert_xml_to_json_washing_machine(xml_structure):
+def conditionally_append_test_case(json_data, list_of_excel_configurations):
+    for excel_config in list_of_excel_configurations:
+        meets_criteria = True
+        for sheet_criteria in excel_config["excel_sheet_criteria"]:
+            if "rule_negation" in sheet_criteria and sheet_criteria["rule_negation"] == True:
+                if sheet_criteria["property"] in json_data[sheet_criteria["type"]]:
+                    meets_criteria = False
+            else:
+                if not sheet_criteria["property"] in json_data[sheet_criteria["type"]]:
+                    meets_criteria = False
+        if meets_criteria and json_data["outputs"] != {}:
+            excel_config["excel_sheet"].append(json_data)
+
+def convert_xml_to_json_GENERIC(xml_structure, list_of_excel_configurations):
     ELEMENT = ET.fromstring(xml_structure)
     tree = ET.ElementTree(ELEMENT)
-
-    wash_sheet = []
-    sensitivity_sheet = []
-    stain_sheet = []
     
     for item in tree.getroot():
         if "root" == item.tag:
             for child in item:
                 json_data = { "node": {}, "outputs": {} }
-                recursively_convert_xml_to_json_washing_machine(child, json_data, wash_sheet, sensitivity_sheet, stain_sheet)
+                json_data[child.tag][child.attrib["attribute"]] = child.attrib["value"]
+                recursively_convert_xml_to_json_GENERIC(child, json_data, list_of_excel_configurations)
         else:
             raise Exception("Root tag is missing")
-    return [wash_sheet, sensitivity_sheet, stain_sheet]
 
-def recursively_convert_xml_to_json_washing_machine(root, json_data, wash_sheet, sensitivity_sheet, stain_sheet):
-    if len(root) == 0:
-        json_data[root.tag][root.attrib["attribute"]] = root.attrib["value"]
+def recursively_convert_xml_to_json_GENERIC(root, json_data, list_of_excel_configurations):
+    if len(root) > 0:
+        outputs = []
+        for child in root:
+            if child.tag == "node":
+                json_data[child.tag][child.attrib["attribute"]] = child.attrib["value"]
+                deep_copy = copy.deepcopy(json_data)
+                recursively_convert_xml_to_json_GENERIC(child, deep_copy, list_of_excel_configurations)
+            elif child.tag == "outputs":
+                outputs.append({ "tag": child.tag, "attrib": child.attrib["name"], "value": child.attrib["value"] })
+        for output in outputs:
+            json_data[output["tag"]][output["attrib"]] = output["value"]
+
+        conditionally_append_test_case(json_data, list_of_excel_configurations)
     else:
-        if root[0].tag == "outputs":
+        if "attribute" in root.attrib:
             json_data[root.tag][root.attrib["attribute"]] = root.attrib["value"]
-            for item in root:
-                json_data[item.tag][item.attrib["name"]] = item.attrib["value"]
-            # Excel "wash" sheet
-            if "TYPE" in json_data["node"] and "COLOR" in json_data["node"] and "DIRTINESS" in json_data["node"] and not "STAIN" in json_data["node"]:
-                wash_sheet.append(json_data)
-            # Excel "sensitivity" sheet
-            if "TYPE" in json_data["node"] and "SENSITIVITY" in json_data["node"] and not "STAIN" in json_data["node"]:
-                sensitivity_sheet.append(json_data)
-            # Excel "stains" sheet
-            if "COLOR" in json_data["node"] and "STAIN" in json_data["node"]:
-                stain_sheet.append(json_data)
+            # maybe allow outputs to be empty in this case -> test cases in excel can also have empty outputs
+            # if "yes", comment the if statement
+            if json_data["outputs"] != {}:
+                conditionally_append_test_case(json_data, list_of_excel_configurations)
         else:
-            number_of_child_nodes = len(root)
-            if number_of_child_nodes > 0:
-                json_data[root.tag][root.attrib["attribute"]] = root.attrib["value"]
-
-                for child in root:
-                    deep_copy = copy.deepcopy(json_data)
-                    recursively_convert_xml_to_json_washing_machine(child, deep_copy, wash_sheet, sensitivity_sheet, stain_sheet)
+            raise Exception("attribute not supported")
 
 def convert_to_int_or_return_str(value: str) -> str | int:
     try:
@@ -95,9 +102,11 @@ def create_combinations_washing_machine(sensitivity, wash, stain):
                     "SELECTED_PROGRAM": str(w_row["outputs"]["SELECTED_PROGRAM"]),
                     "TEMPARATURE": converted_temp,
                     "SENSITIVITY": str(s_row["node"]["SENSITIVITY"]),
-                    "MOTOR_SPIN_SPEED": int(float(s_row["outputs"]["MOTOR_SPIN_SPEED"])),
                     "PROGRAM_OPTION": program_option
                 }
+
+                if "MOTOR_SPIN_SPEED" in s_row["outputs"]:
+                    row["MOTOR_SPIN_SPEED"] = int(float(s_row["outputs"]["MOTOR_SPIN_SPEED"]))
 
                 combinations_without_stain.append(row)
 
@@ -144,9 +153,12 @@ def create_combinations_washing_machine(sensitivity, wash, stain):
                     "SELECTED_PROGRAM": selected_program,
                     "TEMPARATURE": temperature,
                     "SENSITIVITY": combination_without_stain["SENSITIVITY"],
-                    "MOTOR_SPIN_SPEED": combination_without_stain["MOTOR_SPIN_SPEED"],
                     "PROGRAM_OPTION": program_options_as_string
                 }
+
+                if "MOTOR_SPIN_SPEED" in combination_without_stain:
+                    row["MOTOR_SPIN_SPEED"] = combination_without_stain["MOTOR_SPIN_SPEED"]
+
                 combinations_with_stain.append(row)
 
     return [combinations_without_stain, combinations_with_stain]

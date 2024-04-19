@@ -24,8 +24,10 @@ def get_possible_errors(response_data, expected_response_obj, _property):
             if list_as_string != expected_response_obj[_property]:
                 errors += f"{_property} is '{list_as_string}'. Expected value is: {expected_response_obj[_property]}."
         else:
-            if str(response_data[_property]).lower() != str(expected_response_obj[_property]).lower():
-                errors += f"{_property} is '{response_data[_property].lower()}'. Expected value is: '{expected_response_obj[_property].lower()}'."
+            response_string = str(response_data[_property]).lower()
+            expected_string = str(expected_response_obj[_property]).lower()
+            if response_string != expected_string:
+                errors += f"{_property} is '{response_string}'. Expected value is: '{expected_string}'."
     return errors
 
 def get_item_from_list(_substring, _list):

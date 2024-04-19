@@ -9,15 +9,12 @@ from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from server_error_json_schema import server_error_json_schema
 from base_json_schema_400_error_response_wizards import wizards_400_error_json_schema
-from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedDataDirectory
+from Common.FileHelpers import ReadFileFromSharedDataDirectory
 from Common.GeneralHelpers import get_possible_errors
 from WebAPI.ConnectLife.Common.HybrisAuthorization import getHybrisToken
-from Common.HybrisHelpers import get_all_wizard_logic_xml, convert_xml_to_json_washing_machine, create_combinations_washing_machine
+from Common.HybrisHelpers import get_all_wizard_logic_xml, create_combinations_washing_machine, convert_xml_to_json_GENERIC
 
 wizard_ids = getWizardIdsForType("Washing", ReadFileFromSharedDataDirectory("collected_wizards.json"))
-washing_dir_path = os.path.join(ROOT_PROJECT_PATH, "ExcelFiles/Washing")
-washing_dir = os.listdir(washing_dir_path)
-
 all_test_cases_with_wizard_id = []
 
 hybris_token = getHybrisToken()
@@ -26,16 +23,85 @@ if hybris_token != "":
 
     for wizard_obj in wizards:
         if any(x["wizard_id"] == wizard_obj["wizard_id"] for x in wizard_ids):
-            [wash_sheet, sensitivity_sheet, stain_sheet] = convert_xml_to_json_washing_machine(wizard_obj["logic"])
-            [without_stain, with_stain] = create_combinations_washing_machine(sensitivity_sheet, wash_sheet, stain_sheet)
+            if not "default" in wizard_obj["wizard_id"]:
+                excel_configuration_list = [
+                    {
+                        "name": "wash_sheet",
+                        "excel_sheet": [],
+                        "excel_sheet_criteria": [
+                            {
+                                "type": "node",
+                                "property": "TYPE"
+                            },
+                            {
+                                "type": "node",
+                                "property": "COLOR"
+                            },
+                            {
+                                "type": "node",
+                                "property": "DIRTINESS"
+                            },
+                            {
+                                "type": "node",
+                                "property": "STAIN",
+                                "rule_negation": True
+                            }
+                        ]
+                    },
+                    {
+                        "name": "sensitivity_sheet",
+                        "excel_sheet": [],
+                        "excel_sheet_criteria": [
+                            {
+                                "type": "node",
+                                "property": "TYPE"
+                            },
+                            {
+                                "type": "node",
+                                "property": "SENSITIVITY"
+                            },
+                            {
+                                "type": "node",
+                                "property": "STAIN",
+                                "rule_negation": True
+                            }
+                        ]
+                    },
+                    {
+                        "name": "stain_sheet",
+                        "excel_sheet": [],
+                        "excel_sheet_criteria": [
+                            {
+                                "type": "node",
+                                "property": "COLOR"
+                            },
+                            {
+                                "type": "node",
+                                "property": "STAIN"
+                            }
+                        ]
+                    }
+                ]
 
-            for test_case in with_stain:
-                test_case["wizard_id"] = wizard_obj["wizard_id"]
-            all_test_cases_with_wizard_id += with_stain
+                convert_xml_to_json_GENERIC(wizard_obj["logic"], excel_configuration_list)
+                for config in excel_configuration_list:
+                    if config["name"] == "wash_sheet":
+                        wash_sheet = config["excel_sheet"]
+                    if config["name"] == "sensitivity_sheet":
+                        sensitivity_sheet = config["excel_sheet"]
+                    if config["name"] == "stain_sheet":
+                        stain_sheet = config["excel_sheet"]
 
-            for test_case in without_stain:
-                test_case["wizard_id"] = wizard_obj["wizard_id"]
-            all_test_cases_with_wizard_id += without_stain
+                [without_stain, with_stain] = create_combinations_washing_machine(sensitivity_sheet, wash_sheet, stain_sheet)
+
+                for test_case in with_stain:
+                    test_case["wizard_id"] = wizard_obj["wizard_id"]
+                all_test_cases_with_wizard_id += with_stain
+
+                for test_case in without_stain:
+                    if not "default" in wizard_obj["wizard_id"]:
+                        test_case["wizard_id"] = wizard_obj["wizard_id"]
+                all_test_cases_with_wizard_id += without_stain
 
 @pytest.mark.test_env
 @pytest.mark.parametrize("test_case_with_wizard_id", all_test_cases_with_wizard_id)

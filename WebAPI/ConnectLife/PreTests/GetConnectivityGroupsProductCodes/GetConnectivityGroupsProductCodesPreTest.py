@@ -6,7 +6,6 @@ sys.path.append(ROOT_PROJECT_PATH)
 from Common.JsonHelpers import ValidateJson
 from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory, ReadTxtFile
 from Common.JsonSchemaHelpers import CreateJsonSchema
-from Common.FileHelpers import ReadFileFromSharedDataDirectory
 from Common.FileHelpers import SaveToSharedDataDirectory
 
 connGroups = ReadTxtFile(os.path.join(ROOT_PROJECT_PATH, "StaticData/ConnectivityGroups.txt"))
