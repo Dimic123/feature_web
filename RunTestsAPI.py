@@ -15,7 +15,6 @@ elif api_url == azure_prod_api_url:
     env == "prod"
 
 def pre_tests() -> int:
-    pass
     # order is important
     retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetWizardsAll"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetRecipesIdLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
@@ -26,18 +25,22 @@ def pre_tests() -> int:
     retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetProductsAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\PutApplianceApplianceProfileAfota"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\Content"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetAppliancesApplianceProfileAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\PutApplianceApplianceProfileHeidi"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
 
     return retcode
 
 def main() -> int:
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Wizards\\6_PostWizardStoringfoodMultipleWizardId", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\1_GetFaqsAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetApplianceApplianceProfileMultiAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Appliance\\12_GetAppliancesApplianceProfileAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Appliance", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Manuals", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Products", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Recipe", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\WashingPrograms", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Wizards", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Wizards", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     
     # retcode = pytest.main(["WebAPI/HiJuConn/Tests/", "-s", "--auth", "juconnect"])
     return retcode
@@ -70,6 +73,6 @@ def clean_error_logs(mode="all"):
 
 if __name__ == "__main__":
     clean_error_logs("all")
-    pre_tests()
+    # pre_tests()
     main()
     clean_error_logs("empty")

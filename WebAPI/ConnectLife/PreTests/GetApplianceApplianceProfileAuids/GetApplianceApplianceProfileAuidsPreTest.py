@@ -7,32 +7,31 @@ sys.path.append(api_group_folder_path)
 from Common.JsonHelpers import ValidateJson
 from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
-from server_error_json_schema import server_error_json_schema
-from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedDataDirectory, ReadFileFromStaticDataDirectory
+from Common.FileHelpers import ReadFileFromSharedDataDirectory, SaveToSharedDataDirectory
 
 manually_added_auids = [
-    "0000000000007391270001202400040260001", 
-    "0000000000007393970004202300030330003"
+    "0000000000007378500001202000003830003",
+    "0000000000007378910001202300030360001",
+    "0000000000007378910001202300030360002",
+    "0000000000007378910001202300033860002",
+    "0000000000007394880001202200022460001",
+    "0000000000007394030001202200022460001",
+    "0000000000007377260001202100001160001",
+    "0000000000007370910001202300030360001"
 ]
 
-payloads = ReadFileFromSharedDataDirectory("Put_appliances_payloads_profile_afota.json")
-sapIds_list = ReadFileFromSharedDataDirectory("sapIds.json")
-
-auids = list(map((lambda x: "000000000000" + str(x) + "0000000000000000000"), sapIds_list))
-
-if auids == []:
-    auids = manually_added_auids
-
-def getPayloadByAuid(auid, payloads):
-    for payload in payloads:
-        if payload["auid"] == auid:
-            return payload
-    return None
+pairs = []
 
 @pytest.mark.test_env
-@pytest.mark.parametrize("auid", auids)
-def test_get_appliances_profile_auids(token: str, auid):
+@pytest.mark.parametrize("auid", manually_added_auids)
+def test_get_appliances_profile_auids_pre_test(token: str, auid):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])
+
+    auid_len = len(auid)
+    if auid_len > 37:
+        n_to_cut = auid_len - 37
+        auid = auid[:(-1 * n_to_cut)]
+
     url = f"{pytest.api_base_url}/api/v1/appliance/appliance-profile/{auid}"
     print("\nTesting " + url)
     
@@ -84,17 +83,10 @@ def test_get_appliances_profile_auids(token: str, auid):
         assert False
     
     if response.status_code == 200:
-        global payloads
-        payload = getPayloadByAuid(auid, payloads)
-
-        unchanged_appliance_profile = False
-        if payload != None:
-            if "Firmware" in data:
-                for prop in data["Firmware"]:
-                    if data["Firmware"][prop] != payload["firmware"][prop]:
-                        unchanged_appliance_profile = True
-        if unchanged_appliance_profile:
-            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"appliance-profile changes were not saved", str(auid), url])
+        if "heidi" in data and "auId" in data:
+            auid_heidi_pair = { "auid": data["auId"], "heidi": data["heidi"] }
+            pairs.append(auid_heidi_pair)
+            SaveToSharedDataDirectory("auid_heidi_pairs.json", pairs)
     elif response.status_code == 400:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"statusDescription: {data['statusDescription']}, statusCode: {data['statusCode']}", str(auid), url])
         assert False
@@ -241,7 +233,10 @@ def CreateJsonSchemas():
     error_500_schema = CreateJsonSchema(
         "Server error 500 json schema", 
         "General server error schema", 
-        server_error_json_schema
+        {
+            "errorId": "string",
+            "errorMessage": "string"
+        }
     )
     WriteDataToJsonFileInCurrentDirectory("_jsonschema_error_500", file_path, error_500_schema)
     

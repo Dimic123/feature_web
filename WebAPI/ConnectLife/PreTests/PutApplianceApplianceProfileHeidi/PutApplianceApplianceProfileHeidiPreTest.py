@@ -10,34 +10,16 @@ from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedDataDirectory
 
-products_arr = ReadFileFromSharedDataDirectory("list_of_products_by_auids.json")
-
-filtered_products = []
-for product_arr in products_arr:
-    for product in product_arr:
-        if "mcuNumber" in product:
-            if len(product["mcuNumber"]) > 0:
-                if len(product["auid"]) == 37: # only get AUIDs
-                    filtered_products.append(product)
-
-payloads = []
+pairs = ReadFileFromSharedDataDirectory("auid_heidi_pairs.json")
 
 @pytest.mark.test_env
-@pytest.mark.parametrize("test_case_obj", filtered_products)
-def test_put_appliance_appliance_profile_afota_pre_test(token: str, test_case_obj):
-    pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "payload.firmware", "endpoint"])
-    url = f"{pytest.api_base_url}/api/v1/appliance/appliance-profile-afota"
+@pytest.mark.parametrize("pair", pairs)
+def test_put_appliance_appliance_profile_heidi(token: str, pair):
+    pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "heidi", "endpoint"])
+    url = f"{pytest.api_base_url}/api/v1/appliance/appliance-profile-heidi"
     print("\nTesting " + url)
     
-    payload = {
-        "auid": test_case_obj["auid"],
-        "firmware": {
-            "WiFi": "string"
-        }
-    }
-
-    for mcuNumber in test_case_obj["mcuNumber"]:
-        payload["firmware"][mcuNumber] = f"{randint(100, 999)}.{randint(100, 999)}.{randint(100, 999)}"
+    payload = { "auid": pair["auid"], "heidi": pair["heidi"] }
     
     headers = {
         'Authorization': 'Bearer ' + token + '',
@@ -56,22 +38,22 @@ def test_put_appliance_appliance_profile_afota_pre_test(token: str, test_case_ob
             print(f"Request attempt: #{attempts}")
     
     if response == None:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", test_case_obj["auid"], str(payload), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", pair["auid"], pair["heidi"], url])
         assert False
 
     if not response.status_code in [200, 400, 500]:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unknown response status code: { str(response.status_code) }", test_case_obj["auid"], str(payload), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unknown response status code: { str(response.status_code) }", pair["auid"], pair["heidi"], url])
         assert False
 
     try:
         unicode_escaped_data = json.dumps(response.json())
         data = json.loads(unicode_escaped_data)
     except Exception as ex:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Exception: {ex}, Malformed data: {str(response.text)}", test_case_obj["auid"], str(payload), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Exception: {ex}, Malformed data: {str(response.text)}", pair["auid"], pair["heidi"], url])
         assert False
     
     if len(data) <= 0:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Empty response: {data}", test_case_obj["auid"], str(payload), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Empty response: {data}", pair["auid"], pair["heidi"], url])
         assert False
     
     [success_200_schema, error_400_schema, error_404_schema, error_500_schema] = CreateJsonSchemas()
@@ -87,23 +69,22 @@ def test_put_appliance_appliance_profile_afota_pre_test(token: str, test_case_ob
         isValidOrTrue = ValidateJson(data, error_500_schema)
 
     if isValidOrTrue != True:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{isValidOrTrue}", test_case_obj["auid"], str(payload), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{isValidOrTrue}", pair["auid"], pair["heidi"], url])
         assert False
     
     if response.status_code == 200:
-        payloads.append(payload)
-        SaveToSharedDataDirectory("Put_appliances_payloads_profile_afota.json", payloads)
+        print(data)
     elif response.status_code == 400:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"statusDescription: {data['statusDescription']}, statusCode: {data['statusCode']}", test_case_obj["auid"], str(payload), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"statusDescription: {data['statusDescription']}, statusCode: {data['statusCode']}", pair["auid"], pair["heidi"], url])
         assert False
     elif response.status_code == 404:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"statusDescription: {data['statusDescription']}, statusCode: {data['statusCode']}", test_case_obj["auid"], str(payload), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"statusDescription: {data['statusDescription']}, statusCode: {data['statusCode']}", pair["auid"], pair["heidi"], url])
         assert False
     elif response.status_code == 500:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", test_case_obj["auid"], str(payload), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", pair["auid"], pair["heidi"], url])
         assert False
     else:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", test_case_obj["auid"], str(payload), url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", pair["auid"], pair["heidi"], url])
         assert False
 
 def CreateJsonSchemas():

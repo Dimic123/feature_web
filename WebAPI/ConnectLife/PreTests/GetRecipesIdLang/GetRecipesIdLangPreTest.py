@@ -97,7 +97,7 @@ def test_get_recipes_id_lang_pre_test(token: str, pair, lang):
         if noOfPersonsMin <= noOfPersonsDefault and noOfPersonsMax >= noOfPersonsDefault:
             pass
         else:
-            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"noOfPersonsDefault is not withing noOfPersonsMin,noOfPersonsMax values", pair['wizard_id'], pair['recipe_id'], lang, url])
+            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"noOfPersonsDefault[{noOfPersonsDefault}] is not within noOfPersonsMin[{noOfPersonsMin}],noOfPersonsMax[{noOfPersonsMax}] values", pair['wizard_id'], pair['recipe_id'], lang, url])
             assert False
 
         post_request_payload = {
@@ -111,10 +111,10 @@ def test_get_recipes_id_lang_pre_test(token: str, pair, lang):
         recipeId_wizardId_post_request_payload_list.append(post_request_payload)
         SaveToSharedDataDirectory("recipeId_wizardId_post_request_payload_list.json", recipeId_wizardId_post_request_payload_list)
     elif response.status_code == 500:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", recipe_id, lang, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", pair['recipe_id'], lang, url])
         assert False
     else:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", recipe_id, lang, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", pair['recipe_id'], lang, url])
         assert False
 
 def CreateJsonSchemas():
