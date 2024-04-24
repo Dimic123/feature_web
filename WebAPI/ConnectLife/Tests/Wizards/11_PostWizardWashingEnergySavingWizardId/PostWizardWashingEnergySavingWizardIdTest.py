@@ -10,7 +10,7 @@ from Common.JsonSchemaHelpers import CreateJsonSchema
 from server_error_json_schema import server_error_json_schema
 from base_json_schema_400_error_response_wizards import wizards_400_error_json_schema
 from Common.FileHelpers import ReadFileFromSharedDataDirectory
-from Common.GeneralHelpers import get_possible_errors
+from Common.GeneralHelpers import get_possible_errors, get_number_as_en_word
 from WebAPI.ConnectLife.Common.HybrisAuthorization import getHybrisToken
 from Common.HybrisHelpers import get_all_wizard_logic_xml, convert_xml_to_json_GENERIC
 
@@ -23,7 +23,7 @@ if hybris_token != "":
 
     for wizard_obj in wizards:
         if any(x["wizard_id"] == wizard_obj["wizard_id"] for x in wizard_ids):
-            # if not "default" in wizard_obj["wizard_id"]:
+            # if not "default" in wizard_obj["wizard_id"]: ## TODO: uncomment this later
             excel_configuration_list = [
                 {
                     "name": "energy_saving_wizard_sheet",
@@ -47,7 +47,7 @@ if hybris_token != "":
                     energy_saving_wizard_sheet = config["excel_sheet"]
 
             for test_case in energy_saving_wizard_sheet:
-                if not "default" in wizard_obj["wizard_id"]:
+                # if not "default" in wizard_obj["wizard_id"]: ## TODO: uncomment this later
                     test_case["wizard_id"] = wizard_obj["wizard_id"]
             all_test_cases_with_wizard_id += energy_saving_wizard_sheet
 
@@ -120,6 +120,12 @@ def test_post_wizard_washing_energy_saving_wizard_id(token: str, test_case_obj):
     
     if response.status_code == 200:
         errors = ""
+        if "eco" in _expected_results:
+            if _expected_results["eco"] == "/":
+                _expected_results["eco"] = "None"
+            else:
+                _expected_results["eco"] = get_number_as_en_word(int(_expected_results["eco"]))
+
         if "eco" in _expected_results:
             errors += get_possible_errors(data, _expected_results, "eco")
         errors += get_possible_errors(data, _expected_results, "wizardId")
