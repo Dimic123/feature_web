@@ -32,7 +32,8 @@ def pre_tests() -> int:
 
 def main() -> int:
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\1_GetFaqsAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\11_PostWizardWashingEnergySavingWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\6_PostWizardStoringfoodMultipleWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\6_PostWizardStoringfoodMultipleWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Appliance\\12_GetAppliancesApplianceProfileAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Appliance", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
