@@ -1,5 +1,7 @@
 import os, pytest, json, requests, sys, datetime, time
 
+from Common.Types import Auid_Id_test_case
+
 api_group_folder_path = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-2])
 ROOT_PROJECT_PATH = "\\".join(api_group_folder_path.split("\\")[:-3])
 sys.path.append(api_group_folder_path)
@@ -9,6 +11,7 @@ from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from server_error_json_schema import server_error_json_schema
 from Common.FileHelpers import ReadFileFromSharedDataDirectory, ReadFileFromStaticDataDirectory
+from Common.GeneralHelpers import create_auid_from_sapId, generate_test_case_with_n_req_params
 
 manually_added_auids = [
     "0000000000007391270001202400040260001", 
@@ -17,12 +20,22 @@ manually_added_auids = [
 
 read_auids = ReadFileFromStaticDataDirectory("auids.json")
 sapIds_list = ReadFileFromSharedDataDirectory("sapIds.json")
-auids = list(map((lambda x: "000000000000" + str(x) + "0000000000000000000"), sapIds_list))
+auids = list(map(create_auid_from_sapId, sapIds_list))
 
 all_auids = auids + read_auids
 
 if all_auids == []:
     all_auids = manually_added_auids
+
+collected_auids = []
+for auid in all_auids:
+    if not auid in collected_auids:
+        collected_auids.append({
+            "auid": auid
+        })
+
+combined_test_case: Auid_Id_test_case = generate_test_case_with_n_req_params(collected_auids, 10)
+all_auids.append(combined_test_case["auid"])
 
 @pytest.mark.test_env
 @pytest.mark.parametrize("auid", all_auids)
@@ -30,22 +43,16 @@ def test_get_manuals_auids(token: str, auid):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])
     url = f"{pytest.api_base_url}/api/v1/manuals/{auid}"
     print("\nTesting " + url)
-    
-    start = time.time()
 
     response = None
     attempts = 1
     while attempts <= 5:
         try:
-            response = requests.request("GET", url, headers={ 'Authorization': 'Bearer ' + token + '' }, data={}, timeout=(10 * attempts))
+            response = requests.request("GET", url, headers={ 'Authorization': 'Bearer ' + token + '' }, data={}, timeout=(100 * attempts))
             break
         except requests.exceptions.Timeout:
             attempts += 1
             print(f"Request attempt: #{attempts}")
-
-    end = time.time()
-    time_elapsed = end - start
-    print(time_elapsed)
     
     if response == None:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", auid, url])

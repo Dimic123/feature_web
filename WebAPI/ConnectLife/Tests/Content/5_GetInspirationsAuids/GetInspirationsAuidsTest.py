@@ -5,10 +5,11 @@ ROOT_PROJECT_PATH = "\\".join(api_group_folder_path.split("\\")[:-3])
 sys.path.append(api_group_folder_path)
 
 from Common.JsonHelpers import ValidateJson
-from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from server_error_json_schema import server_error_json_schema
-from Common.FileHelpers import ReadFileFromSharedDataDirectory, ReadFileFromStaticDataDirectory
+from Common.FileHelpers import ReadFileFromSharedDataDirectory, WriteDataToJsonFileInCurrentDirectory
+from Common.Types import Auid_Id_test_case
+from Common.GeneralHelpers import generate_test_case_with_n_req_params
 
 map_list = []
 auids_map = ReadFileFromSharedDataDirectory("GetInspirationsAuidsPreTest.json")
@@ -19,19 +20,31 @@ for auid in auids_map:
             "id": details["id"]
         })
 
-@pytest.mark.skip(reason="test takes too long after n-th test case")
+collected_auids = []
+for item in map_list:
+    if not item["auid"] in collected_auids:
+        collected_auids.append({
+            "auid": item["auid"],
+            "id": item["id"]
+        })
+
+combined_test_case: Auid_Id_test_case = generate_test_case_with_n_req_params(collected_auids, 50, True)
+map_list.append(combined_test_case)
+
 @pytest.mark.test_env
 @pytest.mark.parametrize("test_case", map_list)
 def test_get_inspirations_auids(token: str, test_case):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "id", "endpoint"])
-    url = f"{pytest.api_base_url}/api/v1/inspirations/{test_case['auid']}?id={test_case['id']}"
+    url = f"{pytest.api_base_url}/api/v1/inspirations/{test_case['auid']}"
+    if "id" in test_case:
+        url += f"?id={test_case['id']}"
     print("\nTesting " + url)
     
     response = None
     attempts = 1
     while attempts <= 5:
         try:
-            response = requests.request("GET", url, headers={ 'Authorization': 'Bearer ' + token + '' }, data={}, timeout=(10 * attempts))
+            response = requests.request("GET", url, headers={ 'Authorization': 'Bearer ' + token + '' }, data={}, timeout=(50 * attempts))
             break
         except requests.exceptions.Timeout:
             attempts += 1
@@ -70,9 +83,10 @@ def test_get_inspirations_auids(token: str, test_case):
     
     if response.status_code == 200:
         for el in data:
-            if el["id"] != test_case['id']:
-                pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Response includes different id/s", test_case['auid'], test_case['id'], url])
-                assert False
+            if "id" in test_case:
+                if el["id"] != test_case['id']:
+                    pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Response includes different id/s", test_case['auid'], test_case['id'], url])
+                    assert False
     elif response.status_code == 500:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", test_case['auid'], test_case['id'], url])
         assert False

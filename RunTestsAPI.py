@@ -31,8 +31,9 @@ def pre_tests() -> int:
     return retcode
 
 def main() -> int:
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content\\1_GetFaqsAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\6_PostWizardStoringfoodMultipleWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Manuals\\1_GetManualsAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Products\\1_GetProductsAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Manuals\\1_GetManualsAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\Tests\Wizards\\6_PostWizardStoringfoodMultipleWizardId"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Appliance\\12_GetAppliancesApplianceProfileAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Appliance", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
@@ -73,7 +74,7 @@ def clean_error_logs(mode="all"):
             print(ex)
 
 if __name__ == "__main__":
-    clean_error_logs("all")
+    # clean_error_logs("all")
     # pre_tests()
     main()
-    clean_error_logs("empty")
+    # clean_error_logs("empty")

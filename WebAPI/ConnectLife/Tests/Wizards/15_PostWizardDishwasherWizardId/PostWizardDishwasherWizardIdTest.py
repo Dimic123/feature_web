@@ -66,7 +66,7 @@ def test_post_wizard_dishwasher_wizard_id(token: str, test_case_obj):
     if "TYPE" in test_case_obj["node"]:
         _payload["type"] = test_case_obj["node"]["TYPE"]
     if "SOIL_LEVEL" in test_case_obj["node"]:
-        _payload["soilLevel"] = test_case_obj["node"]["SOIL_LEVEL"]
+        _payload["soilLevel"] = str(test_case_obj["node"]["SOIL_LEVEL"]).strip()
     if "WAY_OF_WASH" in test_case_obj["node"]:
         _payload["wayOfWash"] = test_case_obj["node"]["WAY_OF_WASH"]
 

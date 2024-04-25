@@ -1,4 +1,5 @@
-import requests
+import requests, random
+from Common.Types import Auid_Id_test_case
 
 def SendRequest(reqType, url, headers, payload, timeout: int):
     return requests.request(reqType, url, headers=headers, data=payload, timeout=timeout)
@@ -47,3 +48,22 @@ def get_version_str(string) -> str:
         return "0" + string
     else:
         return string
+
+def create_auid_from_sapId(sapId):
+    auid = "000000000000" + str(sapId)
+    number_of_trailing_zeros = 37 - len(auid)
+    auid += ("0" * number_of_trailing_zeros)
+    return auid
+
+def generate_test_case_with_n_req_params(all_samples, n, includeId=False) -> Auid_Id_test_case:
+    narrow_selection = random.sample(all_samples, n)
+    test_case = {"auid": "", "id": ""}
+
+    for pair in narrow_selection:
+        test_case["auid"] += str(pair["auid"]) + ";"
+        if includeId == True:
+            if test_case["id"] == "":
+                test_case["id"] = pair["id"]
+
+    test_case["auid"] = test_case["auid"][:-1]
+    return test_case
