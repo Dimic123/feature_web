@@ -26,13 +26,13 @@ steps:
 
 - script: |
     echo "##vso[task.setvariable variable=currentDirectory;]$(Build.SourcesDirectory)"
-  displayName: 'saving variable value'
+  displayName: 'Saving variable value'
 
 - task: PythonScript@0
   inputs:
     scriptSource: inline
     script: |
+      import subprocess
       test_api_path = f"$(currentDirectory)/RunTestsAPI.py"
-      print(test_api_path)
-      # python ./RunTestsAPI.py -e="test" -ap="aws"
+      subprocess.run(["python", test_api_path, "-e='test'", "-ap='aws'"])
   displayName: 'Run python script'
