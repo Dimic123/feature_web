@@ -1,4 +1,4 @@
-import os, pytest, json, requests, sys, datetime, pandas
+import os, pytest, json, requests, sys, datetime
 
 api_group_folder_path = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-2])
 ROOT_PROJECT_PATH = "\\".join(api_group_folder_path.split("\\")[:-3])

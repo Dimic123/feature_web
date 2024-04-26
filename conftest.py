@@ -1,5 +1,5 @@
 
-import json, os, pytest, requests, re
+import os, pytest
 from selenium import webdriver
 from appium import webdriver as appdriver
 from appium.options.android import UiAutomator2Options
