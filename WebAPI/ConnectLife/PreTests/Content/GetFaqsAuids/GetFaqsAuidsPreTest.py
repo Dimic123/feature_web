@@ -1,13 +1,14 @@
-import os, pytest, json, requests, sys, datetime, time
+import os, pytest, json, requests, sys, datetime
 
 api_group_folder_path = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-2])
 ROOT_PROJECT_PATH = "\\".join(api_group_folder_path.split("\\")[:-3])
 sys.path.append(api_group_folder_path)
 
 from Common.JsonHelpers import ValidateJson
-from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory, SaveToSharedDataDirectory
+from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from Common.FileHelpers import ReadFileFromSharedDataDirectory, ReadFileFromStaticDataDirectory
+from Common.GeneralHelpers import create_auid_from_sapId
 
 manually_added_auids = [
     "0000000000007391270001202400040260001", 
@@ -15,7 +16,7 @@ manually_added_auids = [
 ]
 
 sapIds_list = ReadFileFromSharedDataDirectory("sapIds.json")
-auids = list(map((lambda x: "000000000000" + str(x) + "0000000000000000000"), sapIds_list))
+auids = list(map(create_auid_from_sapId, sapIds_list))
 read_auids = ReadFileFromStaticDataDirectory("auids.json")
 
 all_auids = auids + read_auids
@@ -23,7 +24,7 @@ all_auids = auids + read_auids
 if all_auids == []:
     all_auids = manually_added_auids
 
-@pytest.mark.skip(reason="test takes too long after n-th test case")
+# @pytest.mark.skip(reason="test takes too long after n-th test case")
 @pytest.mark.test_env
 @pytest.mark.parametrize("auid", all_auids)
 def test_get_faqs_auids_pre_test(token: str, auid):
