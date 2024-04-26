@@ -12,6 +12,7 @@ azure_prod_api_url = "https://api.connectlife.io"
 azure_test_api_url = "https://api-test.connectlife.io"
 aws_test_api_url = "https://dnejtsakgzwih.cloudfront.net"
 
+api_url = azure_test_api_url
 env = config["env"]
 if config["api_provider"] == "aws":
     api_url = aws_test_api_url
