@@ -32,7 +32,7 @@ steps:
   inputs:
     scriptSource: inline
     script: |
-      test_api_path = f"{$(currentDirectory)}/RunTestsAPI.py"
+      test_api_path = f"$(currentDirectory)/RunTestsAPI.py"
       print(test_api_path)
       # python ./RunTestsAPI.py -e="test" -ap="aws"
   displayName: 'Run python script'
