@@ -1,6 +1,6 @@
 import pytest, os, argparse
 
-currentDirectory = os.path.dirname(os.path.realpath(__file__))
+ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 parser = argparse.ArgumentParser(description="Swagger API test tool", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument("-e", "--env", help="API environment")
@@ -24,29 +24,29 @@ elif config["api_provider"] == "azure":
 
 def pre_tests() -> int:
     # order is important
-    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI", "ConnectLife", "PreTests", "GetWizardsAll"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetRecipesIdLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetRecipesPagedDetailLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetRecipesPagedLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetConnectivityGroupsProductCodes"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetAppliances"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetProductsAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\PutApplianceApplianceProfileAfota"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\GetAppliancesApplianceProfileAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([os.path.join(currentDirectory, "WebAPI\ConnectLife\PreTests\PutApplianceApplianceProfileHeidi"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetWizardsAll"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetRecipesIdLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetRecipesPagedDetailLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetRecipesPagedLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetConnectivityGroupsProductCodes"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetAppliances"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetProductsAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "PutApplianceApplianceProfileAfota"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetApplianceApplianceProfileAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "PutApplianceApplianceProfileHeidi"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    # retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetApplianceApplianceProfileMultiAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "Content"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
 
     return retcode
 
 def main() -> int:
-    retcode = pytest.main([os.path.join(currentDirectory, "WebAPI", "ConnectLife", "Tests", "Products", "1_GetProductsAuids"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Appliance\\12_GetAppliancesApplianceProfileAuids", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Appliance", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Content", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Manuals", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Products", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Recipe", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\WashingPrograms", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([f".\WebAPI\ConnectLife\Tests\Wizards", "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "Tests", "Appliance"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "Tests", "Content"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "Tests", "Manuals"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "Tests", "Products"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "Tests", "Recipe"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "Tests", "WashingPrograms"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "Tests", "Wizards"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     
     # retcode = pytest.main(["WebAPI/HiJuConn/Tests/", "-s", "--auth", "juconnect"])
     return retcode
@@ -54,7 +54,7 @@ def main() -> int:
 # mode = [all, empty]
 def clean_error_logs(mode="all"):
     try:
-        for root, subfiles, files in os.walk(os.path.join(currentDirectory, "report_logs")):
+        for root, subfiles, files in os.walk(os.path.join(ROOT_DIR, "report_logs")):
             for f in files:
                 if "_logs_" in f:
                     filePath = os.path.join(root, f)
