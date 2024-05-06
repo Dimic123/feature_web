@@ -43,7 +43,10 @@ steps:
     script: |
       import glob
       print(glob.glob(f"$(currentDirectory)/SharedData/*"))
-  displayName: 'Run python script'
+      shared_files = glob.glob(f"$(currentDirectory)/SharedData/*")
+      for file in shared_files:
+        echo "##vso[task.uploadfile]$(file)"
+  displayName: 'Save shared files'
 
 - script: |
     echo "##vso[task.uploadfile]$(Build.SourcesDirectory)/SharedData/collected_wizards_all.json"
