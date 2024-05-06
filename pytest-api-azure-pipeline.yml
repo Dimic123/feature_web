@@ -37,6 +37,6 @@ steps:
       subprocess.run(["python", test_api_path, "-e='test'", "-ap='aws'"])
   displayName: 'Run python script'
 
-- pwsh: Write-Host "##vso[task.uploadfile]$(Build.SourcesDirectory)/report_logs/*"
+- pwsh: Write-Host "##vso[task.uploadfile]$(Build.SourcesDirectory)/SharedData/collected_wizards_all.json"
   displayName: 'Upload report logs from pipeline run'
   condition: always()
