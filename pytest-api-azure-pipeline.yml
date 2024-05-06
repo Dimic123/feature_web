@@ -45,6 +45,10 @@ steps:
       print(glob.glob(f"$(currentDirectory)/SharedData/*"))
   displayName: 'Run python script'
 
+- script: |
+    echo "##vso[task.uploadfile]$(Build.SourcesDirectory)/SharedData/collected_wizards_all.json"
+  displayName: 'Upload report logs from pipeline run script'
+
 - pwsh: Write-Host "##vso[task.uploadfile]$(Build.SourcesDirectory)/SharedData"
   displayName: 'Upload report logs from pipeline run'
   condition: always()
