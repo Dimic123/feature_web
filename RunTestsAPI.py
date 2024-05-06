@@ -50,6 +50,7 @@ def main() -> int:
     
     # # retcode = pytest.main(["WebAPI/HiJuConn/Tests/", "-s", "--auth", "juconnect"])
     # return retcode
+    pass
 
 # mode = [all, empty]
 def clean_error_logs(mode="all"):
