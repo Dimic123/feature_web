@@ -32,6 +32,16 @@ steps:
   inputs:
     scriptSource: inline
     script: |
+      import glob
+      dir_path = f"$(currentDirectory)/Tests/*"
+      files = glob.glob(dir_path)
+      print(files)
+  displayName: 'Print directory files'
+
+- task: PythonScript@0
+  inputs:
+    scriptSource: inline
+    script: |
       import subprocess
       test_api_path = f"$(currentDirectory)/RunTestsAPI.py"
       subprocess.run(["python", test_api_path, "-e='test'", "-ap='aws'"])
