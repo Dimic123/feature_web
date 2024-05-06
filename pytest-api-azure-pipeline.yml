@@ -32,17 +32,11 @@ steps:
   inputs:
     scriptSource: inline
     script: |
-      import glob
-      dir_path = f"$(currentDirectory)/*"
-      files = glob.glob(dir_path)
-      print(files)
-  displayName: 'Print directory files'
-
-- task: PythonScript@0
-  inputs:
-    scriptSource: inline
-    script: |
       import subprocess
       test_api_path = f"$(currentDirectory)/RunTestsAPI.py"
       subprocess.run(["python", test_api_path, "-e='test'", "-ap='aws'"])
   displayName: 'Run python script'
+
+- pwsh: Write-Host "##vso[task.uploadfile]$(Build.SourcesDirectory)/report_logs/*"
+  displayName: 'Upload report logs from pipeline run'
+  condition: always()
