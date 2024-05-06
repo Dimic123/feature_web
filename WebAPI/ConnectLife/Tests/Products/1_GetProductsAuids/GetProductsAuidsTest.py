@@ -1,9 +1,7 @@
 import os, pytest, json, requests, sys, datetime
-from Common.GeneralHelpers import generate_test_case_with_n_req_params
-from Common.Types import Auid_Id_test_case
 
-api_group_folder_path = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-2])
-ROOT_PROJECT_PATH = "\\".join(api_group_folder_path.split("\\")[:-3])
+api_group_folder_path = os.sep.join(os.path.dirname(os.path.realpath(__file__)).split(os.sep)[:-2])
+ROOT_PROJECT_PATH = os.sep.join(api_group_folder_path.split(os.sep)[:-3])
 sys.path.append(api_group_folder_path)
 
 from Common.JsonHelpers import ValidateJson
@@ -11,7 +9,7 @@ from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from server_error_json_schema import server_error_json_schema
 from Common.FileHelpers import ReadFileFromSharedDataDirectory, ReadFileFromStaticDataDirectory
-from Common.GeneralHelpers import create_auid_from_sapId, generate_test_case_with_n_req_params
+from Common.GeneralHelpers import create_auid_from_sapId
 
 manually_added_auids = [
     "0000000000007391270001202400040260001", 

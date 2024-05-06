@@ -1,15 +1,15 @@
 import json, os
 
 def WriteDataToJsonFileInCurrentDirectory(name: str, currentFilePath: str, data, mode="w"):
-    dirPath = currentFilePath.split("\\")[:-1]
-    filePath = os.path.join("\\".join(dirPath), name + ".json")
+    dirPath = currentFilePath.split(os.sep)[:-1]
+    filePath = os.path.join(os.sep.join(dirPath), name + ".json")
     
     with open(filePath, mode) as file:
         file.write(json.dumps(data, indent=3))
         file.write("\n")
         
 def SaveToSharedDataDirectory(file_name, data):
-    ROOT_DIR = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-1])
+    ROOT_DIR = os.sep.join(os.path.dirname(os.path.realpath(__file__)).split(os.sep)[:-1])
     shared_data_dir = os.path.join(ROOT_DIR, "SharedData")
 
     if not os.path.exists(shared_data_dir):
@@ -20,7 +20,7 @@ def SaveToSharedDataDirectory(file_name, data):
         write_file.write(json.dumps(data, indent=3))
         
 def ReadFileFromSharedDataDirectory(file_name):
-    ROOT_DIR = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-1])
+    ROOT_DIR = os.sep.join(os.path.dirname(os.path.realpath(__file__)).split(os.sep)[:-1])
     file_path = os.path.join(os.path.join(ROOT_DIR, "SharedData"), file_name)
     try:
         read_file = open(file_path, "r")
@@ -31,7 +31,7 @@ def ReadFileFromSharedDataDirectory(file_name):
         return []
 
 def ReadFileFromStaticDataDirectory(file_name):
-    ROOT_DIR = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-1])
+    ROOT_DIR = os.sep.join(os.path.dirname(os.path.realpath(__file__)).split(os.sep)[:-1])
     file_path = os.path.join(os.path.join(ROOT_DIR, "StaticData"), file_name)
     try:
         read_file = open(file_path, "r")

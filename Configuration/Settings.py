@@ -1,6 +1,5 @@
-import configparser
+import configparser, os
 from enum import Enum
-
 
 class Sections(Enum):
     WEB = 1,
@@ -17,7 +16,8 @@ class Settings:
     def get(name, *types: Sections):
         if Settings.__conf is None:  # Read only once, lazy.
             Settings.__conf = configparser.ConfigParser()
-            Settings.__conf.read('./Configuration/Config.ini')
+            Settings.__conf.read(os.path.join("Configuration", "Config.ini"))
+            # Settings.__conf.read('./Configuration/Config.ini')
 
         sections = ["COMMON"]
 

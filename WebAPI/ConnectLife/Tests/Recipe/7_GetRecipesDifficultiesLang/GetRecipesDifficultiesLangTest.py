@@ -1,7 +1,7 @@
 import os, pytest, json, requests, sys, datetime
 
-api_group_folder_path = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-2])
-ROOT_PROJECT_PATH = "\\".join(api_group_folder_path.split("\\")[:-3])
+api_group_folder_path = os.sep.join(os.path.dirname(os.path.realpath(__file__)).split(os.sep)[:-2])
+ROOT_PROJECT_PATH = os.sep.join(api_group_folder_path.split(os.sep)[:-3])
 sys.path.append(api_group_folder_path)
 
 from Common.JsonHelpers import ValidateJson

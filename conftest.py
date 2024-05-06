@@ -72,8 +72,10 @@ def pytest_addoption(parser):
 def pytest_generate_tests(metafunc: pytest.Metafunc):
     # called once per each test function
     json_file_path = os.path.join(metafunc.definition.fspath.dirname, metafunc.definition.fspath.purebasename + ".json")
+    if not os.path.exists(os.path.join(ROOT_DIR, "report_logs")):
+        os.makedirs(os.path.join(ROOT_DIR, "report_logs"))
+    pytest.log_objects[metafunc.definition.fspath.purebasename] = CsvLogWriter(os.path.join(ROOT_DIR, "report_logs", f"_logs_{metafunc.definition.fspath.purebasename}.log"))
 
-    pytest.log_objects[metafunc.definition.fspath.purebasename] = CsvLogWriter(os.path.join(ROOT_DIR, f"report_logs/_logs_{metafunc.definition.fspath.purebasename}.log"))
     pytest.data_collections[metafunc.definition.fspath.purebasename] = {}
 
 def pytest_sessionstart(session):

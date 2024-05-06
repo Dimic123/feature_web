@@ -65,7 +65,7 @@ class OAuth2Authorization:
         pass
     
     @staticmethod
-    def GetCDCUserDetailsRequest(env = "PROD"):
+    def GetCDCUserDetailsRequest(env = "PROD"):        
         payload = {
             "loginID": Settings.get(f"{env}_Username"),
             "password": Settings.get(f"{env}_Password"),
@@ -203,6 +203,7 @@ class OAuth2Authorization:
     
     @staticmethod
     def getToken(env = "PROD"):
+        env = env.replace("'", "")
         OAuth2Authorization.GetCDCUserDetailsRequest(env)
         OAuth2Authorization.GetTokenIdRequest(env)
         OAuth2Authorization.GetCodeRequest(env)

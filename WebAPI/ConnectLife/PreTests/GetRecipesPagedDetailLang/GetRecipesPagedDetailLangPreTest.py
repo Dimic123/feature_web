@@ -1,6 +1,6 @@
 import os, pytest, json, requests, sys, datetime
 
-ROOT_PROJECT_PATH = "\\".join(os.path.dirname(os.path.realpath(__file__)).split("\\")[:-4])
+ROOT_PROJECT_PATH = os.sep.join(os.path.dirname(os.path.realpath(__file__)).split(os.sep)[:-4])
 sys.path.append(ROOT_PROJECT_PATH)
 
 from Common.JsonHelpers import ValidateJson
