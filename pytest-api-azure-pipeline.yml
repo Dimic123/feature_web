@@ -33,7 +33,7 @@ steps:
     scriptSource: inline
     script: |
       import glob
-      dir_path = f"$(currentDirectory)/Tests/*"
+      dir_path = f"$(currentDirectory)/*"
       files = glob.glob(dir_path)
       print(files)
   displayName: 'Print directory files'
