@@ -1,0 +1,52 @@
+# Python package
+# Create and test a Python package on multiple Python versions.
+# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
+pool:
+  vmImage: ubuntu-latest
+strategy:
+  matrix:
+    Python312:
+      python.version: '3.10'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+  displayName: 'Use Python $(python.version)'
+
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
+
+- script: |
+    echo "##vso[task.setvariable variable=currentDirectory;]$(Build.SourcesDirectory)"
+  displayName: 'Saving Build.SourcesDirectory to variable'
+
+- task: PythonScript@0
+  inputs:
+    scriptSource: inline
+    script: |
+      import subprocess
+      test_api_path = f"$(currentDirectory)/RunTestsAPI.py"
+      subprocess.run(["python", test_api_path, "-e='test'", "-ap='azure'"])
+  displayName: 'Run all pretests and tests'
+
+- task: CopyFiles@2
+  inputs:
+    contents: 'SharedData/**'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+  displayName: 'Copy shared data to artifacts directory'
+
+- task: CopyFiles@2
+  inputs:
+    contents: 'report_logs/**'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+  displayName: 'Copy report logs to artifacts directory'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: MyBuildOutputs
