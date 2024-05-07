@@ -46,7 +46,10 @@ steps:
       print(glob.glob(f"$(currentDirectory)/SharedData/*"))
       shared_files = glob.glob(f"$(currentDirectory)/SharedData/*")
       print("PRINTING ARTIFACTS PATH")
-      print("'" + $(Build.ArtifactStagingDirectory) + "'")
+
+      ArtifactStagingDirectory = "'" + $(Build.ArtifactStagingDirectory) + "'"
+
+      print(ArtifactStagingDirectory)
       print("SHARED FILES")
       print(shared_files)
   displayName: 'Save shared files'
