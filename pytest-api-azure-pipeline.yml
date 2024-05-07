@@ -32,9 +32,10 @@ steps:
   inputs:
     scriptSource: inline
     script: |
-      import subprocess
+      import subprocess, glob
       test_api_path = f"$(currentDirectory)/RunTestsAPI.py"
       subprocess.run(["python", test_api_path, "-e='test'", "-ap='aws'"])
+      print(glob.glob(f"$(currentDirectory)/*"))
   displayName: 'Run python script'
 
 - task: PythonScript@0
