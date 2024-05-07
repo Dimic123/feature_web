@@ -34,7 +34,7 @@ steps:
     script: |
       import subprocess
       test_api_path = f"$(currentDirectory)/RunTestsAPI.py"
-      subprocess.run(["python", test_api_path, "-e='test'", "-ap='aws'"])
+      subprocess.run(["python", test_api_path, "-e='prod'", "-ap='azure'"])
   displayName: 'Run all pretests and tests'
 
 - task: CopyFiles@2
