@@ -41,11 +41,13 @@ steps:
   inputs:
     contents: 'SharedData/**'
     targetFolder: $(Build.ArtifactStagingDirectory)
+  displayName: 'Copy shared data'
 
 - task: CopyFiles@2
   inputs:
     contents: 'report_logs/**'
     targetFolder: $(Build.ArtifactStagingDirectory)
+  displayName: 'Copy report logs'
 
 - task: PublishBuildArtifacts@1
   inputs:
