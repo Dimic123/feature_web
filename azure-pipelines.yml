@@ -11,7 +11,7 @@ pool:
 strategy:
   matrix:
     Python312:
-      python.version: '3.12'
+      python.version: '3.10'
 
 steps:
 - task: UsePythonVersion@0
@@ -26,11 +26,30 @@ steps:
 
 - script: |
     echo "##vso[task.setvariable variable=currentDirectory;]$(Build.SourcesDirectory)"
-  displayName: 'saving variable value'
+  displayName: 'Saving Build.SourcesDirectory to variable'
 
 - task: PythonScript@0
   inputs:
     scriptSource: inline
     script: |
-      python ./RunTestsAPI.py -e="test" -ap="aws"
-  displayName: 'Run python script'
+      import subprocess
+      test_api_path = f"$(currentDirectory)/RunTestsAPI.py"
+      subprocess.run(["python", test_api_path, "-e='test'", "-ap='azure'"])
+  displayName: 'Run all pretests and tests'
+
+- task: CopyFiles@2
+  inputs:
+    contents: 'SharedData/**'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+  displayName: 'Copy shared data to artifacts directory'
+
+- task: CopyFiles@2
+  inputs:
+    contents: 'report_logs/**'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+  displayName: 'Copy report logs to artifacts directory'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: MyBuildOutputs
