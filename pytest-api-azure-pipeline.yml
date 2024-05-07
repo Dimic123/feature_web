@@ -32,32 +32,17 @@ steps:
   inputs:
     scriptSource: inline
     script: |
-      import subprocess, glob
+      import subprocess
       test_api_path = f"$(currentDirectory)/RunTestsAPI.py"
       subprocess.run(["python", test_api_path, "-e='test'", "-ap='aws'"])
-      print(glob.glob(f"$(currentDirectory)/*"))
   displayName: 'Run python script'
 
-- task: PythonScript@0
+- task: CopyFiles@2
   inputs:
-    scriptSource: inline
-    script: |
-      import glob
-      print(glob.glob(f"$(currentDirectory)/SharedData/*"))
-      shared_files = glob.glob(f"$(currentDirectory)/SharedData/*")
-      print("PRINTING ARTIFACTS PATH")
+    contents: 'SharedData/**'
+    targetFolder: $(Build.ArtifactStagingDirectory)
 
-      ArtifactStagingDirectory = "'" + $(Build.ArtifactStagingDirectory) + "'"
-
-      print(ArtifactStagingDirectory)
-      print("SHARED FILES")
-      print(shared_files)
-  displayName: 'Save shared files'
-
-- script: |
-    echo "##vso[task.uploadfile]$(Build.SourcesDirectory)/SharedData/collected_wizards_all.json"
-  displayName: 'Upload report logs from pipeline run script'
-
-- pwsh: Write-Host "##vso[task.uploadfile]$(Build.SourcesDirectory)/SharedData"
-  displayName: 'Upload report logs from pipeline run'
-  condition: always()
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: MyBuildOutputs
