@@ -42,6 +42,11 @@ steps:
     contents: 'SharedData/**'
     targetFolder: $(Build.ArtifactStagingDirectory)
 
+- task: CopyFiles@2
+  inputs:
+    contents: 'report_logs/**'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: $(Build.ArtifactStagingDirectory)
