@@ -25,7 +25,7 @@ elif config["api_provider"] == "azure":
 def pre_tests() -> int:
     # order is important
     retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetWizardsAll"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
-    # retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetRecipesIdLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
+    retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetRecipesIdLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetRecipesPagedDetailLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetRecipesPagedLang"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
     # retcode = pytest.main([os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "PreTests", "GetConnectivityGroupsProductCodes"), "-s", "--auth", "cdc", "--env", env, "--apiBaseUrl", api_url])
