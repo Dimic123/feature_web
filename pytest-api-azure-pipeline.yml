@@ -45,7 +45,8 @@ steps:
       print(glob.glob(f"$(currentDirectory)/SharedData/*"))
       shared_files = glob.glob(f"$(currentDirectory)/SharedData/*")
       for file in shared_files:
-        echo "##vso[task.uploadfile]" + file
+        print(file)
+        echo "##vso[task.uploadfile;]$(file)"
   displayName: 'Save shared files'
 
 - script: |
