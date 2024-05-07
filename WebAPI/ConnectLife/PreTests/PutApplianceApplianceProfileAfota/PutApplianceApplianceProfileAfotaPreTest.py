@@ -22,7 +22,7 @@ for product_arr in products_arr:
 
 payloads = []
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("test_case_obj", filtered_products)
 def test_put_appliance_appliance_profile_afota_pre_test(token: str, test_case_obj):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "payload.firmware", "endpoint"])

@@ -26,7 +26,7 @@ for request_payload in recipeId_wizardId_post_request_payload_list:
             "servings": str(i)
         })
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("payload", request_payload_list)
 def test_post_wizard_recipe_wizard_id(token: str, payload):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "wizard_id", "recipe_id", "level", "servings", "endpoint"])

@@ -22,7 +22,7 @@ manually_added_auids = [
 
 pairs = []
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("auid", manually_added_auids)
 def test_get_appliances_profile_auids_pre_test(token: str, auid):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])

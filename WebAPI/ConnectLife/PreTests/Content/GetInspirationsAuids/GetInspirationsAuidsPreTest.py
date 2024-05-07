@@ -24,7 +24,7 @@ all_auids = auids + read_auids
 if all_auids == []:
     all_auids = manually_added_auids
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("auid", all_auids)
 def test_get_inspirations_auids_pre_test(token: str, auid):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])

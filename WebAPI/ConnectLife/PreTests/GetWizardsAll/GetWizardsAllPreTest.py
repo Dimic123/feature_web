@@ -11,7 +11,7 @@ from Common.FileHelpers import SaveToSharedDataDirectory
 
 collected_wizards = {}
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 def test_get_wizard_all_pre_test(token: str):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "endpoint"])
     url = f"{pytest.api_base_url}/api/v1/wizard/all" # + "?includeLogicData=true"

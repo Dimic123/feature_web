@@ -25,7 +25,7 @@ if all_auids == []:
 
 products = []
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("auid", all_auids)
 def test_get_products_auids_pre_test(token: str, auid):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])

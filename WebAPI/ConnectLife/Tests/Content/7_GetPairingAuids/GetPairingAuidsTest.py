@@ -19,8 +19,7 @@ for auid in auids_map:
             "id": details["id"]
         })
 
-@pytest.mark.skip(reason="test takes too long after n-th test case")
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("test_case", map_list)
 def test_get_pairing_auids(token: str, test_case):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "id", "endpoint"])

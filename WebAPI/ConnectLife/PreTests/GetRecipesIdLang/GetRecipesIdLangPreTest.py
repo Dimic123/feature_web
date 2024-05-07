@@ -23,7 +23,7 @@ for wizard_id in wizard_ids:
             }
         )
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("lang", langs)
 @pytest.mark.parametrize("pair", wizardId_recipeId_pairs)
 def test_get_recipes_id_lang_pre_test(token: str, pair, lang):

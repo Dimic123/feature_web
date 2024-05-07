@@ -12,7 +12,7 @@ from Common.FileHelpers import ReadFileFromSharedDataDirectory, ReadFileFromStat
 
 langs = ReadFileFromStaticDataDirectory("languages.json")
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("lang", langs)
 def test_get_recipes_allergens_lang(token: str, lang):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "lang", "endpoint"])

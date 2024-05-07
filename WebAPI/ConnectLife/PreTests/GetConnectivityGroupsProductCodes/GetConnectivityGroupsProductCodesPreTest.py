@@ -13,7 +13,7 @@ connGroups = ReadTxtFile(os.path.join(ROOT_PROJECT_PATH, "StaticData/Connectivit
 groupsWithAuids = {}
 auids = []
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("connGroup", connGroups)
 def test_get_connectivity_groups_product_codes_pre_test(token: str, connGroup):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "connectivity_group", "endpoint"])

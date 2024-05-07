@@ -26,7 +26,7 @@ if all_auids == []:
 
 collected_wizards = {}
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("auid", all_auids)
 def test_get_wizard_auids(token: str, auid):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])

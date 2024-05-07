@@ -23,7 +23,7 @@ for recipePage in recipesPagedLang:
             "pageDetails": f"?page={count}&pageSize={pageSize}"
         })
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("test_case", test_cases)
 def test_get_recipes_paged_lang(token: str, test_case):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "lang", "pageDetails", "endpoint"])

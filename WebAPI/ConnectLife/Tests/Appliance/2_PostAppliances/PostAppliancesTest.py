@@ -25,7 +25,6 @@ appliances = ReadFileFromSharedDataDirectory("appliances.json")
 if appliances == []:
     appliances = manually_added_appliances
 
-@pytest.mark.test_env
 @pytest.mark.parametrize("test_case", appliances)
 def test_post_appliances(token: str, test_case):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "payload", "endpoint"])

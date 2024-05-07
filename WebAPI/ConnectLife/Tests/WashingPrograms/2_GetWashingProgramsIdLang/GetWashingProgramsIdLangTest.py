@@ -12,7 +12,7 @@ from Common.FileHelpers import ReadFileFromSharedDataDirectory
 
 washing_programs_ids_langs = ReadFileFromSharedDataDirectory("washing_programs_ids_langs.json")
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("id_lang_pair", washing_programs_ids_langs)
 def test_get_washing_programs_id_lang(token: str, id_lang_pair):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "id", "lang", "endpoint"])

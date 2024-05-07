@@ -54,7 +54,7 @@ if hybris_token != "":
                         test_case["wizard_id"] = wizard_obj["wizard_id"]
                 all_test_cases_with_wizard_id += washing_program_wizard_sheet
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("test_case_obj", all_test_cases_with_wizard_id)
 def test_post_wizard_washing_program_wizard_id(token: str, test_case_obj):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "wizard_id", "payload", "endpoint"])

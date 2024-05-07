@@ -12,7 +12,7 @@ langs = ReadFileFromStaticDataDirectory("languages.json")
 
 recipesPagedDetailLang = []
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("lang", langs)
 def test_get_recipes_paged_detail_lang_pre_test(token: str, lang):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "lang", "endpoint"])

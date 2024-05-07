@@ -15,8 +15,7 @@ all_ids = ReadFileFromSharedDataDirectory("GetGenericFaqPreTest.json")
 if "id" in all_ids:
     ids = all_ids["id"]
 
-@pytest.mark.skip(reason="test takes too long after n-th test case")
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("_id", ids)
 def test_get_generic_faq(token: str, _id):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "id", "endpoint"])

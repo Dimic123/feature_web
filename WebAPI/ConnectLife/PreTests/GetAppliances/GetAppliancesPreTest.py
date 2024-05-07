@@ -9,7 +9,6 @@ from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from Common.FileHelpers import SaveToSharedDataDirectory
 
-@pytest.mark.test_env
 def test_get_appliances_pre_test(token: str):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "endpoint"])
     url = f"{pytest.api_base_url}/api/v1/appliance"

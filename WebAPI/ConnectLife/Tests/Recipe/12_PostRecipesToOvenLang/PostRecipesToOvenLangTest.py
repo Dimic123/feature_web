@@ -29,7 +29,6 @@ for request_payload in recipeId_wizardId_post_request_payload_list:
 lang = "en"
 
 @pytest.skip("To be defined...")
-@pytest.mark.test_env
 @pytest.mark.parametrize("payload", request_payload_list)
 @pytest.mark.parametrize("language", lang)
 def test_post_recipes_to_oven_lang(token: str, payload, language):

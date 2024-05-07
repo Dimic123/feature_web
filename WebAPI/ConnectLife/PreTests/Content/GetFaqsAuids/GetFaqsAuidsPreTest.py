@@ -25,7 +25,7 @@ if all_auids == []:
     all_auids = manually_added_auids
 
 # @pytest.mark.skip(reason="test takes too long after n-th test case")
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("auid", all_auids)
 def test_get_faqs_auids_pre_test(token: str, auid):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])

@@ -20,7 +20,6 @@ for appliance in appliances:
 if appliances == []:
     appliances = manually_added_ids
 
-@pytest.mark.test_env
 @pytest.mark.parametrize("id", ids)
 def test_get_appliances_ids(token: str, id):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "id", "endpoint"])

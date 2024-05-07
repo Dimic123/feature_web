@@ -18,7 +18,7 @@ for wizard_id in wizard_ids:
 
 wizard_ids_list = list(set(wizard_ids_list))
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("wizard_id", wizard_ids_list)
 def test_get_wizard_all(token: str, wizard_id):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "wizard_id", "endpoint"])

@@ -37,7 +37,7 @@ for auid in all_auids:
 combined_test_case: Auid_Id_test_case = generate_test_case_with_n_req_params(collected_auids, 10)
 all_auids.append(combined_test_case["auid"])
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("auid", all_auids)
 def test_get_manuals_auids(token: str, auid):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])

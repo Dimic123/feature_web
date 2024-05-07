@@ -12,7 +12,7 @@ from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedData
 
 pairs = ReadFileFromSharedDataDirectory("auid_heidi_pairs.json")
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("pair", pairs)
 def test_put_appliance_appliance_profile_heidi(token: str, pair):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "heidi", "endpoint"])

@@ -44,7 +44,7 @@ auids = list(map((lambda x: "000000000000" + str(x) + "0000000000000000000"), sa
 
 auids_string = join_fifty_auids_and_return_as_string(manually_added_auids, auids)
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("auid", [auids_string])
 def test_get_appliances_profile_multi_auids_pre_test(token: str, auid):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "endpoint"])

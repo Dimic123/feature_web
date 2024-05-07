@@ -70,7 +70,7 @@ if hybris_token != "":
                 test_case_with_all_categories = generate_test_case_with_all_categories(all_storing_food_categories, refridgerator_wizard_sheet)
                 all_test_cases_with_wizard_id += [test_case_with_all_categories]
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("test_case", all_test_cases_with_wizard_id)
 def test_post_wizard_storingfood_multiple_wizard_id(token: str, test_case):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "wizard_id", "payload", "endpoint"])
