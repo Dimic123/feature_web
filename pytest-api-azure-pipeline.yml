@@ -44,6 +44,7 @@ steps:
       import glob
       print(glob.glob(f"$(currentDirectory)/SharedData/*"))
       shared_files = glob.glob(f"$(currentDirectory)/SharedData/*")
+      print(shared_files)
       for file in shared_files:
         print(file)
         echo "##vso[task.uploadfile;]$(file)"
