@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 jobs:
-- job: Azure_prod
+- job: Azure_prod_env
   timeoutInMinutes: 0
   pool:
     name: AzureProd
@@ -39,13 +39,13 @@ jobs:
 
   - task: CopyFiles@2
     inputs:
-      contents: 'SharedData/**'
+      contents: 'WebAPI/ConnectLife/SharedData/**'
       targetFolder: $(Build.ArtifactStagingDirectory)
     displayName: 'Copy shared data to artifacts directory'
 
   - task: CopyFiles@2
     inputs:
-      contents: 'report_logs/**'
+      contents: 'WebAPI/ConnectLife/report_logs/**'
       targetFolder: $(Build.ArtifactStagingDirectory)
     displayName: 'Copy report logs to artifacts directory'
 

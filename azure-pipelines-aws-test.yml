@@ -4,14 +4,14 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 jobs:
-- job: AWS_test_python_tests
+- job: AWS_test_env
   timeoutInMinutes: 0
   pool:
     name: AzureProd
     demands: Agent.Name -equals devopsagent
   strategy:
     matrix:
-      Python312:
+      Python310:
         python.version: '3.10'
   steps: 
   - task: UsePythonVersion@0
@@ -39,13 +39,13 @@ jobs:
 
   - task: CopyFiles@2
     inputs:
-      contents: 'SharedData/**'
+      contents: 'WebAPI/ConnectLife/SharedData/**'
       targetFolder: $(Build.ArtifactStagingDirectory)
     displayName: 'Copy shared data to artifacts directory'
 
   - task: CopyFiles@2
     inputs:
-      contents: 'report_logs/**'
+      contents: 'WebAPI/ConnectLife/report_logs/**'
       targetFolder: $(Build.ArtifactStagingDirectory)
     displayName: 'Copy report logs to artifacts directory'
 
