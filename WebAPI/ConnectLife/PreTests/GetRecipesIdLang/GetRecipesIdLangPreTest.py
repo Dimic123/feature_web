@@ -27,37 +27,45 @@ for wizard_id in wizard_ids:
 @pytest.mark.parametrize("lang", langs)
 @pytest.mark.parametrize("pair", wizardId_recipeId_pairs)
 def test_get_recipes_id_lang_pre_test(token: str, pair, lang):
-    pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "wizard_id", "recipe_id", "lang", "endpoint"])
+    pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "elapsed_time", "error", "wizard_id", "recipe_id", "lang", "endpoint"])
     url = f"{pytest.api_base_url}/api/v1/recipes/{pair['recipe_id']}/{lang}"
     print("\nTesting " + url)
     
+    req_res_times = []
+    dir_folder_name = os.path.dirname(os.path.realpath(__file__)).split(os.sep)
+    test_name = dir_folder_name.pop(-1)
+
     response = None
     attempts = 1
     while attempts <= 5:
         try:
             response = requests.request("GET", url, headers={ 'Authorization': 'Bearer ' + token + '' }, data={}, timeout=(10 * attempts))
+            req_res_times.append(response.elapsed.total_seconds())
             break
         except requests.exceptions.Timeout:
             attempts += 1
             print(f"Request attempt: #{attempts}")
     
+    req_res_duration = min(req_res_times)
+    pytest.timers[test_name].append(req_res_duration)
+
     if response == None:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", pair['wizard_id'], pair['recipe_id'], lang, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"Request timed out {attempts} time/s", pair['wizard_id'], pair['recipe_id'], lang, url])
         assert False
 
     if not response.status_code in [200, 500]:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unknown response status code: { str(response.status_code) }", pair['wizard_id'], pair['recipe_id'], lang, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"Unknown response status code: { str(response.status_code) }", pair['wizard_id'], pair['recipe_id'], lang, url])
         assert False
 
     try:
         unicode_escaped_data = json.dumps(response.json())
         data = json.loads(unicode_escaped_data)
     except Exception as ex:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Exception: {ex}, Malformed data: {str(response.text)}", pair['wizard_id'], pair['recipe_id'], lang, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"Exception: {ex}, Malformed data: {str(response.text)}", pair['wizard_id'], pair['recipe_id'], lang, url])
         assert False
 
     if len(data) <= 0:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Empty response: {data}", pair['wizard_id'], pair['recipe_id'], lang, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"Empty response: {data}", pair['wizard_id'], pair['recipe_id'], lang, url])
         assert False
     
     [success_200_schema, error_500_schema] = CreateJsonSchemas()
@@ -69,7 +77,7 @@ def test_get_recipes_id_lang_pre_test(token: str, pair, lang):
         isValidOrTrue = ValidateJson(data, error_500_schema)
     
     if isValidOrTrue != True:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"{isValidOrTrue}", pair['wizard_id'], pair['recipe_id'], lang, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"{isValidOrTrue}", pair['wizard_id'], pair['recipe_id'], lang, url])
         assert False
     
     if response.status_code == 200:
@@ -79,25 +87,25 @@ def test_get_recipes_id_lang_pre_test(token: str, pair, lang):
         if "noOfPersonsDefault" in data:
             noOfPersonsDefault = int(data["noOfPersonsDefault"])
         else:
-            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"noOfPersonsDefault missing", pair['wizard_id'], pair['recipe_id'], lang, url])
+            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"noOfPersonsDefault missing", pair['wizard_id'], pair['recipe_id'], lang, url])
             assert False
 
         if "noOfPersonsMin" in data:
             noOfPersonsMin = int(data["noOfPersonsMin"])
         else:
-            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"noOfPersonsMin missing", pair['wizard_id'], pair['recipe_id'], lang, url])
+            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"noOfPersonsMin missing", pair['wizard_id'], pair['recipe_id'], lang, url])
             assert False
 
         if "noOfPersonsMax" in data:
             noOfPersonsMax = int(data["noOfPersonsMax"])
         else:
-            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"noOfPersonsMax missing", pair['wizard_id'], pair['recipe_id'], lang, url])
+            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"noOfPersonsMax missing", pair['wizard_id'], pair['recipe_id'], lang, url])
             assert False
 
         if noOfPersonsMin <= noOfPersonsDefault and noOfPersonsMax >= noOfPersonsDefault:
             pass
         else:
-            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"noOfPersonsDefault[{noOfPersonsDefault}] is not within noOfPersonsMin[{noOfPersonsMin}],noOfPersonsMax[{noOfPersonsMax}] values", pair['wizard_id'], pair['recipe_id'], lang, url])
+            pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"noOfPersonsDefault[{noOfPersonsDefault}] is not within noOfPersonsMin[{noOfPersonsMin}],noOfPersonsMax[{noOfPersonsMax}] values", pair['wizard_id'], pair['recipe_id'], lang, url])
             assert False
 
         post_request_payload = {
@@ -111,10 +119,10 @@ def test_get_recipes_id_lang_pre_test(token: str, pair, lang):
         recipeId_wizardId_post_request_payload_list.append(post_request_payload)
         SaveToSharedDataDirectory("recipeId_wizardId_post_request_payload_list.json", recipeId_wizardId_post_request_payload_list)
     elif response.status_code == 500:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", pair['recipe_id'], lang, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", pair['recipe_id'], lang, url])
         assert False
     else:
-        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Unhandled response with status code: {response.status_code}", pair['recipe_id'], lang, url])
+        pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), req_res_duration, f"Unhandled response with status code: {response.status_code}", pair['recipe_id'], lang, url])
         assert False
 
 def CreateJsonSchemas():

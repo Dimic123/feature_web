@@ -33,6 +33,11 @@ def test_post_wizard_recipe_wizard_id(token: str, payload):
     url = f"{pytest.api_base_url}/api/v1/wizard/recipe/{payload['wizard_id']}"
     print("\nTesting " + url)
     
+    req_res_times = []
+    dir_folder_name = os.path.dirname(os.path.realpath(__file__)).split(os.sep)
+    folder_name = dir_folder_name.pop(-1)
+    group_name = dir_folder_name.pop(-1)
+
     payload = {
         "recipeId": payload["recipe_id"],
         "level": payload["level"],
@@ -50,11 +55,15 @@ def test_post_wizard_recipe_wizard_id(token: str, payload):
     while attempts <= 5:
         try:
             response = requests.request("POST", url, headers=headers, data=json.dumps(payload), timeout=(10 * attempts))
+            req_res_times.append(response.elapsed.total_seconds())
             break
         except requests.exceptions.Timeout:
             attempts += 1
             print(f"Request attempt: #{attempts}")
     
+    req_res_duration = min(req_res_times)
+    pytest.timers[group_name][folder_name].append(req_res_duration)
+
     if response == None:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", payload["wizard_id"], payload["recipe_id"], payload["level"], payload["servings"], url])
         assert False

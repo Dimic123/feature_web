@@ -30,16 +30,25 @@ def test_get_recipes_paged_lang(token: str, test_case):
     url = f"{pytest.api_base_url}/api/v1/recipes/paged/{test_case['lang']}{test_case['pageDetails']}"
     print("\nTesting " + url)
     
+    req_res_times = []
+    dir_folder_name = os.path.dirname(os.path.realpath(__file__)).split(os.sep)
+    folder_name = dir_folder_name.pop(-1)
+    group_name = dir_folder_name.pop(-1)
+
     response = None
     attempts = 1
     while attempts <= 5:
         try:
             response = requests.request("GET", url, headers={ 'Authorization': 'Bearer ' + token + '' }, data={}, timeout=(10 * attempts))
+            req_res_times.append(response.elapsed.total_seconds())
             break
         except requests.exceptions.Timeout:
             attempts += 1
             print(f"Request attempt: #{attempts}")
     
+    req_res_duration = min(req_res_times)
+    pytest.timers[group_name][folder_name].append(req_res_duration)
+
     if response == None:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", test_case['lang'], test_case['pageDetails'], url])
         assert False

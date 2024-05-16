@@ -33,16 +33,25 @@ def test_get_wizard_auids(token: str, auid):
     url = f"{pytest.api_base_url}/api/v1/wizard/{auid}" # + "?includeLogicData=true"
     print("\nTesting " + url)
     
+    req_res_times = []
+    dir_folder_name = os.path.dirname(os.path.realpath(__file__)).split(os.sep)
+    folder_name = dir_folder_name.pop(-1)
+    group_name = dir_folder_name.pop(-1)
+
     response = None
     attempts = 1
     while attempts <= 5:
         try:
             response = requests.request("GET", url, headers={ 'Authorization': 'Bearer ' + token + '' }, data={}, timeout=(10 * attempts))
+            req_res_times.append(response.elapsed.total_seconds())
             break
         except requests.exceptions.Timeout:
             attempts += 1
             print(f"Request attempt: #{attempts}")
     
+    req_res_duration = min(req_res_times)
+    pytest.timers[group_name][folder_name].append(req_res_duration)
+
     if response == None:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", auid, url])
         assert False
@@ -89,7 +98,6 @@ def test_get_wizard_auids(token: str, auid):
                     if "possibleValues" in param:
                         name = param["name"]
                         possibleValues = param["possibleValues"]
-                        print(name, possibleValues)
 
             if not wizard_id in collected_wizards:
                 collected_wizards[wizard_id] = {
@@ -106,7 +114,7 @@ def test_get_wizard_auids(token: str, auid):
             pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"This AUID/sapId has duplicate wizard ids", auid, url])
             assert False
 
-        SaveToSharedDataDirectory("collected_wizards.json", collected_wizards)
+        # SaveToSharedDataDirectory("collected_wizards.json", collected_wizards)
     elif response.status_code == 500:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"errorMessage: {data['errorMessage']}, errorId: {data['errorId']}", auid, url])
         assert False

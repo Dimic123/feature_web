@@ -9,7 +9,7 @@ from Common.FileHelpers import WriteDataToJsonFileInCurrentDirectory
 from Common.JsonSchemaHelpers import CreateJsonSchema
 from server_error_json_schema import server_error_json_schema
 from base_json_schema_400_error_response_wizards import wizards_400_error_json_schema
-from Common.FileHelpers import SaveToSharedDataDirectory, ReadFileFromSharedDataDirectory
+from Common.FileHelpers import ReadFileFromSharedDataDirectory
 
 recipeId_wizardId_post_request_payload_list = ReadFileFromSharedDataDirectory("recipeId_wizardId_post_request_payload_list.json")
 request_payload_list = []
@@ -28,7 +28,7 @@ for request_payload in recipeId_wizardId_post_request_payload_list:
 
 lang = "en"
 
-@pytest.skip("To be defined...")
+@pytest.mark.skip("To be defined...")
 @pytest.mark.parametrize("payload", request_payload_list)
 @pytest.mark.parametrize("language", lang)
 def test_post_recipes_to_oven_lang(token: str, payload, language):
@@ -36,6 +36,11 @@ def test_post_recipes_to_oven_lang(token: str, payload, language):
     url = f"{pytest.api_base_url}/api/v1/recipes/toOven/{language}"
     print("\nTesting " + url)
     
+    req_res_times = []
+    dir_folder_name = os.path.dirname(os.path.realpath(__file__)).split(os.sep)
+    folder_name = dir_folder_name.pop(-1)
+    group_name = dir_folder_name.pop(-1)
+
     # payload
     # {
         # "recipeId": "string",
@@ -60,11 +65,15 @@ def test_post_recipes_to_oven_lang(token: str, payload, language):
     while attempts <= 5:
         try:
             response = requests.request("POST", url, headers=headers, data=json.dumps(payload), timeout=(10 * attempts))
+            req_res_times.append(response.elapsed.total_seconds())
             break
         except requests.exceptions.Timeout:
             attempts += 1
             print(f"Request attempt: #{attempts}")
     
+    req_res_duration = min(req_res_times)
+    pytest.timers[group_name][folder_name].append(req_res_duration)
+
     if response == None:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", payload["wizard_id"], payload["recipe_id"], payload["level"], payload["servings"], url])
         assert False

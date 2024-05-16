@@ -1,0 +1,1975 @@
+{
+   "count": 205,
+   "pageSize": 15,
+   "numPages": 14,
+   "currentPage": 0,
+   "links": [
+      {
+         "href": "/api/v1/recipes/paged/detail?page=1",
+         "rel": "nextPage",
+         "method": "GET",
+         "isTemplated": false
+      }
+   ],
+   "items": [
+      {
+         "difficulty": "Beginner",
+         "noOfPersonsDefault": 1,
+         "noOfPersonsMin": 1,
+         "noOfPersonsMax": 5,
+         "type": "SIDE",
+         "description": "Prepare peppers for a vibrant and a healthy meal. They are perfect for salads, spreads and fillings.",
+         "allergens": [],
+         "steps": [
+            {
+               "desc": "Wash the green bell pepper and remove the inner membranes and seeds.",
+               "id": "recipe_step_N096_0_0"
+            },
+            {
+               "desc": "Slice it into smaller long pieces. ",
+               "id": "recipe_step_N096_0_1"
+            },
+            {
+               "desc": "Salt to taste at the end of cooking.",
+               "id": "recipe_step_N096_0_2"
+            }
+         ],
+         "diet": [
+            {
+               "id": "D6",
+               "title": "Low calories"
+            },
+            {
+               "id": "d002",
+               "title": "Gluten-Free"
+            },
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "D5",
+               "title": "Vegan"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d003",
+               "title": "Dairy-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "D2",
+               "title": "Vegetarian"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "100",
+               "isLockable": false,
+               "quantity": 100.0,
+               "unit": "g",
+               "id": "In133",
+               "title": "green bell pepper"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In005",
+               "title": "salt"
+            }
+         ],
+         "id": "N096",
+         "title": "Pepper",
+         "imageUrl": "https://atag.hgecdn.net/medias/N096-Pepper-1-recipeListFormat?context=bWFzdGVyfGltYWdlc3w3MTQyNnxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJnMU5TOW9NMlV2T0RnNU56YzROVEk1T0RrM05DNXFjR2N8ZjIzMDEwMDFmNjdjZTI1YzNkYmJhODBmNDllOTVkN2M3N2JkNDRlOTcyZDNkMzRhYmMxYzAyZGY0OTdjM2RhNg"
+      },
+      {
+         "difficulty": "Advanced",
+         "noOfPersonsDefault": 1,
+         "noOfPersonsMin": 1,
+         "noOfPersonsMax": 6,
+         "type": "MAIN",
+         "description": "This recipe calls for fresh tuna, which takes advantage of the fish's natural richness. Seasoned with rosemary and thyme and enriched with lemon, this will make a perfect meal. Serve with vegetables on the side.",
+         "allergens": [
+            {
+               "id": "a003",
+               "title": "Dairy"
+            },
+            {
+               "id": "a004",
+               "title": "Fish"
+            }
+         ],
+         "steps": [
+            {
+               "desc": "Oil and season the steak.",
+               "id": "recipe_step_N998_0_0"
+            },
+            {
+               "desc": "Place the food into a vacuum bag that is suitable for sous vide cooking. ",
+               "id": "recipe_step_N998_0_1"
+            },
+            {
+               "desc": "Vacuum and seal the bag and place it in the oven.",
+               "id": "recipe_step_N998_0_2"
+            },
+            {
+               "desc": "After the automatic program, remove the steak from the bag. Pat it dry on both sides. Preheat a skillet over high heat. Swirl the steak around in the pan for about a minute or two on each side.",
+               "id": "recipe_step_N998_0_3"
+            },
+            {
+               "desc": "Tip: For an even stronger flavour, marinate the steak in the refrigerator up to 24 hours before cooking.",
+               "id": "recipe_step_N998_0_4"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d002",
+               "title": "Gluten-Free"
+            },
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "d003",
+               "title": "Dairy-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In012",
+               "title": "pepper"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": false,
+               "quantity": 2.0,
+               "unit": "tbs",
+               "id": "In017",
+               "title": "olive oil"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "tbs",
+               "id": "In091",
+               "title": "lemon juice"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "sprig",
+               "id": "In109",
+               "title": "thyme"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "sprig",
+               "id": "In085",
+               "title": "rosemary"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "slice",
+               "id": "In131",
+               "title": "lemon"
+            },
+            {
+               "friendlyQuantity": "150",
+               "isLockable": false,
+               "quantity": 150.0,
+               "unit": "g",
+               "id": "In998",
+               "title": "Tuna steak - MISSING"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": false,
+               "quantity": 2.0,
+               "unit": "tbs",
+               "id": "In017",
+               "title": "olive oil"
+            }
+         ],
+         "id": "N998",
+         "title": "Fish steak",
+         "imageUrl": "https://atag.hgecdn.net/medias/Atag-N233-Fish-Steak.jpg-recipeListFormat?context=bWFzdGVyfGltYWdlc3w5MzUwN3xpbWFnZS9qcGVnfGFXMWhaMlZ6TDJoa1pTOW9Oak12T0RnNU56azFOVEk1T1RNMU9DNXFjR2N8OWMwOGZlMjkwNGZhZDY4MzNlOTc1YTkwOGIwMzk5NmQ2N2MyNjEwMGEzNWMyYjlhOTliZGEwZTBmZDliYzA5OA"
+      },
+      {
+         "difficulty": "Beginner",
+         "noOfPersonsDefault": 1,
+         "noOfPersonsMin": 1,
+         "noOfPersonsMax": 8,
+         "type": "SIDE",
+         "description": "What a perfect choice for a healthy diet. Add this gluten-free and fluffy cooked millet to salads, stews, bread, muffins and cakes.",
+         "allergens": [
+            {
+               "id": "a001",
+               "title": "Gluten"
+            }
+         ],
+         "steps": [
+            {
+               "desc": "Place the millet in a dish and add tap water. Salt to taste.",
+               "id": "recipe_step_N142_0_0"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "D5",
+               "title": "Vegan"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d003",
+               "title": "Dairy-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "D2",
+               "title": "Vegetarian"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "90",
+               "isLockable": false,
+               "quantity": 90.0,
+               "unit": "g",
+               "id": "In160",
+               "title": "water"
+            },
+            {
+               "friendlyQuantity": "60",
+               "isLockable": false,
+               "quantity": 60.0,
+               "unit": "g",
+               "id": "In177",
+               "title": "millet"
+            }
+         ],
+         "id": "N142",
+         "title": "Millet",
+         "imageUrl": "https://atag.hgecdn.net/medias/N142-Millet-2-recipeListFormat?context=bWFzdGVyfGltYWdlc3w1ODIwMHxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJnME15OW9NREV2T0RnNU56YzRORFEwTnpBd05pNXFjR2N8NzkxNWNiMmRkYzk2MTQ0NTA2NzU3YTI4M2ZmZTBiNmQ3NTI4MTYzODJkMTZmOGI3OGZjM2Q4YzQ4MzFhMjQwNg"
+      },
+      {
+         "difficulty": "Beginner",
+         "noOfPersonsDefault": 1,
+         "noOfPersonsMin": 1,
+         "noOfPersonsMax": 5,
+         "type": "SIDE",
+         "description": "String beans are perfect for a fancy holiday meal or a simple everyday lunch. They are simply bursting with flavour in this delicious combination with shallots and chopped garlic.",
+         "allergens": [],
+         "steps": [
+            {
+               "desc": "Wash the string beans. ",
+               "id": "recipe_step_N104_0_0"
+            },
+            {
+               "desc": "Salt to taste at the end of cooking.",
+               "id": "recipe_step_N104_0_1"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d002",
+               "title": "Gluten-Free"
+            },
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "D5",
+               "title": "Vegan"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d003",
+               "title": "Dairy-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "D2",
+               "title": "Vegetarian"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "100",
+               "isLockable": false,
+               "quantity": 100.0,
+               "unit": "g",
+               "id": "In176",
+               "title": "string beans"
+            }
+         ],
+         "id": "N104",
+         "title": "String beans",
+         "imageUrl": "https://atag.hgecdn.net/medias/N104-String-beans-2-recipeListFormat?context=bWFzdGVyfGltYWdlc3w2NDc1OHxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJoaE9TOW9Oak12T0RnNU56YzROelV5TnpFNU9DNXFjR2N8M2NhYmUwODkyOWI1NzBkMTEwZDUzMTE5NDUzMzRlOWRlZjI5ZTI4ZDBkYjg5M2UxMmM1OTI0ODQwNjA3ZTk2Yw"
+      },
+      {
+         "difficulty": "Advanced",
+         "noOfPersonsDefault": 1,
+         "noOfPersonsMin": 1,
+         "noOfPersonsMax": 6,
+         "type": "MAIN",
+         "description": "Cooking turkey breasts doesn't have to be boring. Bring it to the next level with this recipe. Juicy meat packed with flavour will satisfy your taste buds, screaming for more.",
+         "allergens": [],
+         "steps": [
+            {
+               "desc": "Oil and season the fillet.",
+               "id": "recipe_step_N232_0_0"
+            },
+            {
+               "desc": "Place the food into a vacuum bag that is suitable for sous vide cooking. ",
+               "id": "recipe_step_N232_0_1"
+            },
+            {
+               "desc": "Vacuum and seal the bag and place it in the oven.",
+               "id": "recipe_step_N232_0_2"
+            },
+            {
+               "desc": "After the automatic program, remove the fillet from the bag. Pat it dry on both sides. Preheat a skillet over high heat. Swirl the fillet around in the pan for about a minute or two on each side.",
+               "id": "recipe_step_N232_0_3"
+            },
+            {
+               "desc": "Tip: For an even stronger flavour, marinate the meat in the refrigerator up to 24 hours before cooking.",
+               "id": "recipe_step_N232_0_4"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d002",
+               "title": "Gluten-Free"
+            },
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "d003",
+               "title": "Dairy-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In012",
+               "title": "pepper"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "sprig",
+               "id": "In085",
+               "title": "rosemary"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": true,
+               "quantity": 2.0,
+               "unit": "tbs",
+               "id": "In115",
+               "title": "vegetable oil"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "sprig",
+               "id": "In109",
+               "title": "thyme"
+            },
+            {
+               "friendlyQuantity": "150",
+               "isLockable": false,
+               "quantity": 150.0,
+               "unit": "g",
+               "id": "In191",
+               "title": "turkey fillet"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": true,
+               "quantity": 2.0,
+               "unit": "tbs",
+               "id": "In115",
+               "title": "vegetable oil"
+            }
+         ],
+         "id": "N232",
+         "title": "Turkey breasts",
+         "imageUrl": "https://atag.hgecdn.net/medias/Atag-N232-Turkey-Breast.jpg-recipeListFormat?context=bWFzdGVyfGltYWdlc3w4MTMxNnxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJnek55OW9NV1l2T0RnNU56azFORFl4TVRJek1DNXFjR2N8ZGM2NDk0ZDkxY2ZhZjc1MmIwYmViYzM4OGVjMWM5NGU5M2EwNWU3ZmFiY2Q2ODQ5NjhlMjM1ZDU1YThhZWRmYQ"
+      },
+      {
+         "difficulty": "Beginner",
+         "noOfPersonsDefault": 1,
+         "noOfPersonsMin": 1,
+         "noOfPersonsMax": 8,
+         "type": "SIDE",
+         "description": "Are you looking for something to start your day with? This morning treat gets a major upgrade when you mix in seasonal fruit, marmalade, spices, and other flavour-boosting ingredients after cooking.",
+         "allergens": [
+            {
+               "id": "a001",
+               "title": "Gluten"
+            }
+         ],
+         "steps": [
+            {
+               "desc": "Place oatmeal in a dish. Add tap water and salt to taste.",
+               "id": "recipe_step_N150_0_0"
+            }
+         ],
+         "diet": [
+            {
+               "id": "D6",
+               "title": "Low calories"
+            },
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "D5",
+               "title": "Vegan"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d003",
+               "title": "Dairy-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "D2",
+               "title": "Vegetarian"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "100",
+               "isLockable": false,
+               "quantity": 100.0,
+               "unit": "ml",
+               "id": "In160",
+               "title": "water"
+            },
+            {
+               "friendlyQuantity": "60",
+               "isLockable": false,
+               "quantity": 60.0,
+               "unit": "g",
+               "id": "In035",
+               "title": "oatmeal"
+            }
+         ],
+         "id": "N150",
+         "title": "Oatmeal",
+         "imageUrl": "https://atag.hgecdn.net/medias/N150-Oatmeal-1-recipeListFormat?context=bWFzdGVyfGltYWdlc3w2MTM1MHxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJnMU9DOW9Nakl2T0RnNU56YzROVGd5TXpJMk1pNXFjR2N8YjZhY2UxYWNlYWVmNzMzOGJlN2RmZWM0YzkwNTA1ZDI3YjRjM2UyNzA3ZDg3ODkzOWZlYjM0M2UxNWU4OWVjOA"
+      },
+      {
+         "difficulty": "Intermediate",
+         "noOfPersonsDefault": 4,
+         "noOfPersonsMin": 4,
+         "noOfPersonsMax": 4,
+         "type": "MAIN",
+         "description": " ",
+         "allergens": [],
+         "steps": [
+            {
+               "desc": "Place rib rack, meat-side down, on heavy-duty aluminum foil. Prick back of the rack several times with a knife.",
+               "id": "recipe_step_N2007_0_0"
+            },
+            {
+               "desc": "Prepare the coating. Mix ancho chile powder, white and brown sugars, salt, black pepper, cumin, dry mustard, cayenne, and chipotle pepper in a small bowl until combined.",
+               "id": "recipe_step_N2007_0_1"
+            },
+            {
+               "desc": "Generously apply a coating of dry rub to all sides of the rack. Store any remaining dry rub in an airtight container for future use.",
+               "id": "recipe_step_N2007_0_2"
+            },
+            {
+               "desc": "With the meat facing down, fold foil around the rack to create a tight seal. Transfer to a sheet pan.",
+               "id": "recipe_step_N2007_0_3"
+            },
+            {
+               "desc": "After two hours open foil, drain and discard any accumulated juices and fat. Brush barbeque sauce on all sides of the rack.",
+               "id": "recipe_step_N2007_0_4"
+            },
+            {
+               "desc": "Turn the rack on the foil so the meat is facing up. Return to the oven, leaving the foil open and bake for 10 minutes. Remove from the oven and brush another layer of barbeque sauce on the meat side only. Repeat baking and brushing with sauce 4 more times, for a total of 50 minutes baking time.",
+               "id": "recipe_step_N2007_0_5"
+            },
+            {
+               "desc": "Cut rack into individual rib segments and serve with more barbeque sauce.",
+               "id": "recipe_step_N2007_0_6"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d002",
+               "title": "Gluten-Free"
+            },
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d003",
+               "title": "Dairy-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "2",
+               "isLockable": false,
+               "quantity": 2.0,
+               "unit": "tbs",
+               "id": "In2022",
+               "title": "freshly ground black pepper"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "tbs",
+               "id": "In240",
+               "title": "ground cumin"
+            },
+            {
+               "friendlyQuantity": " \u00bd",
+               "isLockable": false,
+               "quantity": 0.5,
+               "unit": "tsp",
+               "id": "In2024",
+               "title": "ground dried chipotle pepper"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "tsp",
+               "id": "In2025",
+               "title": "ground cayenne pepper"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "tsp",
+               "id": "N2023",
+               "title": "dry mustard"
+            },
+            {
+               "friendlyQuantity": " \u00bd",
+               "isLockable": false,
+               "quantity": 0.5,
+               "unit": "cup",
+               "id": "In2021",
+               "title": "ancho chile powder"
+            },
+            {
+               "friendlyQuantity": " \u00bc",
+               "isLockable": false,
+               "quantity": 0.25,
+               "unit": "cup",
+               "id": "In003",
+               "title": "sugar"
+            },
+            {
+               "friendlyQuantity": " \u00bc",
+               "isLockable": false,
+               "quantity": 0.25,
+               "unit": "cup",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": " \u00bc",
+               "isLockable": false,
+               "quantity": 0.25,
+               "unit": "cup",
+               "id": "In251",
+               "title": "brown sugar"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "cup",
+               "id": "N2006",
+               "title": "barbeque sauce"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "rack",
+               "id": "In2026",
+               "title": "baby back pork ribs"
+            }
+         ],
+         "id": "N2007",
+         "title": "Baked BBQ baby back ribs",
+         "imageUrl": "https://atag.hgecdn.net/medias/baked-BBQ-baby-back-ribs-listformat.jpg?context=bWFzdGVyfGltYWdlc3wyNTYzMDF8aW1hZ2UvanBlZ3xhRFprTDJnMk1TODVOVEU1T0RFd05UUXpOalEyTDJKaGEyVmtYMEpDVVY5aVlXSjVYMkpoWTJ0ZmNtbGljMTlzYVhOMFptOXliV0YwTG1wd1p3fDcxMmVjNWM2MzU1NGU3OGE3ZjRhOGU1ZjBmZWI2YWQzMTFhMTM3ZjQ3NWIwNDY4MjA4ODY0MmJmNmVjYWRjMzg"
+      },
+      {
+         "difficulty": "Intermediate",
+         "noOfPersonsDefault": 4,
+         "noOfPersonsMin": 4,
+         "noOfPersonsMax": 15,
+         "type": "BREAKFAST_AND_BRUNCH",
+         "description": "Are you looking for an alternative to white bread? This rye bread has a darker colour and richer taste than your average white loaf. Sliced, it is perfect for open sandwiches and healthy canap\u00e9s.",
+         "allergens": [
+            {
+               "id": "a001",
+               "title": "Gluten"
+            }
+         ],
+         "steps": [
+            {
+               "desc": "Prepare the starter. Add crumbled yeast, flour, sugar and salt into 1 dl of lukewarm water to obtain a smooth mixture. Let rise for approximately 5 minutes.",
+               "id": "recipe_step_N029_0_0"
+            },
+            {
+               "desc": "Prepare the dough. Add the starter to flour, add oil and salt. During kneading, add lukewarm water.",
+               "id": "recipe_step_N029_0_1"
+            },
+            {
+               "desc": "Shape the dough into a ball, cover it with a cotton towel and let it rise for approximately 30-40 minutes (until the bread has doubled in volume).",
+               "id": "recipe_step_N029_0_2"
+            },
+            {
+               "desc": "Knead the dough one more time, form a loaf and place on a baking sheet covered with parchment paper. Cover the bread with a cotton towel and let it rise for another 20-30 min.",
+               "id": "recipe_step_N029_0_3"
+            },
+            {
+               "desc": "Before baking, score the bread with 4 diagonal cuts to prevent it from cracking.",
+               "id": "recipe_step_N029_0_4"
+            },
+            {
+               "desc": "After baking remove the bread from the oven, and cool before slicing.",
+               "id": "recipe_step_N029_0_5"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "D5",
+               "title": "Vegan"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d003",
+               "title": "Dairy-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "D2",
+               "title": "Vegetarian"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "2",
+               "isLockable": true,
+               "quantity": 2.0,
+               "unit": "tbs",
+               "id": "In001",
+               "title": "white wheat flour"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In003",
+               "title": "sugar"
+            },
+            {
+               "friendlyQuantity": "20",
+               "isLockable": false,
+               "quantity": 20.0,
+               "unit": "g",
+               "id": "In004",
+               "title": "fresh yeast"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "100",
+               "isLockable": true,
+               "quantity": 100.0,
+               "unit": "ml",
+               "id": "In150",
+               "title": "lukewarm water"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "tsp",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "tbs",
+               "id": "In017",
+               "title": "olive oil"
+            },
+            {
+               "friendlyQuantity": "250",
+               "isLockable": false,
+               "quantity": 250.0,
+               "unit": "g",
+               "id": "In034",
+               "title": "rye flour"
+            },
+            {
+               "friendlyQuantity": "300",
+               "isLockable": false,
+               "quantity": 300.0,
+               "unit": "ml",
+               "id": "In150",
+               "title": "lukewarm water"
+            },
+            {
+               "friendlyQuantity": "250",
+               "isLockable": false,
+               "quantity": 250.0,
+               "unit": "g",
+               "id": "In153",
+               "title": "whole wheat flour"
+            }
+         ],
+         "id": "N029",
+         "title": "Rye bread",
+         "imageUrl": "https://atag.hgecdn.net/medias/Atag-N029-Rye-wheat-bread-recipeListFormat?context=bWFzdGVyfGltYWdlc3w5ODQ0N3xpbWFnZS9qcGVnfGFXMWhaMlZ6TDJnM01DOW9NalF2T0RnNU56YzRNemcxTnpFNE1pNXFjR2N8OWVkMjhlYmM3NTliYWU2NWY4NWIyODVmZGQwNjJjZThmMzdmNTgzODgxNmE3MjAwY2QzMmI1NWFiN2Y2YTkxYQ"
+      },
+      {
+         "difficulty": "Intermediate",
+         "noOfPersonsDefault": 2,
+         "noOfPersonsMin": 2,
+         "noOfPersonsMax": 10,
+         "type": "MAIN",
+         "description": "A retro meal we all love to eat. Prepare it with carrots and paprika for sweeter taste. Enjoy this cheap and easy-to-prepare family meal which also tastes delicious as a cold cut for picnics.",
+         "allergens": [
+            {
+               "id": "a001",
+               "title": "Gluten"
+            },
+            {
+               "id": "a002",
+               "title": "Egg"
+            },
+            {
+               "id": "a003",
+               "title": "Dairy"
+            }
+         ],
+         "steps": [
+            {
+               "desc": "Saut\u00e9 the onion and let it cool down.",
+               "id": "recipe_step_N012_0_0"
+            },
+            {
+               "desc": "Hard boil the egg and let it cool down.",
+               "id": "recipe_step_N012_0_1"
+            },
+            {
+               "desc": "Cube the bread rolls. Pour milk and beaten egg over the bread.",
+               "id": "recipe_step_N012_0_2"
+            },
+            {
+               "desc": "Season the ground meat and add the onion, bread, cubed vegetables, and crushed garlic.",
+               "id": "recipe_step_N012_0_3"
+            },
+            {
+               "desc": "Form a loaf of ground meat and place it on a greased baking tray.",
+               "id": "recipe_step_N012_0_4"
+            },
+            {
+               "desc": "Place the hard-boiled egg in the middle.",
+               "id": "recipe_step_N012_0_5"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pcs",
+               "id": "In006",
+               "title": "eggs"
+            },
+            {
+               "friendlyQuantity": " \u00bd",
+               "isLockable": false,
+               "quantity": 0.5,
+               "unit": "tsp",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "100",
+               "isLockable": false,
+               "quantity": 100.0,
+               "unit": "ml",
+               "id": "In007",
+               "title": "milk"
+            },
+            {
+               "friendlyQuantity": " \u00bd",
+               "isLockable": true,
+               "quantity": 0.5,
+               "unit": "pcs",
+               "id": "In008",
+               "title": "onions"
+            },
+            {
+               "friendlyQuantity": "0.3",
+               "isLockable": false,
+               "quantity": 0.3,
+               "unit": "kg",
+               "id": "In009",
+               "title": "ground meat"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "clove",
+               "id": "In010",
+               "title": "garlic"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "sprig",
+               "id": "In011",
+               "title": "parsley"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In012",
+               "title": "pepper"
+            },
+            {
+               "friendlyQuantity": " \u00bd",
+               "isLockable": true,
+               "quantity": 0.5,
+               "unit": "pcs",
+               "id": "In025",
+               "title": "carrot"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In082",
+               "title": "marjoram"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In109",
+               "title": "thyme"
+            },
+            {
+               "friendlyQuantity": "4",
+               "isLockable": true,
+               "quantity": 4.0,
+               "unit": "tbs",
+               "id": "In115",
+               "title": "vegetable oil"
+            },
+            {
+               "friendlyQuantity": " \u00bd",
+               "isLockable": true,
+               "quantity": 0.5,
+               "unit": "pcs",
+               "id": "In133",
+               "title": "green bell pepper"
+            },
+            {
+               "friendlyQuantity": " \u00bd",
+               "isLockable": false,
+               "quantity": 0.5,
+               "unit": "pcs",
+               "id": "In148",
+               "title": "bread roll"
+            }
+         ],
+         "id": "N012",
+         "title": "Meat loaf",
+         "imageUrl": "https://atag.hgecdn.net/medias/Atag-N012-Meat-Loaf.jpg-recipeListFormat?context=bWFzdGVyfGltYWdlc3w4NDA2NnxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJneFpTOW9OR012T0RnNU56azBPREUxTlRrek5DNXFjR2N8MGE0NzkzYTRkYzliYzI0ZTM0YjIzMTU2Nzg5YzcxM2U1MDIxNDRkMzdjYjFkMzFkMmJiNGU4YWMxZGRlNzA0ZQ"
+      },
+      {
+         "difficulty": "Intermediate",
+         "noOfPersonsDefault": 2,
+         "noOfPersonsMin": 2,
+         "noOfPersonsMax": 10,
+         "type": "MAIN",
+         "description": "You will easily obtain restaurant-quality results from your home oven with this simple dinner recipe for braised beef roast.",
+         "allergens": [
+            {
+               "id": "a001",
+               "title": "Gluten"
+            },
+            {
+               "id": "a003",
+               "title": "Dairy"
+            }
+         ],
+         "steps": [
+            {
+               "desc": "Oil the meat and the baking dish and season to taste. Line with sliced vegetables and add tomato paste.",
+               "id": "recipe_step_N002_0_0"
+            },
+            {
+               "desc": "Add 3-4 dl water and cover the baking dish.",
+               "id": "recipe_step_N002_0_1"
+            },
+            {
+               "desc": "Prepare the sauce. When the meat is cooked, thicken the meat juices with a mixture of flour whisked into a few spoons of hot juices released from the meat. Mix in sour cream just before serving.",
+               "id": "recipe_step_N002_0_2"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": " \u00bd",
+               "isLockable": false,
+               "quantity": 0.5,
+               "unit": "tsp",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pcs",
+               "id": "In008",
+               "title": "onions"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": true,
+               "quantity": 2.0,
+               "unit": "cloves",
+               "id": "In010",
+               "title": "garlic"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In012",
+               "title": "pepper"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": true,
+               "quantity": 2.0,
+               "unit": "tbs",
+               "id": "In013",
+               "title": "tomato paste"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": true,
+               "quantity": 2.0,
+               "unit": "pcs",
+               "id": "In025",
+               "title": "carrot"
+            },
+            {
+               "friendlyQuantity": "4",
+               "isLockable": true,
+               "quantity": 4.0,
+               "unit": "tbs",
+               "id": "In115",
+               "title": "vegetable oil"
+            },
+            {
+               "friendlyQuantity": "0.4",
+               "isLockable": false,
+               "quantity": 0.4,
+               "unit": "kg",
+               "id": "In132",
+               "title": "beef shoulder"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pcs",
+               "id": "In133",
+               "title": "green bell pepper"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pcs",
+               "id": "In134",
+               "title": "red bell pepper"
+            },
+            {
+               "friendlyQuantity": "150",
+               "isLockable": true,
+               "quantity": 150.0,
+               "unit": "g",
+               "id": "In135",
+               "title": "brussels sprouts"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pcs",
+               "id": "In136",
+               "title": "parsley root"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "tbs",
+               "id": "In001",
+               "title": "white wheat flour"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": true,
+               "quantity": 2.0,
+               "unit": "tbs",
+               "id": "In053",
+               "title": "sour cream"
+            }
+         ],
+         "id": "N002",
+         "title": "Braised beef roast",
+         "imageUrl": "https://atag.hgecdn.net/medias/Atag-N002-Braised-Beef-Roast.jpg-recipeListFormat?context=bWFzdGVyfGltYWdlc3wxMDI2NzN8aW1hZ2UvanBlZ3xhVzFoWjJWekwyZ3lZaTlvTldVdk9EZzVOemsxTVRnNU1UUTROaTVxY0djfGVkMjNmYmZmMjQ4YTk4OTY2NjFiMjE0Y2FiOGUxNWZjYjFhYzEzM2RiZTk5NzZmNDVjMjZlYjgwNzMzMTY2MDc"
+      },
+      {
+         "noOfPersonsDefault": 1,
+         "type": "SIDE",
+         "allergens": [],
+         "steps": [],
+         "diet": [],
+         "ingredients": [],
+         "id": "N401",
+         "title": "Potato fritters"
+      },
+      {
+         "difficulty": "Beginner",
+         "noOfPersonsDefault": 1,
+         "noOfPersonsMin": 1,
+         "noOfPersonsMax": 5,
+         "type": "DESSERT",
+         "description": "Halved peaches are a wonderful starting point for a sophisticated and simple summer dessert. They are also perfect for breakfast with some yogurt and cereals.",
+         "allergens": [],
+         "steps": [
+            {
+               "desc": "Wash, peel, core and cut peaches into halves.",
+               "id": "recipe_step_N181_0_0"
+            }
+         ],
+         "diet": [
+            {
+               "id": "D6",
+               "title": "Low calories"
+            },
+            {
+               "id": "d002",
+               "title": "Gluten-Free"
+            },
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "D5",
+               "title": "Vegan"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d003",
+               "title": "Dairy-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "D2",
+               "title": "Vegetarian"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "200",
+               "isLockable": false,
+               "quantity": 200.0,
+               "unit": "g",
+               "id": "In211",
+               "title": "peeled and cored peaches"
+            }
+         ],
+         "id": "N181",
+         "title": "Peach halves",
+         "imageUrl": "https://atag.hgecdn.net/medias/N181-Peach-halves-recipeListFormat?context=bWFzdGVyfGltYWdlc3w1ODM5MHxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJoak9DOW9aVEl2T0RnNU56Z3pNVGd5T1RVek5DNXFjR2N8YjJiNzM3MjQ4ZWMxZjM0ZmNkYWZhMjBkNjc5ZWZmYjZiZTkxODhhNjQ2N2ZiYzEyMTJmOTEwMDkzMWFjMjliYg"
+      },
+      {
+         "difficulty": "Intermediate",
+         "noOfPersonsDefault": 8,
+         "noOfPersonsMin": 8,
+         "noOfPersonsMax": 8,
+         "type": "BREAKFAST_AND_BRUNCH",
+         "description": "Bread rolls are something that children adore. They'll enjoy helping you prepare them, almost as much as they'll enjoy eating them.",
+         "allergens": [
+            {
+               "id": "a001",
+               "title": "Gluten"
+            },
+            {
+               "id": "a003",
+               "title": "Dairy"
+            }
+         ],
+         "steps": [
+            {
+               "desc": "Prepare the starter. Add crumbled yeast, flour, sugar and salt into 1 dl of lukewarm water to obtain a smooth mixture. Let rise for approximately 5 minutes.",
+               "id": "recipe_step_N031_0_0"
+            },
+            {
+               "desc": "Prepare the dough. Add the starter to flour, add oil and salt. During kneading, add lukewarm water and milk.",
+               "id": "recipe_step_N031_0_1"
+            },
+            {
+               "desc": "Shape the dough into a ball, cover it with a cotton towel and let it rise for approximately 30-40 minutes (until the bread has doubled in volume).",
+               "id": "recipe_step_N031_0_2"
+            },
+            {
+               "desc": "Place the dough on the work surface and loosely roll it into a long cylinder.",
+               "id": "recipe_step_N031_0_3"
+            },
+            {
+               "desc": "Divide the dough into 8 sections and shape into oval rolls. Press a deep indentation into the top. As each roll is shaped, place it face down on a baking tray covered with parchment paper, and let them rise in a warm place for another 20-30 minutes. Lightly brush the risen rolls with water.",
+               "id": "recipe_step_N031_0_4"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "D2",
+               "title": "Vegetarian"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "2",
+               "isLockable": false,
+               "quantity": 2.0,
+               "unit": "tbs",
+               "id": "In001",
+               "title": "white wheat flour"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In003",
+               "title": "sugar"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "30",
+               "isLockable": false,
+               "quantity": 30.0,
+               "unit": "g",
+               "id": "In004",
+               "title": "fresh yeast"
+            },
+            {
+               "friendlyQuantity": "100",
+               "isLockable": false,
+               "quantity": 100.0,
+               "unit": "ml",
+               "id": "In150",
+               "title": "lukewarm water"
+            },
+            {
+               "friendlyQuantity": "500",
+               "isLockable": false,
+               "quantity": 500.0,
+               "unit": "g",
+               "id": "In001",
+               "title": "white wheat flour"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "tsp",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "200",
+               "isLockable": false,
+               "quantity": 200.0,
+               "unit": "ml",
+               "id": "In150",
+               "title": "lukewarm water"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": false,
+               "quantity": 2.0,
+               "unit": "tbs",
+               "id": "In115",
+               "title": "vegetable oil"
+            },
+            {
+               "friendlyQuantity": "150",
+               "isLockable": false,
+               "quantity": 150.0,
+               "unit": "ml",
+               "id": "In157",
+               "title": "lukewarm milk"
+            }
+         ],
+         "id": "N031",
+         "title": "Bread rolls",
+         "imageUrl": "https://atag.hgecdn.net/medias/Atag-N031-Bread-Rolls.jpg-recipeListFormat?context=bWFzdGVyfGltYWdlc3w5MDk5OHxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJobE9DOW9Oamt2T0RnNU56azBPVEEzTXpRek9DNXFjR2N8YmRhYTQ0NWFhZmEwMjY3ZjA5MDgzNzE4NDQ0MWEyMmYyMWFiYWU2ZjcxZmY2ZWVlYjZkMjA0NDM1NTJjZmY1MQ"
+      },
+      {
+         "difficulty": "Intermediate",
+         "noOfPersonsDefault": 8,
+         "noOfPersonsMin": 8,
+         "noOfPersonsMax": 8,
+         "type": "MAIN",
+         "description": "This easy dish is made with sliced potatoes, layered with minced meat and veggies, which add a welcomed sweetness, and topped with creamy b\u00e9chamel and cheese. What a comforting and rich-tasting meal!",
+         "allergens": [
+            {
+               "id": "a001",
+               "title": "Gluten"
+            },
+            {
+               "id": "a003",
+               "title": "Dairy"
+            }
+         ],
+         "steps": [
+            {
+               "desc": "Peel and cut the potatoes into round slices. Cook the potatoes in salt water until half done.",
+               "id": "recipe_step_N021_0_0"
+            },
+            {
+               "desc": "Meanwhile saut\u00e9 the onions over some oil. Add ground meat, garlic, chopped carrot, seasoning and stir.",
+               "id": "recipe_step_N021_0_1"
+            },
+            {
+               "desc": "Cube the tomato and add it to the meat. Add tomato paste and pour with 1-2 dl water. Simmer for about 15 minutes.",
+               "id": "recipe_step_N021_0_2"
+            },
+            {
+               "desc": "Prepare the B\u00e9chamel sauce. Melt the butter in a small saucepan. Add flour and wait for it to turn yellow. Add milk and stir. Season with salt and nutmeg. ",
+               "id": "recipe_step_N021_0_3"
+            },
+            {
+               "desc": "Grease the baking dish and cover the bottom with one layer of sliced potatoes. Spread the meat sauce over it. Add the B\u00e9chamel sauce and some grated cheese. ",
+               "id": "recipe_step_N021_0_4"
+            },
+            {
+               "desc": "Proceed with the next layers. Add the B\u00e9chamel sauce and sprinkle the grated cheese more generously over the last layer.",
+               "id": "recipe_step_N021_0_5"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": "3",
+               "isLockable": false,
+               "quantity": 3.0,
+               "unit": "tsp",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": false,
+               "quantity": 2.0,
+               "unit": "pcs",
+               "id": "In008",
+               "title": "onions"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": false,
+               "quantity": 2.0,
+               "unit": "cloves",
+               "id": "In010",
+               "title": "garlic"
+            },
+            {
+               "friendlyQuantity": "0.7",
+               "isLockable": false,
+               "quantity": 0.7,
+               "unit": "kg",
+               "id": "In009",
+               "title": "ground meat"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "pcs",
+               "id": "In025",
+               "title": "carrot"
+            },
+            {
+               "friendlyQuantity": "100",
+               "isLockable": false,
+               "quantity": 100.0,
+               "unit": "ml",
+               "id": "In013",
+               "title": "tomato paste"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": false,
+               "quantity": 2.0,
+               "unit": "pcs",
+               "id": "In027",
+               "title": "bay leaves"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In012",
+               "title": "pepper"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In028",
+               "title": "basil"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In029",
+               "title": "oregano"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": false,
+               "quantity": 2.0,
+               "unit": "pcs",
+               "id": "In031",
+               "title": "tomatoes"
+            },
+            {
+               "friendlyQuantity": "350",
+               "isLockable": false,
+               "quantity": 350.0,
+               "unit": "g",
+               "id": "In033",
+               "title": "grated cheese"
+            },
+            {
+               "friendlyQuantity": "3",
+               "isLockable": false,
+               "quantity": 3.0,
+               "unit": "tbs",
+               "id": "In115",
+               "title": "vegetable oil"
+            },
+            {
+               "friendlyQuantity": "0.8",
+               "isLockable": false,
+               "quantity": 0.8,
+               "unit": "kg",
+               "id": "In078",
+               "title": "peeled potatoes"
+            },
+            {
+               "friendlyQuantity": "50",
+               "isLockable": false,
+               "quantity": 50.0,
+               "unit": "g",
+               "id": "In001",
+               "title": "white wheat flour"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "l",
+               "id": "In007",
+               "title": "milk"
+            },
+            {
+               "friendlyQuantity": "50",
+               "isLockable": false,
+               "quantity": 50.0,
+               "unit": "g",
+               "id": "In018",
+               "title": "butter"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": false,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In026",
+               "title": "nutmeg"
+            }
+         ],
+         "id": "N021",
+         "title": "Moussaka with potatoes",
+         "imageUrl": "https://atag.hgecdn.net/medias/Atag-N021-Moussaka-with-potatoes-recipeListFormat?context=bWFzdGVyfGltYWdlc3wxMDA1MTh8aW1hZ2UvanBlZ3xhVzFoWjJWekwyZzBPQzlvT1RFdk9EZzNOVFV3TnprM05ERTNOQzVxY0djfDRhMmNkNjZiMjE2NGNjMmVmYzQwZTZlNDE4ZGVjYjBlMjliZTVlN2RmNjUxODg5Y2MwNWRhZjBjYzA1OGE2NDM"
+      },
+      {
+         "difficulty": "Intermediate",
+         "noOfPersonsDefault": 2,
+         "noOfPersonsMin": 2,
+         "noOfPersonsMax": 10,
+         "type": "MAIN",
+         "description": "Are you looking for an alternative for a perfect dinner roast? Use a veal shoulder. Give it some extra flavour with bacon, spices and pickles and your palate won't be disappointed.",
+         "allergens": [
+            {
+               "id": "a010",
+               "title": "Mustard seeds"
+            }
+         ],
+         "steps": [
+            {
+               "desc": "Oil the meat and the baking dish and season to taste. Lard meat with bacon and slices of pickles/gherkins.",
+               "id": "recipe_step_N004_0_0"
+            },
+            {
+               "desc": "Add 1-2 dl water and baste the meat with the juices it releases during roasting.",
+               "id": "recipe_step_N004_0_1"
+            }
+         ],
+         "diet": [
+            {
+               "id": "d002",
+               "title": "Gluten-Free"
+            },
+            {
+               "id": "d001",
+               "title": "Egg-Free"
+            },
+            {
+               "id": "d005",
+               "title": "Seafood-Free"
+            },
+            {
+               "id": "d003",
+               "title": "Dairy-Free"
+            },
+            {
+               "id": "d004",
+               "title": "Peanut-Free"
+            },
+            {
+               "id": "d006",
+               "title": "Sesame-Free"
+            },
+            {
+               "id": "d007",
+               "title": "Soy-Free"
+            },
+            {
+               "id": "d008",
+               "title": "Tree-Nut-Free"
+            },
+            {
+               "id": "d009",
+               "title": "Sulphite-Free"
+            }
+         ],
+         "ingredients": [
+            {
+               "friendlyQuantity": " \u00bd",
+               "isLockable": false,
+               "quantity": 0.5,
+               "unit": "tsp",
+               "id": "In005",
+               "title": "salt"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": true,
+               "quantity": 2.0,
+               "unit": "pinches",
+               "id": "In011",
+               "title": "parsley"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In012",
+               "title": "pepper"
+            },
+            {
+               "friendlyQuantity": "0.4",
+               "isLockable": false,
+               "quantity": 0.4,
+               "unit": "kg",
+               "id": "In081",
+               "title": "veal shoulder"
+            },
+            {
+               "friendlyQuantity": "1",
+               "isLockable": true,
+               "quantity": 1.0,
+               "unit": "pinch",
+               "id": "In082",
+               "title": "marjoram"
+            },
+            {
+               "friendlyQuantity": "4",
+               "isLockable": false,
+               "quantity": 4.0,
+               "unit": "pcs",
+               "id": "In084",
+               "title": "pickles (pickled gherkins)"
+            },
+            {
+               "friendlyQuantity": "2",
+               "isLockable": false,
+               "quantity": 2.0,
+               "unit": "slices",
+               "id": "In083",
+               "title": "bacon"
+            },
+            {
+               "friendlyQuantity": "4",
+               "isLockable": true,
+               "quantity": 4.0,
+               "unit": "tbs",
+               "id": "In115",
+               "title": "vegetable oil"
+            }
+         ],
+         "id": "N004",
+         "title": "Veal roast",
+         "imageUrl": "https://atag.hgecdn.net/medias/Atag-N004-Veal-Roast.jpg-recipeListFormat?context=bWFzdGVyfGltYWdlc3w4OTIyMnxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJobFl5OW9aVFl2T0RnNU56azBOelk1TnpFNE1pNXFjR2N8ZGFiYTlhNWFkMjVkZTAzNTEwZWI2MmY2ZTAzMTcwMDM5YTE1ODU0MTI4OTU5OTE0ZTQzNjE1M2NiMGE1NWI4MA"
+      }
+   ]
+}
