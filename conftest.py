@@ -12,54 +12,23 @@ from Common.FileHelpers import SaveToSharedDataDirectory
 
 ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 
-def getToken(config: pytest.Config):
-    authType = config.getoption("--auth")
-    envType = config.getoption("--env")
-    if pytest.api_token is None:
-        retry = 0
-        while retry < 5:
-            if(authType == "swagger"):
-                token = SwaggerAPI(Settings.get("Username"), Settings.get(
-                    "Password"), Settings.get("ClientId"), Settings.get("ClientSecret"))
-                if token is None:
-                    print(
-                        "ERROR - token was not retrieved, retrying... (attempt " + str(retry+1) + ")")
-                else:
-                    pytest.api_token = token
-                    break
-            elif(authType == "juconnect"):
-                token = JuconnectAPI(Settings.get(
-                    "Username"), Settings.get("Password"))
-                if token is None:
-                    print(
-                        "ERROR - token was not retrieved, retrying... (attempt " + str(retry+1) + ")")
-                else:
-                    pytest.api_token = token
-                    break
-            elif(authType == "cdc"):
-                token = OAuth2Authorization.getToken(str(envType).upper())
-                pytest.api_token = token
-            retry += 1
-
-    if pytest.api_token is None:
-        print("ERROR - token was not retrieved")
-        raise Exception("ERROR - token was not retrieved")
-    
-    return pytest.api_token
-
 def pytest_configure(config: pytest.Config):
     pytest.api_token = None
     pytest.api_base_url = config.getoption("--apiBaseUrl")
-    pytest.log_objects = {}
 
-    pytest.data_collections = {}
-    pytest.timers = {}
+    split_path = config.getoption("file_or_dir")[0].split(os.sep)
 
-    if not os.path.exists(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "report_logs")):
-        os.makedirs(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "report_logs"))
-    if not os.path.exists(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "ElapsedTimes")):
-        os.makedirs(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "ElapsedTimes"))
-    
+    if "WebAPI" in split_path:
+        pytest.log_objects = {}
+        pytest.data_collections = {}
+        pytest.timers = {}
+        if not os.path.exists(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "report_logs")):
+            os.makedirs(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "report_logs"))
+        if not os.path.exists(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "ElapsedTimes")):
+            os.makedirs(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "ElapsedTimes"))
+    elif "Web" in split_path:
+        pass
+
 def pytest_unconfigure():
     pass
 
@@ -77,35 +46,48 @@ def pytest_addoption(parser):
 
 def pytest_generate_tests(metafunc: pytest.Metafunc):
     # called once per each test function
-    json_file_path = os.path.join(metafunc.definition.fspath.dirname, metafunc.definition.fspath.purebasename + ".json")
-    pytest.log_objects[metafunc.definition.fspath.purebasename] = CsvLogWriter(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "report_logs", f"_logs_{metafunc.definition.fspath.purebasename}.log"))
-
     split_path = metafunc.definition.fspath.dirname.split(os.sep)
+    if "WebAPI" in split_path:
+        json_file_path = os.path.join(metafunc.definition.fspath.dirname, metafunc.definition.fspath.purebasename + ".json")
+        pytest.log_objects[metafunc.definition.fspath.purebasename] = CsvLogWriter(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "report_logs", f"_logs_{metafunc.definition.fspath.purebasename}.log"))
 
-    # create data structure to measure req/res times for WebAPI
-    idx = split_path.index("WebAPI")
-    relative_path = split_path[idx:]
-    if len(relative_path) == 4:
-        test_name = split_path.pop(-1)
-        pytest.timers[test_name] = []
-    elif len(relative_path) == 5:
-        test_name = split_path.pop(-1)
-        group_name = split_path.pop(-1)
-        test_type = split_path.pop(-1)
+        # create data structure to measure req/res times for WebAPI
+        idx = split_path.index("WebAPI")
+        relative_path = split_path[idx:]
+        if len(relative_path) == 4:
+            test_name = split_path.pop(-1)
+            pytest.timers[test_name] = []
+        elif len(relative_path) == 5:
+            test_name = split_path.pop(-1)
+            group_name = split_path.pop(-1)
+            test_type = split_path.pop(-1)
 
-        if not group_name in pytest.timers.keys():
-            pytest.timers[group_name] = {}
-            pytest.timers[group_name][test_name] = {
-                "type": test_type,
-                "values": []
-            }
-        else:
-            pytest.timers[group_name][test_name] = {
-                "type": test_type,
-                "values": []
-            }
+            if not group_name in pytest.timers.keys():
+                pytest.timers[group_name] = {}
+                pytest.timers[group_name][test_name] = {
+                    "type": test_type,
+                    "values": []
+                }
+            else:
+                pytest.timers[group_name][test_name] = {
+                    "type": test_type,
+                    "values": []
+                }
 
-    pytest.data_collections[metafunc.definition.fspath.purebasename] = {}
+        pytest.data_collections[metafunc.definition.fspath.purebasename] = {}
+    elif "Web" in split_path:
+        json_file = os.path.join(metafunc.definition.fspath.dirname, metafunc.definition.fspath.purebasename + ".json")
+        json_data = {}
+        if os.path.exists(json_file):
+            with open(json_file, 'r') as f:
+                json_data = json.load(f)
+
+        data = []
+
+        for case in json_data["test_cases"]:
+            data.append(json_data["test_cases"][case])
+
+        metafunc.parametrize("params", data)
 
 def pytest_sessionstart(session):
     pass
@@ -113,81 +95,83 @@ def pytest_sessionstart(session):
 @pytest.hookimpl()
 def pytest_sessionfinish(session, exitstatus):
     # called when all test cases for specific test had been finished
-    item: pytest.Item
-    for item in session.items:
-        file_name = item.path.stem
-        if file_name == "GetFaqsAuidsPreTest":
-            if pytest.data_collections[file_name] != {}:
-                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
-                pytest.data_collections[file_name] = {}
-        elif file_name == "GetFaqsAuidsLangsPreTest":
-            if pytest.data_collections[file_name] != {}:
-                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
-                pytest.data_collections[file_name] = {}
-        elif file_name == "GetTipsTricksAuidsLangPreTest":
-            if pytest.data_collections[file_name] != {}:
-                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
-                pytest.data_collections[file_name] = {}
-        elif file_name == "GetInspirationsAuidsPreTest":
-            if pytest.data_collections[file_name] != {}:
-                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
-                pytest.data_collections[file_name] = {}
-        elif file_name == "GetPairingAuidsPreTest":
-            if pytest.data_collections[file_name] != {}:
-                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
-                pytest.data_collections[file_name] = {}
-        elif file_name == "GetHelpPreTest":
-            if pytest.data_collections[file_name] != {}:
-                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
-                pytest.data_collections[file_name] = {}
-        elif file_name == "GetGenericFaqPreTest":
-            if pytest.data_collections[file_name] != {}:
-                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
-                pytest.data_collections[file_name] = {}
-        elif file_name == "GetGuidesPreTest":
-            if pytest.data_collections[file_name] != {}:
-                SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
-                pytest.data_collections[file_name] = {}
+    if hasattr(pytest, "data_collections"):
+        item: pytest.Item
+        for item in session.items:
+            file_name = item.path.stem
+            if file_name == "GetFaqsAuidsPreTest":
+                if pytest.data_collections[file_name] != {}:
+                    SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                    pytest.data_collections[file_name] = {}
+            elif file_name == "GetFaqsAuidsLangsPreTest":
+                if pytest.data_collections[file_name] != {}:
+                    SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                    pytest.data_collections[file_name] = {}
+            elif file_name == "GetTipsTricksAuidsLangPreTest":
+                if pytest.data_collections[file_name] != {}:
+                    SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                    pytest.data_collections[file_name] = {}
+            elif file_name == "GetInspirationsAuidsPreTest":
+                if pytest.data_collections[file_name] != {}:
+                    SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                    pytest.data_collections[file_name] = {}
+            elif file_name == "GetPairingAuidsPreTest":
+                if pytest.data_collections[file_name] != {}:
+                    SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                    pytest.data_collections[file_name] = {}
+            elif file_name == "GetHelpPreTest":
+                if pytest.data_collections[file_name] != {}:
+                    SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                    pytest.data_collections[file_name] = {}
+            elif file_name == "GetGenericFaqPreTest":
+                if pytest.data_collections[file_name] != {}:
+                    SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                    pytest.data_collections[file_name] = {}
+            elif file_name == "GetGuidesPreTest":
+                if pytest.data_collections[file_name] != {}:
+                    SaveToSharedDataDirectory(f"{file_name}.json", pytest.data_collections[file_name])
+                    pytest.data_collections[file_name] = {}
 
     # save measurd req/res times for WebAPI to file
-    for group in pytest.timers.keys():
-        if type(pytest.timers[group]) is list:
-            raw_values = pytest.timers[group]
-            if len(raw_values) <= 0:
-                continue
-
-            min_elapsed_time = min(raw_values)
-            max_elapsed_time = max(raw_values)
-            avg_elapsed_time = sum(raw_values) / len(raw_values)
-            pytest.timers[group] = {
-                "raw_values": raw_values,
-                "min": min_elapsed_time,
-                "avg": avg_elapsed_time,
-                "max": max_elapsed_time
-            }
-
-            f_out = open(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "ElapsedTimes", f"PreTests_0_{group}.json"), "w")
-            json.dump(pytest.timers, f_out)
-            f_out.close()
-        else:
-            for folder in pytest.timers[group].keys():
-                test_type = pytest.timers[group][folder]["type"]
-                raw_values = pytest.timers[group][folder]["values"]
+    if hasattr(pytest, "timers"):
+        for group in pytest.timers.keys():
+            if type(pytest.timers[group]) is list:
+                raw_values = pytest.timers[group]
                 if len(raw_values) <= 0:
                     continue
 
                 min_elapsed_time = min(raw_values)
                 max_elapsed_time = max(raw_values)
                 avg_elapsed_time = sum(raw_values) / len(raw_values)
-                pytest.timers[group][folder] = {
+                pytest.timers[group] = {
                     "raw_values": raw_values,
                     "min": min_elapsed_time,
                     "avg": avg_elapsed_time,
                     "max": max_elapsed_time
                 }
-            f_out = open(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "ElapsedTimes", f"{test_type}_{group}.json"), "w")
-            json.dump(pytest.timers, f_out)
-            f_out.close()
+
+                f_out = open(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "ElapsedTimes", f"PreTests_0_{group}.json"), "w")
+                json.dump(pytest.timers, f_out)
+                f_out.close()
+            else:
+                for folder in pytest.timers[group].keys():
+                    test_type = pytest.timers[group][folder]["type"]
+                    raw_values = pytest.timers[group][folder]["values"]
+                    if len(raw_values) <= 0:
+                        continue
+
+                    min_elapsed_time = min(raw_values)
+                    max_elapsed_time = max(raw_values)
+                    avg_elapsed_time = sum(raw_values) / len(raw_values)
+                    pytest.timers[group][folder] = {
+                        "raw_values": raw_values,
+                        "min": min_elapsed_time,
+                        "avg": avg_elapsed_time,
+                        "max": max_elapsed_time
+                    }
+                f_out = open(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "ElapsedTimes", f"{test_type}_{group}.json"), "w")
+                json.dump(pytest.timers, f_out)
+                f_out.close()
 
 def pytest_terminal_summary(terminalreporter, exitstatus, config):
     print("pytest_terminal_summary")
@@ -230,6 +214,41 @@ def driver(request):
     # Teardown
     driver.close()
     driver.quit()
+
+def getToken(config: pytest.Config):
+    authType = config.getoption("--auth")
+    envType = config.getoption("--env")
+    if pytest.api_token is None:
+        retry = 0
+        while retry < 5:
+            if(authType == "swagger"):
+                token = SwaggerAPI(Settings.get("Username"), Settings.get(
+                    "Password"), Settings.get("ClientId"), Settings.get("ClientSecret"))
+                if token is None:
+                    print(
+                        "ERROR - token was not retrieved, retrying... (attempt " + str(retry+1) + ")")
+                else:
+                    pytest.api_token = token
+                    break
+            elif(authType == "juconnect"):
+                token = JuconnectAPI(Settings.get(
+                    "Username"), Settings.get("Password"))
+                if token is None:
+                    print(
+                        "ERROR - token was not retrieved, retrying... (attempt " + str(retry+1) + ")")
+                else:
+                    pytest.api_token = token
+                    break
+            elif(authType == "cdc"):
+                token = OAuth2Authorization.getToken(str(envType).upper())
+                pytest.api_token = token
+            retry += 1
+
+    if pytest.api_token is None:
+        print("ERROR - token was not retrieved")
+        raise Exception("ERROR - token was not retrieved")
+    
+    return pytest.api_token
 
 @pytest.fixture(scope="function")
 def token(request):
