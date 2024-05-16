@@ -1,10 +1,8 @@
-_sap_ids_sample.txt
-report_logs/*
-SharedData/*
+# WebAPI
+WebAPI/ConnectLife/report_logs/*
+WebAPI/ConnectLife/SharedData/*
+WebAPI/ConnectLife/ElapsedTimes/*
 _jsonschema_*
-_response_*
-step_*_logs.txt
-error_logs.txt
 
 ./Mobile/UIAutomatorViewer
 ./Mobile/UIAutomatorViewer/*

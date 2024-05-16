@@ -22,7 +22,6 @@ for appliance in appliances:
 if appliances == []:
     appliances = manually_added_ids
 
-@pytest.mark.test_env
 @pytest.mark.parametrize("id", ids)
 @pytest.mark.parametrize("lang", langs)
 def test_get_appliances_metadata_ids_langs(token: str, id, lang):

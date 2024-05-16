@@ -51,7 +51,7 @@ if hybris_token != "":
                     test_case["wizard_id"] = wizard_obj["wizard_id"]
             all_test_cases_with_wizard_id += energy_saving_wizard_sheet
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("test_case_obj", all_test_cases_with_wizard_id)
 def test_post_wizard_washing_energy_saving_wizard_id(token: str, test_case_obj):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "wizard_id", "payload", "endpoint"])
@@ -74,17 +74,26 @@ def test_post_wizard_washing_energy_saving_wizard_id(token: str, test_case_obj):
         "Content-Type": "application/json; charset=utf-8",
         "Accept": "application/json"
     }
+
+    req_res_times = []
+    dir_folder_name = os.path.dirname(os.path.realpath(__file__)).split(os.sep)
+    folder_name = dir_folder_name.pop(-1)
+    group_name = dir_folder_name.pop(-1)
     
     response = None
     attempts = 1
     while attempts <= 5:
         try:
             response = requests.request("POST", url, headers=headers, data=json.dumps(_payload), timeout=(10 * attempts))
+            req_res_times.append(response.elapsed.total_seconds())
             break
         except requests.exceptions.Timeout:
             attempts += 1
             print(f"Request attempt: #{attempts}")
     
+    req_res_duration = min(req_res_times)
+    pytest.timers[group_name][folder_name].append(req_res_duration)
+
     if response == None:
         pytest.log_objects[__name__].writeToLogFileAsList([str(datetime.datetime.now()), f"Request timed out {attempts} time/s", test_case_obj["wizard_id"], _payload, url])
         assert False

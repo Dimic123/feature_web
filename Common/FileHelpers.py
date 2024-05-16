@@ -10,18 +10,18 @@ def WriteDataToJsonFileInCurrentDirectory(name: str, currentFilePath: str, data,
         
 def SaveToSharedDataDirectory(file_name, data):
     ROOT_DIR = os.sep.join(os.path.dirname(os.path.realpath(__file__)).split(os.sep)[:-1])
-    shared_data_dir = os.path.join(ROOT_DIR, "SharedData")
+    shared_data_dir = os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "SharedData")
 
     if not os.path.exists(shared_data_dir):
         os.makedirs(shared_data_dir)
 
-    file_path = os.path.join(os.path.join(ROOT_DIR, "SharedData"), file_name)
+    file_path = os.path.join(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "SharedData"), file_name)
     with open(file_path, "w") as write_file:
         write_file.write(json.dumps(data, indent=3))
         
 def ReadFileFromSharedDataDirectory(file_name):
     ROOT_DIR = os.sep.join(os.path.dirname(os.path.realpath(__file__)).split(os.sep)[:-1])
-    file_path = os.path.join(os.path.join(ROOT_DIR, "SharedData"), file_name)
+    file_path = os.path.join(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "SharedData"), file_name)
     try:
         read_file = open(file_path, "r")
         data = json.load(read_file)
@@ -32,7 +32,7 @@ def ReadFileFromSharedDataDirectory(file_name):
 
 def ReadFileFromStaticDataDirectory(file_name):
     ROOT_DIR = os.sep.join(os.path.dirname(os.path.realpath(__file__)).split(os.sep)[:-1])
-    file_path = os.path.join(os.path.join(ROOT_DIR, "StaticData"), file_name)
+    file_path = os.path.join(os.path.join(ROOT_DIR, "WebAPI", "ConnectLife", "StaticData"), file_name)
     try:
         read_file = open(file_path, "r")
         data = json.load(read_file)

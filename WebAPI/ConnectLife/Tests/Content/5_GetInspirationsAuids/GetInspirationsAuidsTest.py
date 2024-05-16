@@ -31,7 +31,7 @@ for item in map_list:
 combined_test_case: Auid_Id_test_case = generate_test_case_with_n_req_params(collected_auids, 50, True)
 map_list.append(combined_test_case)
 
-@pytest.mark.test_env
+@pytest.mark.prod_api
 @pytest.mark.parametrize("test_case", map_list)
 def test_get_inspirations_auids(token: str, test_case):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "id", "endpoint"])

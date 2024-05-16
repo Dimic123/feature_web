@@ -20,8 +20,8 @@ for auid in auids_map:
             "lang": details["lang"]
         })
 
-@pytest.mark.skip(reason="test takes too long after n-th test case")
-@pytest.mark.test_env
+@pytest.mark.prod_api
+# @pytest.mark.skip(reason="test takes too long after n-th test case")
 @pytest.mark.parametrize("test_case", map_list)
 def test_get_tips_tricks_auids_lang(token: str, test_case):
     pytest.log_objects[__name__].writeHeaderToLogFileAsList(["time", "error", "auid", "id", "lang", "endpoint"])
